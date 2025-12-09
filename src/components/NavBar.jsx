@@ -3,7 +3,7 @@
 import logo from '../assets/images/logo.svg'
 import { Home, Phone, Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ onNavigateHome, onNavigateContact }) => {
     // const linkClass = ({ isActive }) =>
     //     isActive
     //         ? 'text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
@@ -29,25 +29,25 @@ const Navbar = () => {
                                 src={logo}
                                 alt="React Jobs"
                             />
-                            <h2 className="text-gray-100 ml-1 font-semibold">EPITA Intl. Student Guide 🇫🇷</h2>
+                            <h2 className="text-gray-100 ml-1 font-mono">EPITA Intl. Student Guide</h2>
                         </a>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <button
-                            // onClick={onNavigateHome}
+                            onClick={onNavigateHome}
                             className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-100 hover:bg-indigo-600 transition-colors cursor-pointer"
                         >
                             <Home className="w-5 h-5" />
-                            <span className="hidden sm:inline">Home</span>
+                            <span className="hidden sm:inline font-mono">Home</span>
                         </button>
 
                         <button
-                            // onClick={onNavigateContact}
+                            onClick={onNavigateContact}
                             className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-100 hover:bg-indigo-600 transition-colors cursor-pointer"
                         >
                             <Phone className="w-5 h-5" />
-                            <span className="hidden sm:inline">Contact Us</span>
+                            <span className="hidden sm:inline font-mono">Contact Us</span>
                         </button>
                     </div>
                 </div>
