@@ -1,16 +1,21 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700&display=swap');
 
 /*
 @theme allows you to define your custom design tokens—like colors, fonts, and
 spacing—directly within your main CSS file, using standard CSS variables
 */
+
+/* 1. Import Inter (and Roboto) */
+/* We grab weights 100-900 to support all Tailwind font-weight classes */
+
+
 @theme {
+    /* Usage: class="font-sans" */
     --font-sans: "Roboto", sans-serif;
-    /*
-        1. Maps to 'grid-cols-...' utility because `grid-template-columns` is a reserved namespace (special keyword)
-        2. Renamed '70/30' to '70-30' because CSS variables cannot use slashes
-    */
-    --grid-template-columns-70-30: 70% 28%;
+
+    /* Usage: class="font-inter" */
+    --font-inter: "Inter", sans-serif;
 }
 
 @custom-variant dark (&:is(.dark *));
