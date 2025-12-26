@@ -2,12 +2,14 @@
 // import { NavLink } from 'react-router-dom';  // allows for active link style css
 import logo from '../assets/images/logo.svg'
 import { Home, Phone, Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ onNavigateHome, onNavigateContact }) => {
     // const linkClass = ({ isActive }) =>
     //     isActive
     //         ? 'text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
     //         : 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+    const navigate = useNavigate();
 
     return (
         <nav
@@ -35,7 +37,7 @@ const Navbar = ({ onNavigateHome, onNavigateContact }) => {
 
                     <div className="flex items-center gap-4">
                         <button
-                            onClick={onNavigateHome}
+                            onClick={()=> navigate('/')}
                             className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-100 hover:bg-indigo-600 transition-colors cursor-pointer"
                         >
                             <Home className="w-5 h-5" />
@@ -43,7 +45,7 @@ const Navbar = ({ onNavigateHome, onNavigateContact }) => {
                         </button>
 
                         <button
-                            onClick={onNavigateContact}
+                            onClick={()=> navigate('/contact')}
                             className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-100 hover:bg-indigo-600 transition-colors cursor-pointer"
                         >
                             <Phone className="w-5 h-5" />
