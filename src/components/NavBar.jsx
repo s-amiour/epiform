@@ -11,6 +11,13 @@ const Navbar = ({ onNavigateHome, onNavigateContact }) => {
     //         : 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
     const navigate = useNavigate();
 
+    const navigateHome = () => {
+        if (window.location.pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // scroll to top of page
+        } else {
+            navigate('/'); // navigate to home if not already
+        }
+        }
     return (
         <nav
             className="fixed top-0 left-0 right-0 bg-indigo-700 border-b border-blue-500 shadow-sm z-50 transition-transform duration-300"
@@ -37,7 +44,7 @@ const Navbar = ({ onNavigateHome, onNavigateContact }) => {
 
                     <div className="flex items-center gap-4">
                         <button
-                            onClick={()=> navigate('/')}
+                            onClick={navigateHome}
                             className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-100 hover:bg-indigo-600 transition-colors cursor-pointer"
                         >
                             <Home className="w-5 h-5" />
