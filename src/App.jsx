@@ -126,6 +126,8 @@ function ProcedureRouteWrapper({ procedures, onStatusChange }) {
     const { slug } = useParams();
     const procedure = procedures.find(p => p.slug === slug);
 
+    // IBAAD! This is where you will use <NotFound />; In this if statement
+    // delete this and above comment once completed
     if (!procedure) return <div>Procedure not found</div>;
 
     return (
