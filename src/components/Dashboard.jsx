@@ -5,7 +5,9 @@ import ProcedureCard from './ProcedureCard';
 import {useState} from "react";
 
 const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObligatoryProcedure }) => {
-    const [expandedCategory, setExpandedCategory] = useState('obligatory');
+    const [expandedCategory, setExpandedCategory] = useState(() => {
+    return sessionStorage.getItem('expandedCategory') || 'obligatory';
+});
 
     // Procedures grouped into three categories
     const obligatoryProcedures = procedures.filter(p => p.category === 'obligatory');
@@ -21,8 +23,10 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
     const progressPercentage = (totalCompleted / totalProcedures) * 100;
 
     const toggleCategory = (category) => {
-        setExpandedCategory(expandedCategory === category ? null : category);
-    };
+    const newCategory = expandedCategory === category ? null : category;
+    setExpandedCategory(newCategory);
+    sessionStorage.setItem('expandedCategory', newCategory);
+};
 
     return (
         <>
@@ -155,7 +159,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                             </div>
                         )}
                     </div>
-
+                        
                     {/* Optional Procedures Section */}
                     <div className="mb-6">
                         <button
