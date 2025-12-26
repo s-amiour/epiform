@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
 import { CheckCircle2, ChevronDown, ChevronUp, ArrowRight, OctagonAlert, Sparkle, ClipboardList } from 'lucide-react';
 import ProcedureCard from './ProcedureCard';
-
-import {useState} from "react";
-
 const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObligatoryProcedure }) => {
     const [expandedCategory, setExpandedCategory] = useState(() => {
     return sessionStorage.getItem('expandedCategory') || 'obligatory';
@@ -21,12 +19,26 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
     const totalCompleted = completedObligatory + completedHighlyRecommended + completedOptional;
     const totalProcedures = procedures.length;
     const progressPercentage = (totalCompleted / totalProcedures) * 100;
+    const obligatoryRef = useRef(null);
+    const highlyRecommendedRef = useRef(null);
+    const optionalRef = useRef(null);
 
     const toggleCategory = (category) => {
     const newCategory = expandedCategory === category ? null : category;
     setExpandedCategory(newCategory);
     sessionStorage.setItem('expandedCategory', newCategory);
-};
+    if (newCategory) {
+            // Delay slightly to ensure DOM has updated
+            setTimeout(() => {
+                let ref;
+                if (newCategory === 'obligatory') ref = obligatoryRef;
+                else if (newCategory === 'highly-recommended') ref = highlyRecommendedRef;
+                else if (newCategory === 'optional') ref = optionalRef;
+
+                ref?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    };
 
     return (
         <>
@@ -85,7 +97,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                     </div>
 
                     {/* Obligatory Procedures Section */}
-                    <div className="mb-6">
+                    <div className="mb-6" ref={obligatoryRef}>
                         <button
                             onClick={() => toggleCategory('obligatory')}
                             className="w-full bg-white rounded-lg shadow-sm border-2 border-red-200 p-4 hover:border-red-300 transition-colors cursor-pointer"
@@ -123,7 +135,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                     </div>
 
                     {/* Highly Recommended Procedures Section */}
-                    <div className="mb-6">
+                    <div className="mb-6" ref={highlyRecommendedRef}>
                         <button
                             onClick={() => toggleCategory('highly-recommended')}
                             className="w-full bg-white rounded-lg shadow-sm border-2 border-emerald-200 p-4 hover:border-emerald-300 transition-colors cursor-pointer"
@@ -161,7 +173,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                     </div>
                         
                     {/* Optional Procedures Section */}
-                    <div className="mb-6">
+                    <div className="mb-6" ref={optionalRef}>
                         <button
                             onClick={() => toggleCategory('optional')}
                             className="w-full bg-white rounded-lg shadow-sm border-2 border-blue-200 p-4 hover:border-blue-300 transition-colors cursor-pointer"
