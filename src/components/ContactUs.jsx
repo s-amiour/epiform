@@ -13,19 +13,31 @@ const ContactUs = () => {
     return (
         <div className="bg-gradient-to-r from-indigo-50 to-indigo-100">
             {/* Header */}
-            <div className="bg-white border-b border-gray-200 shadow-sm">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <button
-                        onClick={goBack}
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-4 transition-colors cursor-pointer"
-                    >
-                        <ArrowLeft className="w-5 h-5" />
-                        <span>Back</span>
-                    </button>
-                    <h1 className="text-indigo-600 font-bold">Contact Us</h1>
-                    <p className="text-gray-600 mt-2">We're here to help students like you to settle in Paris. Notify us immediately if you find any outdated information</p>
-                </div>
-            </div>
+<div className="bg-white border-b border-gray-200 shadow-sm">
+    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-6">
+  {/* Back button flush left */}
+  <div>
+    <button
+      onClick={goBack}
+      className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors"
+    >
+      <ArrowLeft className="w-4 h-4" />
+      Back to dashboard
+    </button>
+  </div>
+
+    {/* Centered header */}
+    <div className="text-center mt-6">
+    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-700 mb-4">
+      Contact Us
+    </h1>
+    <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+      We're here to help students like you settle in Paris. Notify us immediately if you find any outdated information.
+    </p>
+  </div>
+</div>
+</div>
+
 
             {/* Content */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

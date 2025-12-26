@@ -5,6 +5,7 @@ import Hero from "./components/Hero.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import ProcedureDetail from "./components/ProcedureDetail.jsx";
 import ContactUs from "./components/ContactUs";
+import Procedures from "./components/Procedures.jsx"
 
 import { useState, useEffect } from "react";
 
@@ -104,9 +105,19 @@ function App() {
                             />
                         </>
                     } />
+                     {/* Home Route */}
+                    <Route path="/procedures" element={
+                        <>
+                            <Procedures
+                                procedures={procedures}
+                                onStatusChange={handleStatusChange}
+                                firstObligatoryProcedure={firstObligatoryProcedure}
+                            />
+                        </>
+                    } />
 
                     {/* Procedure Route with slug */}
-                    <Route path="/procedure/:slug" element={
+                    <Route path="/procedures/procedure/:slug" element={
                         <ProcedureRouteWrapper
                             procedures={procedures}
                             onStatusChange={handleStatusChange}

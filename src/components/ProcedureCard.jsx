@@ -103,7 +103,7 @@ const ProcedureCard = ({ procedure, onStatusChange} ) => {
                 {/* Actions */}
                 <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                    <Link
-                        to={`/procedure/${procedure.slug}`}
+                        to={`/procedures/procedure/${procedure.slug}`}
                         className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 hover:underline cursor-pointer"
                     >
                         <span>View Details</span>

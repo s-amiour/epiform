@@ -38,7 +38,7 @@ const ProcedureDetail = ({ procedure, allProcedures, onStatusChange }) => {
         if (window.history.length > 1) {
             navigate(-1);
         } else {
-            navigate('/'); // fallback to Dashboard
+            navigate('/procedures'); // fallback to Dashboard
         }
     };
 
@@ -60,7 +60,7 @@ const ProcedureDetail = ({ procedure, allProcedures, onStatusChange }) => {
                         className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-4 transition-colors cursor-pointer"
                     >
                         <ArrowLeft className="w-5 h-5" />
-                        <span>Back to Dashboard</span>
+                        <span>Back to Procedures</span>
                     </button>
 
                     <div className="flex items-start justify-between">
