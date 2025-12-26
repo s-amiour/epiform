@@ -11,9 +11,12 @@ import {
     MessageSquare,
     Link
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const ProcedureDetail = ({ procedure, allProcedures, onStatusChange, onBack }) => {
+const ProcedureDetail = ({ procedure, allProcedures, onStatusChange }) => {
+    const navigate = useNavigate();
     const categoryInfo = {
+
         'obligatory': { color: 'red', label: 'Obligatory', emoji: '⚠️' },
         'highly-recommended': { color: 'emerald', label: 'Highly Recommended', emoji: '✨' },
         'optional': { color: 'blue', label: 'Optional', emoji: 'ℹ️' }
@@ -23,6 +26,15 @@ const ProcedureDetail = ({ procedure, allProcedures, onStatusChange, onBack }) =
 
     const toggleStatus = () => {
         onStatusChange(procedure.id, procedure.status === 'todo' ? 'completed' : 'todo');
+    };
+
+
+     const goBack = () => {
+        if (window.history.length > 1) {
+            navigate(-1);
+        } else {
+            navigate('/'); // fallback to Dashboard
+        }
     };
 
     // updates `prerequisites` property (which contains array of procedure id's)
@@ -39,7 +51,7 @@ const ProcedureDetail = ({ procedure, allProcedures, onStatusChange, onBack }) =
             <div className="bg-white border-b border-gray-200 shadow-sm sticky top-16 z-10">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <button
-                        onClick={onBack}
+                        onClick={goBack}
                         className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-4 transition-colors cursor-pointer"
                     >
                         <ArrowLeft className="w-5 h-5" />

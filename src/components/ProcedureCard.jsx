@@ -13,6 +13,8 @@ import {
     Circle,
     ArrowRight
 } from 'lucide-react';
+import { Link } from "react-router-dom";
+
 
 const iconMap = {
     'passport': FileText,
@@ -38,7 +40,7 @@ const categoryIconColors = {
     'optional': 'bg-blue-100 text-blue-600'
 };
 
-const ProcedureCard = ({ procedure, onStatusChange, onViewDetails } ) => {
+const ProcedureCard = ({ procedure, onStatusChange} ) => {
     const IconComponent = iconMap[procedure.icon] || Circle;
 
     const toggleStatus = () => {
@@ -100,13 +102,13 @@ const ProcedureCard = ({ procedure, onStatusChange, onViewDetails } ) => {
 
                 {/* Actions */}
                 <div className="flex items-center justify-between pt-3 border-t border-gray-200">
-                    <button
-                        onClick={onViewDetails}
+                   <Link
+                        to={`/procedure/${procedure.slug}`}
                         className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 hover:underline cursor-pointer"
                     >
                         <span>View Details</span>
                         <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </Link>
                     <button
                         onClick={toggleStatus}
                         className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 transition-all hover:scale-105 ${

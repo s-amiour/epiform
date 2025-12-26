@@ -1,4 +1,5 @@
-import { CheckCircle2, AlertTriangle, ChevronDown, ChevronUp, ArrowRight, OctagonAlert, Sparkle, ClipboardList } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { CheckCircle2, ChevronDown, ChevronUp, ArrowRight, OctagonAlert, Sparkle, ClipboardList } from 'lucide-react';
 import ProcedureCard from './ProcedureCard';
 
 import {useState} from "react";
@@ -37,13 +38,13 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                                         Begin with the first essential step every international student must complete
                                     </p>
                                 </div>
-                                <button
-                                    onClick={() => onNavigateToProcedure(firstObligatoryProcedure.id)}
-                                    className="bg-gray-200 text-blue-500 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors flex items-center gap-2 whitespace-nowrap  cursor-pointer"
-                                >
+                                <Link
+                                    to={`/procedure/${firstObligatoryProcedure.slug}`}
+                                    className="bg-gray-200 text-blue-500 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer"
+                                    >
                                     <span>Start Here</span>
                                     <ArrowRight className="w-5 h-5" />
-                                </button>
+                                    </Link>
                             </div>
                         </div>
                     )}
@@ -111,8 +112,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                                         key={procedure.id}
                                         procedure={procedure}
                                         onStatusChange={(newStatus) => onStatusChange(procedure.id, newStatus)}
-                                        onViewDetails={() => onNavigateToProcedure(procedure.id)}
-                                    />
+                                       />
                                 ))}
                             </div>
                         )}
@@ -150,8 +150,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                                         key={procedure.id}
                                         procedure={procedure}
                                         onStatusChange={(newStatus) => onStatusChange(procedure.id, newStatus)}
-                                        onViewDetails={() => onNavigateToProcedure(procedure.id)}
-                                    />
+                                        />
                                 ))}
                             </div>
                         )}
@@ -189,8 +188,7 @@ const Dashboard = ({ procedures, onStatusChange, onNavigateToProcedure, firstObl
                                         key={procedure.id}
                                         procedure={procedure}
                                         onStatusChange={(newStatus) => onStatusChange(procedure.id, newStatus)}
-                                        onViewDetails={() => onNavigateToProcedure(procedure.id)}
-                                    />
+                                        />
                                 ))}
                             </div>
                         )}
