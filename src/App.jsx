@@ -7,7 +7,7 @@ import ProcedureDetail from "./components/ProcedureDetail.jsx";
 import ContactUs from "./components/ContactUs";
 import Procedures from "./components/Procedures.jsx"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
@@ -90,7 +90,17 @@ function App() {
     };
     const firstObligatoryProcedure = procedures.find(p => p.category === 'obligatory');
 
-    return (
+    // Frontend Documentation Scrolling Functionality (FDSF)
+    //   use useRef hook to define target element reference; then use ref attribute on that element to allow it to be recognizable
+    const frontEndDocSection = useRef(null);
+
+    //   Scroll if not null
+    const handleFrontEndDocScroll = () => {
+      frontEndDocSection?.current.scrollIntoView({ behavior: "smooth" });
+    }
+
+
+  return (
         <Router>
             <NavBar />
             <div className="pt-16">
@@ -98,8 +108,9 @@ function App() {
                     {/* Home Route */}
                     <Route path="/" element={
                         <>
-                            <Hero />
-                            <Dashboard />
+                            {/* FDSF: Passed as props*/}
+                            <Hero scrollToDoc={handleFrontEndDocScroll} />
+                            <Dashboard frontEndDoc={frontEndDocSection} />
                         </>
                     } />
                      {/* Procedures Route */}

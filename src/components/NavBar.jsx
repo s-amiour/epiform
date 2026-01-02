@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';  // allows for active link style css
 import logo from '../assets/images/logo.svg'
 import { Home, Phone, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -28,14 +26,14 @@ const Navbar = () => {
                         {/*    /!*{sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}*!/*/}
                         {/*</button>*/}
 
-                        <Link to="/" className="flex flex-shrink-0 items-center mr-4">
+                        <a to="/" className="flex flex-shrink-0 items-center mr-4">
                             <img
                                 className="h-10 w-auto "
                                 src={logo}
                                 alt="/"
                             />
                             <h2 className="text-gray-100 ml-1 font-mono">epiform</h2>
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="flex items-center gap-4">
