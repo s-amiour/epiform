@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from 'lucide-react';
 import GlowOverlay from "./utils/GlowOverlay.jsx";
 
-const Dashboard = () => {
+const Dashboard = ({ frontEndDoc }) => {
     return (
         <>
           <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 pb-16">
@@ -10,8 +10,8 @@ const Dashboard = () => {
             {/* GlowOverlay is used for the cursor-glow effect found in index.css */}
             <GlowOverlay />
             <main className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              {/* Text centered section */}
-              <section className="text-center mb-16">
+              {/* Frontend documentation */}
+              <section ref={frontEndDoc} className="text-center mb-16 pt-24">
                 <div className="text-3xl md:text-4xl font-bold mb-4">
                   Organize and Follow Your <span
                   className="bg-gradient-to-r from-indigo-700 to-indigo-400 bg-clip-text text-transparent">Integration Process</span>
@@ -21,7 +21,6 @@ const Dashboard = () => {
                   right direction.</p>
               </section>
 
-              {/* Client-side documentation */}
               <section className="space-y-24">
                 <div className="flex flex-col lg:flex-row items-center mb-16">
                   {/*Card 1*/}

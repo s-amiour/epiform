@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
-import proceduresdata from './proceduresdata.json';
+import proceduresData from './proceduresData.json';
 import Hero from "./components/Hero.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import ProcedureDetail from "./components/ProcedureDetail.jsx";
 import ContactUs from "./components/ContactUs";
 import Procedures from "./components/Procedures.jsx"
 
-import { useState, useEffect } from "react";
+import {useState, useEffect, useRef} from "react";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
@@ -24,7 +24,7 @@ function generateSlug(title) {
 function App() {
     const [procedures, setProcedures] = useState(() => {
         // Add slug to each procedure
-        const defaultData = proceduresdata.map(proc => ({
+        const defaultData = proceduresData.map(proc => ({
             ...proc,
             slug: generateSlug(proc.title)
         }));
@@ -90,6 +90,16 @@ function App() {
     };
     const firstObligatoryProcedure = procedures.find(p => p.category === 'obligatory');
 
+
+    // Frontend Documentation Scrolling Functionality (FDSF)
+    //   use useRef hook to define target element reference; then use ref attribute on that element to allow it to be recognizable
+    const frontEndDocSection = useRef(null);
+
+    //   Scroll if not null
+    const handleFrontEndDocScroll = () => {
+      frontEndDocSection?.current.scrollIntoView({ behavior: "smooth" });
+    }
+
     return (
         <Router>
             <NavBar />
@@ -98,8 +108,9 @@ function App() {
                     {/* Home Route */}
                     <Route path="/" element={
                         <>
-                            <Hero />
-                            <Dashboard />
+                            {/* FDSF: Passed as props*/}
+                            <Hero scrollToDoc={handleFrontEndDocScroll} />
+                            <Dashboard frontEndDoc={frontEndDocSection} />
                         </>
                     } />
                      {/* Procedures Route */}
