@@ -1,15 +1,19 @@
-<div style="text-align: center;">
+<p align="center">
   <img src="docs/banner.svg" height="180" alt="Bannière" />
-  <h1>epiform</h1>
-  Un outil de suivi en ligne des démarches administratives françaises, conçu pour les étudiants internationaux de l'<a href="https://github.com/epita">EPITA</a>.
-
-![Node.js](https://img.shields.io/badge/Node.js-22.14.0-darkgreen?logo=node.js)
-![React](https://img.shields.io/badge/React-19.2.0-blue?logo=react)
-![Vite](https://img.shields.io/badge/Vite-7.2.4-purple?logo=vite)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-darkblue?logo=tailwindcss)
-
-[Wiki](https://github.com/s-amiour/epiform/wiki) · [English](./README.md) · Français
-</div>
+  <h1 align="center">epiform</h1>
+  <p align="center">Un outil de suivi en ligne des démarches administratives françaises, conçu pour les étudiants internationaux de <a href="https://github.com/epita">l'EPITA</a>.</p>
+  <div align="center">
+    
+  ![Node.js](https://img.shields.io/badge/Node.js-22.14.0-darkgreen?logo=node.js)
+  ![React](https://img.shields.io/badge/React-19.2.0-blue?logo=react)
+  ![Vite](https://img.shields.io/badge/Vite-7.2.4-purple?logo=vite)
+  ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-darkblue?logo=tailwindcss)
+  </div>
+  <div align="center">  
+    
+  [Wiki](https://github.com/s-amiour/epiform/wiki) · [English](./README.md) · Français
+  </div>
+</p>
 
 ## Fonctionnalités
 
