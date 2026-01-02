@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 
 import { useNavigate } from 'react-router-dom';
 import {useEffect} from "react";
-const Hero = () => {
+
+const Hero = ({ scrollToDoc }) => {
     const navigate = useNavigate();
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+
     return (
         <>
             <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 pt-5 pb-10">
@@ -24,7 +26,8 @@ const Hero = () => {
                       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                         <Link className="inline-flex items-center justify-center rounded-xl font-medium transition-all focus:outline-none h-12 px-6 text-base bg-[#0033CC] hover:bg-[#002299] text-white shadow-md dark:bg-[#4F95FF] dark:hover:bg-[#3A80EA]" to="/procedures">See Procedures</Link>
                         <button
-                          className="inline-flex items-center justify-center rounded-xl font-medium transition-all focus:outline-none h-12 px-6 text-base bg-white hover:bg-gray-50 text-[#0033CC] border border-[#0033CC]/20 shadow-sm dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-[#4F9FF] dark:border-[#4F9FFF]/20 cursor-pointer">
+                          className="inline-flex items-center justify-center rounded-xl font-medium transition-all focus:outline-none h-12 px-6 text-base bg-white hover:bg-gray-50 text-[#0033CC] border border-[#0033CC]/20 shadow-sm dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-[#4F9FF] dark:border-[#4F9FFF]/20 cursor-pointer"
+                          onClick={scrollToDoc}>
                           How to Use
                           <ChevronDown className="ml-2 w-4 h-4"></ChevronDown>
                         </button>
