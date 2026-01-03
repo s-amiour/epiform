@@ -1,15 +1,20 @@
-<div style="text-align: center;">
-  <img src="docs/banner.svg" height="180" alt="Banner" />
-  <h1>epiform</h1>
-  A web-based progress tracker for French administrative procedures, designed for international students @ <a href="https://github.com/epita">EPITA</a>.
-
+<p align="center">
+  <img align="center" src="docs/banner.svg" height="180" alt="Banner" />
+  <h1 align="center">epiform</h1>
+  <p align="center">A web-based progress tracker for French administrative procedures, designed for international students @ <a href="https://github.com/epita">EPITA</a>.</p>
+  <div align="center">
+    
   ![Node.js](https://img.shields.io/badge/Node.js-22.14.0-darkgreen?logo=node.js)
   ![React](https://img.shields.io/badge/React-19.2.0-blue?logo=react)
   ![Vite](https://img.shields.io/badge/Vite-7.2.4-purple?logo=vite)
   ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-darkblue?logo=tailwindcss)
+  </div>
 
+  <div align="center">
+    
   [Wiki](https://github.com/s-amiour/epiform/wiki) · English · [Français](./README_FR.md)
-</div>
+  </div>
+</p>
 
 ## Features
 
