@@ -1,215 +1,214 @@
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+// App.jsx
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
+import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar.jsx";
 import proceduresdata from './proceduresdata.json';
 import Hero from "./components/Hero.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import ProcedureDetail from "./components/ProcedureDetail.jsx";
-import ContactUs from "./components/ContactUs";
-import Procedures from "./components/Procedures.jsx"
-
-import { useState, useEffect, useRef } from "react";
+import ContactUs from "./components/ContactUs.jsx";
+import Procedures from "./components/Procedures.jsx";
+import { translate } from "./components/utils/translate";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
-//creating slugs which are used to be put in the url
-function generateSlug(title) {
-    return title
-        .toLowerCase()
-        .normalize("NFD")                 // split accented characters
-        .replace(/[\u0300-\u036f]/g, '')  // remove accents
-        .replace(/[^a-z0-9]+/g, '-')      // replace non-alphanum with hyphens
-        .replace(/(^-|-$)/g, '');         // remove leading/trailing hyphens
-}
+// ------------------
+// Error Boundary
+// ------------------
+function ErrorBoundary({ children }) {
+  const [error, setError] = useState(null);
 
-function App() {
-    const [procedures, setProcedures] = useState(() => {
-        // Add slug to each procedure
-        const defaultData = proceduresdata.map(proc => ({
-            ...proc,
-            slug: generateSlug(proc.title)
-        }));
-        const savedProgress = localStorage.getItem(STORAGE_KEY);
-        if (savedProgress) {
-            try {
-                const progressData = JSON.parse(savedProgress);
-                return defaultData.map(proc => ({
-                    ...proc,
-                    status: progressData[proc.id] || proc.status
-                }));
-            } catch (error) {
-                console.error('Error parsing local storage', error);
-                return defaultData;
-            }
-        }
-
-        return defaultData;
-    });
-    //const [selectedProcedureId, setSelectedProcedureId] = useState(null);
-
-    // const [procedures, setProcedures] = useState(() => {
-    //     // Procedures Data
-    //     const defaultData = proceduresdata;
-
-    //     // Grab saved progress immediately
-    //     const savedProgress = localStorage.getItem(STORAGE_KEY);
-
-    //     if (savedProgress) {
-    //         try {
-    //             const progressData = JSON.parse(savedProgress);
-    //             // 3. Merge saved status into default data
-    //             return defaultData.map(proc => ({
-    //                 ...proc,
-    //                 status: progressData[proc.id] || proc.status
-    //             }));
-    //         } catch (error) {
-    //             console.error('Error parsing local storage', error);
-    //             return defaultData;
-    //         }
-    //     }
-
-    //     // 4. If no storage, just return defaults
-    //     return defaultData;
-    // });
-
-    // handlesStatusChange(...) runs before useEffect here
-    // Save progress to localStorage whenever it changes
-    useEffect(() => {
-        const progressData = {};
-        procedures.forEach(proc => {
-            progressData[proc.id] = proc.status;
-        });
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(progressData));
-    }, [procedures]);
-
-    const handleStatusChange = (id, newStatus) => {
-        setProcedures(procedures =>
-            procedures.map(proc =>
-                proc.id === id ? {...proc, status: newStatus} : proc
-            )
-        );
-    };
-    const firstObligatoryProcedure = procedures.find(p => p.category === 'obligatory');
-
-    // Frontend Documentation Scrolling Functionality (FDSF)
-    //   use useRef hook to define target element reference; then use ref attribute on that element to allow it to be recognizable
-    const frontEndDocSection = useRef(null);
-
-    //   Scroll if not null
-    const handleFrontEndDocScroll = () => {
-      frontEndDocSection?.current.scrollIntoView({ behavior: "smooth" });
-    }
-
+  if (error) {
+    return (
+      <div className="p-8 text-red-700 bg-red-100 rounded-lg">
+        <h2 className="text-lg font-bold mb-2">Something went wrong:</h2>
+        <pre className="whitespace-pre-wrap">{error.message}</pre>
+      </div>
+    );
+  }
 
   return (
-        <Router>
-            <NavBar />
-            <div className="pt-16">
-                <Routes>
-                    {/* Home Route */}
-                    <Route path="/" element={
-                        <>
-                            {/* FDSF: Passed as props*/}
-                            <Hero scrollToDoc={handleFrontEndDocScroll} />
-                            <Dashboard frontEndDoc={frontEndDocSection} />
-                        </>
-                    } />
-                     {/* Procedures Route */}
-                    <Route path="/procedures" element={
-                        <>
-                            <Procedures
-                                procedures={procedures}
-                                onStatusChange={handleStatusChange}
-                                firstObligatoryProcedure={firstObligatoryProcedure}
-                            />
-                        </>
-                    } />
-
-                    {/* Procedure Route with slug */}
-                    <Route path="/procedures/procedure/:slug" element={
-                        <ProcedureRouteWrapper
-                            procedures={procedures}
-                            onStatusChange={handleStatusChange}
-                        />
-                    } />
-
-                    {/* Contact Route */}
-                    <Route path="/contact" element={<ContactUs />} />
-                </Routes>
-            </div>
-        </Router>
-    );
+    <ErrorBoundaryWrapper onError={setError}>
+      {children}
+    </ErrorBoundaryWrapper>
+  );
 }
 
-// Wrapper to extract slug param
-function ProcedureRouteWrapper({ procedures, onStatusChange }) {
-    const { slug } = useParams();
-    const procedure = procedures.find(p => p.slug === slug);
+// Inner wrapper to catch errors using React's componentDidCatch
+import React from "react";
+class ErrorBoundaryWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    this.props.onError(error);
+  }
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
 
-    if (!procedure) return <div>Procedure not found</div>;
+// ------------------
+// Utility to generate slugs
+// ------------------
+function generateSlug(titleObj) {
+  if (!titleObj || !titleObj['en']) return '';
+  return titleObj['en'] // always use English
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
 
-    return (
-        <ProcedureDetail
-            procedure={procedure}
-            allProcedures={procedures}
-            onStatusChange={onStatusChange}
-        />
-    );
+
+// ------------------
+// Outlet Context Hook
+// ------------------
+function OutletContext() {
+  return useOutletContext();
+}
+
+// ------------------
+// LangWrapper
+// ------------------
+function LangWrapper() {
+  const { lang } = useParams();
+
+  const [procedures, setProcedures] = useState(() => {
+    const defaultData = proceduresdata.map(proc => ({
+      ...proc,
+      slugEn: generateSlug(proc.title, 'en'),
+    }));
+
+    const savedProgress = localStorage.getItem(STORAGE_KEY);
+    if (savedProgress) {
+      try {
+        const progressData = JSON.parse(savedProgress);
+        return defaultData.map(proc => ({
+          ...proc,
+          status: progressData[proc.id] || proc.status
+        }));
+      } catch {
+        return defaultData;
+      }
+    }
+    return defaultData;
+  });
+
+  useEffect(() => {
+    const progressData = {};
+    procedures.forEach(p => (progressData[p.id] = p.status));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progressData));
+  }, [procedures]);
+
+  const handleStatusChange = (id, newStatus) => {
+    setProcedures(procs => procs.map(p => (p.id === id ? { ...p, status: newStatus } : p)));
+  };
+
+  const firstObligatoryProcedure = procedures.find(p => p.category === 'obligatory');
+
+  return (
+    <>
+      <Outlet context={{ procedures, handleStatusChange, firstObligatoryProcedure, lang }} />
+    </>
+  );
+}
+
+// ------------------
+// ProcedureDetailRoute
+// ------------------
+function ProcedureDetailRoute() {
+  const { procedures, handleStatusChange } = OutletContext();
+  const { slug, lang } = useParams();
+
+      const procedure = procedures.find(p => p.slugEn === slug);
+
+  if (!procedure) return <div>Procedure not found</div>;
+
+  return (
+    <ProcedureDetail
+      procedure={procedure}
+      allProcedures={procedures}
+      onStatusChange={handleStatusChange}
+      lang={lang} // pass lang to render translations
+    />
+  );
+}
+
+
+// ------------------
+// ProceduresWrapper
+// ------------------
+function ProceduresWrapper() {
+  const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  return (
+    <Procedures
+      procedures={procedures}
+      onStatusChange={handleStatusChange}
+      firstObligatoryProcedure={firstObligatoryProcedure}
+      lang={lang}
+    />
+  );
+}
+
+// ------------------
+// Home Wrapper
+// ------------------
+function Home() {
+  const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  return (
+    <>
+      <Hero lang={lang} />
+      <Dashboard
+        procedures={procedures}
+        onStatusChange={handleStatusChange}
+        firstObligatoryProcedure={firstObligatoryProcedure}
+        lang={lang}
+      />
+    </>
+  );
+}
+
+// ------------------
+// ContactWrapper
+// ------------------
+function ContactWrapper() {
+  const { lang } = OutletContext();
+  return <ContactUs lang={lang} />;
+}
+
+// ------------------
+// Main App
+// ------------------
+function App() {
+  return (
+    <ErrorBoundary>
+      <Router>
+        <NavBar />
+        <Routes>
+          {/* Root redirect */}
+          <Route path="/" element={<Navigate to="/en" replace />} />
+
+          {/* Language parent route */}
+          <Route path="/:lang" element={<LangWrapper />}>
+            <Route index element={<Home />} />
+            <Route path="procedures" element={<ProceduresWrapper />} />
+            <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
+            <Route path="contact" element={<ContactWrapper />} />
+
+            {/* Fallback */}
+            <Route path="*" element={<Navigate to="" replace />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  );
 }
 
 export default App;
-
-
-//     const navigateToProcedure = (procedureId) => {
-//         setSelectedProcedureId(procedureId);
-//         setCurrentView('procedure');
-//     };
-
-//     const navigateToHome = () => {
-//         setSelectedProcedureId(null);
-//         setCurrentView('home');
-//     };
-
-//     const navigateToContact = () => {
-//         setCurrentView('contact');
-//     };
-
-//     const selectedProcedure = procedures.find(p => p.id === selectedProcedureId);
-    
-
-//     return (
-//         <>
-//             <NavBar
-//                 onNavigateHome={navigateToHome}
-//                 onNavigateContact={navigateToContact}
-//             />
-//             <div className="pt-16">
-//                 {currentView === 'home' && (
-//                     <div>
-//                         <Hero onNavigateContact={navigateToContact}/>
-
-//                         <Dashboard
-//                             procedures={procedures}
-//                             onStatusChange={handleStatusChange}
-//                             onNavigateToProcedure={navigateToProcedure}
-//                             firstObligatoryProcedure={firstObligatoryProcedure}
-//                         />
-//                     </div>
-//                 )}
-
-//                 {currentView === 'procedure' && selectedProcedure && (
-//                     <ProcedureDetail
-//                         procedure={selectedProcedure}
-//                         allProcedures={procedures}
-//                         onStatusChange={handleStatusChange}
-//                         onBack={navigateToHome}
-//                     />
-//                 )}
-
-//                 {currentView === 'contact' && (
-//                     <ContactUs />
-//                 )}
-//             </div>
-//         </>
-//     )
-// }
-// export default App

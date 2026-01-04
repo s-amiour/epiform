@@ -8,10 +8,16 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 // Whole application layout (with its components)
 import App from './App.jsx'
+import { LanguageProvider } from './components/context/Languagecontext';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     // Strict Mode is a wrapper of your app that checks for unsafe or deprecated usages
+    
     <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-)
+        <LanguageProvider>
+            <App />
+        </LanguageProvider>
+
+    </React.StrictMode>
+);

@@ -14,6 +14,8 @@ import {
     ArrowRight
 } from 'lucide-react';
 import { Link } from "react-router-dom";
+import uitext from "./utils/uitext";
+import { translate } from "./utils/translate";
 
 
 const iconMap = {
@@ -40,7 +42,8 @@ const categoryIconColors = {
     'optional': 'bg-blue-100 text-blue-600'
 };
 
-const ProcedureCard = ({ procedure, onStatusChange} ) => {
+const ProcedureCard = ({ procedure, onStatusChange, lang = 'en' }) => {
+    
     const IconComponent = iconMap[procedure.icon] || Circle;
 
     const toggleStatus = () => {
@@ -49,6 +52,7 @@ const ProcedureCard = ({ procedure, onStatusChange} ) => {
 
     return (
         <div
+            id={`procedure-${procedure.id}`}
             className={`bg-white rounded-lg border-2 shadow-sm hover:shadow-md transition-all ${
                 categoryColors[procedure.category]
             } ${procedure.status === 'completed' ? 'opacity-75' : ''}`}
@@ -64,15 +68,16 @@ const ProcedureCard = ({ procedure, onStatusChange} ) => {
                             <div className="flex items-center gap-2 mb-1">
                                 {procedure.label && (
                                     <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
-                                      {procedure.label}
+                                        {translate(procedure.label, lang)}
                                     </span>
                                 )}
                             </div>
-                            <h3 className="text-gray-900 mb-1">{procedure.title}</h3>
+                            
+                            <h3 className="text-gray-900 mb-1">{translate(procedure.title, lang)}</h3>
                             {procedure.timeConstraint && (
                                 <div className="flex items-center gap-1.5 text-orange-600 bg-orange-50 border border-orange-200 rounded px-2 py-1 inline-flex mt-2">
                                     <Clock className="w-4 h-4 flex-shrink-0" />
-                                    <span className="text-sm">{procedure.timeConstraint}</span>
+                                    <span className="text-sm">{translate(procedure.timeConstraint, lang)}</span>
                                 </div>
                             )}
                         </div>
@@ -80,13 +85,13 @@ const ProcedureCard = ({ procedure, onStatusChange} ) => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-3">{procedure.description}</p>
+                <p className="text-gray-600 mb-3">{translate(procedure.description, lang)}</p>
 
                 {/* Short Summary */}
                 {procedure.shortSummary && (
                     <div className="bg-gray-50 rounded px-3 py-2 mb-3">
                         <p className="text-sm text-gray-700">
-                            <span className="text-gray-900">Summary:</span> {procedure.shortSummary}
+                            <span className="text-gray-900">{translate(uitext.summary, lang)}</span> {translate(procedure.shortSummary, lang)}
                         </p>
                     </div>
                 )}
@@ -95,20 +100,21 @@ const ProcedureCard = ({ procedure, onStatusChange} ) => {
                 {procedure.required && (
                     <div className="bg-gray-50 rounded px-3 py-2 mb-3">
                         <p className="text-sm text-gray-700">
-                            <span className="text-gray-900">Required:</span> {procedure.required}
+                            <span className="text-gray-900">{translate(uitext.required, lang)}</span> {translate(procedure.required, lang)}
                         </p>
                     </div>
                 )}
 
                 {/* Actions */}
                 <div className="flex items-center justify-between pt-3 border-t border-gray-200">
-                   <Link
-                        to={`/procedures/procedure/${procedure.slug}`}
-                        className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 hover:underline cursor-pointer"
+                    <Link
+                    to={`/${lang}/procedures/procedure/${procedure.slugEn}`} // always use English slug
+                    className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 hover:underline cursor-pointer"
                     >
-                        <span>View Details</span>
-                        <ArrowRight className="w-4 h-4" />
+                    <span>{translate(uitext.viewDetails, lang)}</span>
+                    <ArrowRight className="w-4 h-4" />
                     </Link>
+
                     <button
                         onClick={toggleStatus}
                         className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 transition-all hover:scale-105 ${
@@ -123,12 +129,15 @@ const ProcedureCard = ({ procedure, onStatusChange} ) => {
                             <Circle className="w-5 h-5" />
                         )}
                         <span className="text-sm">
-                          {procedure.status === 'completed' ? 'Completed' : 'Mark Done'}
+                        {procedure.status === 'completed' 
+                            ? translate(uitext.completedStatus, lang) 
+                            : translate(uitext.markDone, lang)}
                         </span>
                     </button>
                 </div>
             </div>
         </div>
-    )
-}
-export default ProcedureCard
+    );
+};
+
+export default ProcedureCard;

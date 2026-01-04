@@ -1,19 +1,41 @@
 [{
-    "id": "14",
-    "title": "Visa Validation (VLS-TS)",
-    "icon": "passport",
-    "label": "Immigration",
-    "description": "Register your long-stay student visa online with the ANEF.",
-    "shortSummary": "Online registration required within 3 months",
-    "required": "French address, payment (€70-80)",
-    "timeConstraint": "Within 3 months of arrival",
-    "status": "todo",
-    "category": "obligatory",
-    "prerequisites": [],
-    "detailedInfo": {
-      "overview": "All international students with a long-stay visa (VLS-TS) must validate it online within 3 months of arriving in France. This validation is essential for your legal stay in France and replaces the physical OFII stamp that was previously required.",
-      "discussion": "The ANEF (Administration Numérique pour les Étrangers en France) platform has digitalized the visa validation process, making it more accessible for international students. This procedure is critical as it officially starts your legal residence period in France. Without this validation, your visa is not considered valid, and you may face legal issues if you need to travel outside France and return. The process is entirely online, which means you can complete it from the comfort of your accommodation once you have a French address. The validation fee is mandatory and must be paid online using a credit or debit card. After successful validation, you will receive a confirmation that serves as proof of your legal status in France.",
-      "steps": [
+  "id": "1",
+  "title": {
+    "en": "Visa Validation (VLS-TS)",
+    "fr": "Validation du visa (VLS-TS)"
+  },
+  "icon": "passport",
+  "label": "immigration",
+  "description": {
+    "en": "Register your long-stay student visa online with the ANEF.",
+    "fr": "Enregistrer votre visa étudiant de long séjour en ligne auprès de l’ANEF."
+  },
+  "shortSummary": {
+    "en": "Online registration required within 3 months",
+    "fr": "Enregistrement en ligne obligatoire dans les 3 mois"
+  },
+  "required": {
+    "en": "French address, payment (€70–80)",
+    "fr": "Adresse en France, paiement (70–80 €)"
+  },
+  "timeConstraint": {
+    "en": "Within 3 months of arrival",
+    "fr": "Dans les 3 mois suivant votre arrivée"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": [],
+  "detailedInfo": {
+    "overview": {
+      "en": "All international students with a long-stay visa (VLS-TS) must validate it online within 3 months of arriving in France. This validation is essential for your legal stay in France and replaces the physical OFII stamp that was previously required.",
+      "fr": "Tous les étudiants internationaux titulaires d’un visa long séjour (VLS-TS) doivent le valider en ligne dans les 3 mois suivant leur arrivée en France. Cette validation est indispensable pour séjourner légalement en France et remplace le tampon physique de l’OFII exigé auparavant."
+    },
+    "discussion": {
+      "en": "The ANEF (Administration Numérique pour les Étrangers en France) platform has digitalized the visa validation process, making it more accessible for international students. This procedure is critical as it officially starts your legal residence period in France. Without this validation, your visa is not considered valid, and you may face legal issues if you need to travel outside France and return. The process is entirely online, which means you can complete it from the comfort of your accommodation once you have a French address. The validation fee is mandatory and must be paid online using a credit or debit card. After successful validation, you will receive a confirmation that serves as proof of your legal status in France.",
+      "fr": "La plateforme ANEF (Administration Numérique pour les Étrangers en France) a dématérialisé la procédure de validation des visas, la rendant plus accessible aux étudiants internationaux. Cette démarche est essentielle car elle marque officiellement le début de votre période de séjour légal en France. Sans cette validation, votre visa n’est pas considéré comme valide et vous pourriez rencontrer des difficultés juridiques, notamment en cas de sortie et de retour sur le territoire français. La procédure est entièrement en ligne et peut être effectuée depuis votre logement une fois que vous disposez d’une adresse en France. Les frais de validation sont obligatoires et doivent être réglés en ligne par carte bancaire. Après validation, une attestation vous sera fournie et servira de preuve de votre statut légal en France."
+    },
+    "steps": {
+      "en": [
         "Prepare a valid French address (rental agreement, accommodation certificate, or host attestation)",
         "Visit the ANEF website at administration-etrangers-en-france.interieur.gouv.fr",
         "Create an account using your email address and personal information",
@@ -22,52 +44,110 @@
         "Upload scanned copies of your passport (photo page and visa page)",
         "Upload proof of your French address",
         "Upload a recent digital passport photo",
-        "Pay the validation fee (currently €70-80) using a credit/debit card",
+        "Pay the validation fee (currently €70–80) using a credit/debit card",
         "Submit your application",
-        "Receive confirmation email (usually within 24-48 hours)",
+        "Receive confirmation email (usually within 24–48 hours)",
         "Download and save your validation certificate"
       ],
-      "requiredDocuments": [
+      "fr": [
+        "Préparer une adresse valide en France (bail, attestation d’hébergement ou certificat de logement)",
+        "Se rendre sur le site de l’ANEF : administration-etrangers-en-france.interieur.gouv.fr",
+        "Créer un compte avec votre adresse e-mail et vos informations personnelles",
+        "Sélectionner l’option « Valider mon visa VLS-TS »",
+        "Remplir le formulaire en ligne avec les informations de votre passeport et de votre visa",
+        "Téléverser des copies scannées de votre passeport (page d’identité et page du visa)",
+        "Téléverser un justificatif de domicile en France",
+        "Téléverser une photo d’identité numérique récente",
+        "Payer les frais de validation (actuellement 70–80 €) par carte bancaire",
+        "Soumettre votre demande",
+        "Recevoir l’e-mail de confirmation (généralement sous 24–48 heures)",
+        "Télécharger et conserver l’attestation de validation"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
         "Valid passport with VLS-TS visa sticker",
         "Proof of French address (rental agreement, accommodation certificate, or host attestation)",
         "Digital passport-style photo (recent, color, neutral background)",
         "Credit or debit card for payment"
       ],
-      "officialLinks": [
-        {
-          "title": "ANEF Official Platform",
-          "url": "https://administration-etrangers-en-france.interieur.gouv.fr"
+      "fr": [
+        "Passeport valide avec vignette de visa VLS-TS",
+        "Justificatif de domicile en France (bail, attestation d’hébergement ou certificat de logement)",
+        "Photo d’identité numérique (récente, en couleur, fond neutre)",
+        "Carte bancaire pour le paiement"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "ANEF Official Platform",
+          "fr": "Plateforme officielle de l’ANEF"
         },
-        {
-          "title": "Campus France - Visa Information",
-          "url": "https://www.campusfrance.org"
-        }
-      ],
-      "tips": [
-        "Complete this as soon as you arrive and have a French address - don\"t wait until the last minute",
+        "url": "https://administration-etrangers-en-france.interieur.gouv.fr"
+      },
+      {
+        "title": {
+          "en": "Campus France – Visa Information",
+          "fr": "Campus France – Informations sur les visas"
+        },
+        "url": "https://www.campusfrance.org"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Complete this as soon as you arrive and have a French address — don’t wait until the last minute",
         "Save multiple copies of your validation confirmation (digital and printed)",
-        "This validation is your proof of legal residence - keep it with your passport",
+        "This validation is your proof of legal residence — keep it with your passport",
         "If you plan to travel outside France during your studies, ensure your visa is validated before leaving",
-        "The ANEF platform may experience high traffic during peak enrollment periods (September-October)",
-        "Contact your university\"s international office if you encounter technical issues"
+        "The ANEF platform may experience high traffic during peak enrollment periods (September–October)",
+        "Contact your university’s international office if you encounter technical issues"
+      ],
+      "fr": [
+        "Effectuez la démarche dès votre arrivée et dès que vous disposez d’une adresse en France — n’attendez pas le dernier moment",
+        "Conservez plusieurs copies de votre attestation de validation (numérique et papier)",
+        "Cette validation est la preuve de votre séjour légal — gardez-la avec votre passeport",
+        "Si vous prévoyez de voyager hors de France pendant vos études, assurez-vous que votre visa est validé avant de partir",
+        "La plateforme ANEF peut être saturée pendant les périodes de forte affluence (septembre–octobre)",
+        "Contactez le service des relations internationales de votre établissement en cas de problème technique"
       ]
     }
+  }
 },
 
-  {
-    "id": "2",
-    "title": "University Enrollment & CVEC",
-    "icon": "graduation-cap",
-    "label": "Academic",
-    "description": "Finalize your academic registration and pay the mandatory Campus and Student Life Contribution.",
-    "shortSummary": "Complete enrollment and pay €100-110 CVEC fee",
-    "status": "todo",
-    "category": "obligatory",
-    "prerequisites": [],
-    "detailedInfo": {
-      "overview": "University enrollment is your official registration as an EPITA student, and the CVEC (Contribution Vie Étudiante et de Campus) is a mandatory annual contribution that funds student life services, health services, and campus facilities.",
-      "discussion": "The CVEC was introduced in 2018 to support student life and well-being on French campuses. This contribution funds various services including cultural activities, sports facilities, psychological support services, and social assistance. Payment is mandatory for all students enrolling in French higher education institutions. You must pay the CVEC before completing your university enrollment, as you will need to present the CVEC attestation during the registration process. The payment is done through a dedicated government platform, and the attestation you receive is valid for the entire academic year. Keep this attestation safe as you may need to present it multiple times throughout the year.",
-      "steps": [
+{
+  "id": "2",
+  "title": {
+    "en": "University Enrollment & CVEC",
+    "fr": "Inscription universitaire et CVEC"
+  },
+  "icon": "graduation-cap",
+  "label": {
+    "en": "Academic",
+    "fr": "Académique"
+  },
+  "description": {
+    "en": "Finalize your academic registration and pay the mandatory Campus and Student Life Contribution.",
+    "fr": "Finaliser votre inscription universitaire et payer la contribution obligatoire à la vie étudiante et de campus."
+  },
+  "shortSummary": {
+    "en": "Complete enrollment and pay €100-110 CVEC fee",
+    "fr": "Finaliser l’inscription et payer la CVEC (100–110 €)"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": [],
+  "detailedInfo": {
+    "overview": {
+      "en": "University enrollment is your official registration as an EPITA student, and the CVEC (Contribution Vie Étudiante et de Campus) is a mandatory annual contribution that funds student life services, health services, and campus facilities.",
+      "fr": "L’inscription universitaire correspond à votre enregistrement officiel en tant qu’étudiant à l’EPITA. La CVEC (Contribution Vie Étudiante et de Campus) est une contribution annuelle obligatoire destinée à financer les services de vie étudiante, les services de santé et les infrastructures du campus."
+    },
+    "discussion": {
+      "en": "The CVEC was introduced in 2018 to support student life and well-being on French campuses. This contribution funds various services including cultural activities, sports facilities, psychological support services, and social assistance. Payment is mandatory for all students enrolling in French higher education institutions. You must pay the CVEC before completing your university enrollment, as you will need to present the CVEC attestation during the registration process. The payment is done through a dedicated government platform, and the attestation you receive is valid for the entire academic year. Keep this attestation safe as you may need to present it multiple times throughout the year.",
+      "fr": "La CVEC a été mise en place en 2018 afin de soutenir la vie étudiante et le bien-être sur les campus français. Cette contribution finance différents services tels que les activités culturelles, les infrastructures sportives, les services de soutien psychologique et l’aide sociale. Le paiement est obligatoire pour tous les étudiants inscrits dans un établissement d’enseignement supérieur en France. Vous devez payer la CVEC avant de finaliser votre inscription universitaire, car l’attestation CVEC est exigée lors de la procédure d’inscription. Le paiement s’effectue via une plateforme gouvernementale dédiée et l’attestation obtenue est valable pour toute l’année universitaire. Conservez-la soigneusement, car elle pourra vous être demandée à plusieurs reprises."
+    },
+    "steps": {
+      "en": [
         "Visit the CVEC website at cvec.etudiant.gouv.fr",
         "Create an account or log in with your existing credentials",
         "Fill out your personal information and select EPITA as your institution",
@@ -80,7 +160,22 @@
         "Receive your student card and university credentials",
         "Activate your EPITA email and online student portal access"
       ],
-      "requiredDocuments": [
+      "fr": [
+        "Se rendre sur le site de la CVEC : cvec.etudiant.gouv.fr",
+        "Créer un compte ou se connecter avec vos identifiants existants",
+        "Renseigner vos informations personnelles et sélectionner l’EPITA comme établissement",
+        "Payer la contribution CVEC (100 € pour l’année 2024–2025)",
+        "Télécharger immédiatement votre attestation CVEC",
+        "Contacter le service des admissions de l’EPITA pour planifier votre rendez-vous d’inscription",
+        "Rassembler tous les documents nécessaires à l’inscription",
+        "Se présenter au rendez-vous d’inscription avec tous les documents, y compris l’attestation CVEC",
+        "Finaliser les formalités administratives et signer le contrat d’inscription",
+        "Recevoir votre carte étudiante et vos identifiants universitaires",
+        "Activer votre adresse e-mail EPITA et l’accès au portail étudiant en ligne"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
         "CVEC payment attestation (downloaded from cvec.etudiant.gouv.fr)",
         "Acceptance letter from EPITA",
         "Valid passport and student visa",
@@ -89,41 +184,89 @@
         "Proof of French address",
         "Proof of health insurance (will be addressed in Social Security registration)"
       ],
-      "officialLinks": [
-        {
-          "title": "CVEC Official Website",
-          "url": "https://cvec.etudiant.gouv.fr"
+      "fr": [
+        "Attestation de paiement de la CVEC (téléchargée depuis cvec.etudiant.gouv.fr)",
+        "Lettre d’admission de l’EPITA",
+        "Passeport valide et visa étudiant",
+        "Relevés de notes et diplômes antérieurs",
+        "Photos d’identité (généralement 2 à 3)",
+        "Justificatif de domicile en France",
+        "Justificatif de couverture santé (traité lors de l’inscription à la Sécurité sociale)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "CVEC Official Website",
+          "fr": "Site officiel de la CVEC"
         },
-        {
-          "title": "EPITA Official Website",
-          "url": "https://www.epita.fr"
-        }
-      ],
-      "tips": [
+        "url": "https://cvec.etudiant.gouv.fr"
+      },
+      {
+        "title": {
+          "en": "EPITA Official Website",
+          "fr": "Site officiel de l’EPITA"
+        },
+        "url": "https://www.epita.fr"
+      }
+    ],
+    "tips": {
+      "en": [
         "Pay the CVEC as soon as you receive your acceptance letter",
         "Save multiple copies of your CVEC attestation - both digital and printed",
         "Your CVEC attestation is valid for one academic year and must be renewed annually",
         "Students from EU/EEA countries and certain scholarship holders may be exempt from CVEC",
         "Your EPITA student card provides discounts at museums, cinemas, and restaurants",
         "Activate your student email immediately - this is your official communication channel"
+      ],
+      "fr": [
+        "Payez la CVEC dès réception de votre lettre d’admission",
+        "Conservez plusieurs copies de votre attestation CVEC (numérique et papier)",
+        "L’attestation CVEC est valable pour une année universitaire et doit être renouvelée chaque année",
+        "Les étudiants originaires de l’UE/EEE et certains boursiers peuvent être exonérés de la CVEC",
+        "Votre carte étudiante EPITA vous donne droit à des réductions dans les musées, cinémas et restaurants",
+        "Activez votre adresse e-mail étudiante immédiatement : c’est votre canal de communication officiel"
       ]
     }
+  }
+},
+{
+  "id": "3",
+  "title": {
+    "en": "Social Security Registration",
+    "fr": "Inscription à la Sécurité Sociale"
   },
-  {
-    "id": "3",
-    "title": "Social Security Registration",
-    "icon": "heart-pulse",
-    "label": "Healthcare",
-    "description": "Register for French national health insurance coverage.",
-    "shortSummary": "Free healthcare coverage for students in France",
-    "required": "Validated visa, student certificate",
-    "status": "todo",
-    "category": "obligatory",
-    "prerequisites": ["1", "2"],
-    "detailedInfo": {
-      "overview": "All international students studying in France are automatically affiliated with the French social security system (Sécurité Sociale), which provides healthcare coverage. This is a mandatory registration that gives you access to reimbursement for medical expenses.",
-      "discussion": "The French healthcare system is considered one of the best in the world. As a student, you are automatically covered by the social security system at no additional cost. However, the reimbursement rates vary - typically 70% for doctor visits and 60-100% for hospital care. Many students choose to complement this with a mutuelle (complementary health insurance) to cover the remaining costs. The registration process has been streamlined for international students, and you can complete most steps online. Once registered, you will receive a social security number (numéro de sécurité sociale) that is permanent and will remain yours even if you leave and return to France later. The Carte Vitale is your health insurance card that you present to doctors and pharmacies.",
-      "steps": [
+  "icon": "heart-pulse",
+  "label": {
+    "en": "Healthcare",
+    "fr": "Santé"
+  },
+  "description": {
+    "en": "Register for French national health insurance coverage.",
+    "fr": "S’inscrire à l’assurance maladie française."
+  },
+  "shortSummary": {
+    "en": "Free healthcare coverage for students in France",
+    "fr": "Couverture santé gratuite pour les étudiants en France"
+  },
+  "required": {
+    "en": "Validated visa, student certificate",
+    "fr": "Visa validé, certificat étudiant"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": ["1", "2"],
+  "detailedInfo": {
+    "overview": {
+      "en": "All international students studying in France are automatically affiliated with the French social security system (Sécurité Sociale), which provides healthcare coverage. This is a mandatory registration that gives you access to reimbursement for medical expenses.",
+      "fr": "Tous les étudiants internationaux en France sont automatiquement affiliés au système de Sécurité Sociale français, qui couvre les soins de santé. Cette inscription est obligatoire et vous permet de bénéficier du remboursement de vos frais médicaux."
+    },
+    "discussion": {
+      "en": "The French healthcare system is considered one of the best in the world. As a student, you are automatically covered by the social security system at no additional cost. However, the reimbursement rates vary - typically 70% for doctor visits and 60-100% for hospital care. Many students choose to complement this with a mutuelle (complementary health insurance) to cover the remaining costs. The registration process has been streamlined for international students, and you can complete most steps online. Once registered, you will receive a social security number (numéro de sécurité sociale) that is permanent and will remain yours even if you leave and return to France later. The Carte Vitale is your health insurance card that you present to doctors and pharmacies.",
+      "fr": "Le système de santé français est considéré comme l’un des meilleurs au monde. En tant qu’étudiant, vous êtes automatiquement couvert par la Sécurité Sociale sans coût supplémentaire. Toutefois, les taux de remboursement varient : environ 70 % pour les consultations médicales et 60-100 % pour l’hospitalisation. Beaucoup d’étudiants choisissent de compléter cette couverture avec une mutuelle pour couvrir les frais restants. La procédure d’inscription a été simplifiée pour les étudiants internationaux et la plupart des étapes peuvent être réalisées en ligne. Une fois inscrit, vous recevrez un numéro de sécurité sociale permanent, qui restera le vôtre même si vous quittez la France puis revenez ultérieurement. La Carte Vitale est votre carte d’assurance maladie à présenter chez les médecins et les pharmacies."
+    },
+    "steps": {
+      "en": [
         "Ensure you have completed your university enrollment and have a student certificate",
         "Ensure your VLS-TS visa is validated",
         "Visit etudiant-etranger.ameli.fr",
@@ -137,18 +280,55 @@
         "Receive your Carte Vitale by mail at your French address (can take 2-3 months)",
         "Download the Ameli mobile app to manage your health insurance"
       ],
-      "requiredDocuments": [
+      "fr": [
+        "Assurez-vous d’avoir finalisé votre inscription universitaire et d’avoir un certificat étudiant",
+        "Assurez-vous que votre visa VLS-TS est validé",
+        "Visitez etudiant-etranger.ameli.fr",
+        "Cliquez sur 'Créer mon compte' et sélectionnez votre établissement (EPITA)",
+        "Remplissez vos informations personnelles exactement comme sur vos documents officiels",
+        "Téléversez les documents requis (passeport, visa, certificat étudiant, justificatif de domicile)",
+        "Fournissez vos coordonnées bancaires françaises (RIB)",
+        "Soumettez votre demande",
+        "Attendez le traitement (généralement 2 à 6 semaines)",
+        "Recevez votre numéro de sécurité sociale par e-mail",
+        "Recevez votre Carte Vitale par courrier à votre adresse en France (peut prendre 2-3 mois)",
+        "Téléchargez l’application mobile Ameli pour gérer votre assurance maladie"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
         "Valid student certificate from EPITA",
         "Validated VLS-TS visa or residence permit",
         "Proof of French address (rental agreement or accommodation certificate)",
         "French bank account details (RIB) - see procedure \"Open a French Bank Account\"",
         "Copy of passport (photo page)"
       ],
-      "officialLinks": [
-        {"title": "Ameli - International Students", "url": "https://etudiant-etranger.ameli.fr"},
-        {"title": "Social Security Information", "url": "https://www.ameli.fr"}
-      ],
-      "tips": [
+      "fr": [
+        "Certificat étudiant valide de l’EPITA",
+        "Visa VLS-TS ou titre de séjour validé",
+        "Justificatif de domicile en France (bail ou attestation de logement)",
+        "Coordonnées bancaires françaises (RIB) – voir la procédure « Ouvrir un compte bancaire en France »",
+        "Copie du passeport (page photo)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Ameli - International Students",
+          "fr": "Ameli - Étudiants internationaux"
+        },
+        "url": "https://etudiant-etranger.ameli.fr"
+      },
+      {
+        "title": {
+          "en": "Social Security Information",
+          "fr": "Informations sur la Sécurité Sociale"
+        },
+        "url": "https://www.ameli.fr"
+      }
+    ],
+    "tips": {
+      "en": [
         "Apply as soon as you have your student certificate and validated visa",
         "Your social security number is permanent - write it down and keep it safe",
         "While waiting for your Carte Vitale, you can still see doctors - request paper forms (feuille de soins)",
@@ -156,24 +336,56 @@
         "The Ameli app allows you to track reimbursements and download attestations",
         "Emergency care is available even without your Carte Vitale - always carry your passport",
         "Prescriptions must be filled at French pharmacies to be reimbursed"
+      ],
+      "fr": [
+        "Faites votre demande dès que vous avez votre certificat étudiant et votre visa validé",
+        "Votre numéro de sécurité sociale est permanent – notez-le et conservez-le précieusement",
+        "En attendant votre Carte Vitale, vous pouvez consulter un médecin – demandez les formulaires papier (feuille de soins)",
+        "Envisagez de souscrire une assurance complémentaire (mutuelle) pour une meilleure couverture – LMDE, SMENO et MAE proposent des tarifs étudiants",
+        "L’application Ameli permet de suivre vos remboursements et de télécharger vos attestations",
+        "Les soins d’urgence sont disponibles même sans Carte Vitale – gardez toujours votre passeport sur vous",
+        "Les prescriptions doivent être remplies en pharmacie en France pour être remboursées"
       ]
     }
+  }
+},
+{
+  "id": "4",
+  "title": {
+    "en": "Open a French Bank Account",
+    "fr": "Ouvrir un compte bancaire en France"
   },
-  {
-    "id": "4",
-    "title": "Open a French Bank Account",
-    "icon": "piggy-bank",
-    "label": "Financial",
-    "description": "Essential for daily finances, paying bills, and receiving aid.",
-    "shortSummary": "Required for CAF, rent, and local transactions",
-    "required": "Passport/visa, proof of address, student certificate",
-    "status": "todo",
-    "category": "obligatory",
-    "prerequisites": ["2"],
-    "detailedInfo": {
-      "overview": "Opening a French bank account is essential for managing your finances in France. It is required for receiving housing aid (CAF), paying rent, and many other services. French banks offer special student packages that are often free or low-cost.",
-      "discussion": "A French bank account provides you with a RIB (Relevé d\"Identité Bancaire), which is your bank account identifier needed for virtually all financial transactions in France. Unlike in some countries, cash and foreign cards are not widely accepted for recurring payments like rent, subscriptions, or receiving aid. The RIB contains your IBAN and is required for setting up direct debits, receiving salary or aid payments, and proving your financial situation. Traditional banks (BNP Paribas, Société Générale, LCL, Crédit Agricole) have physical branches where you can get in-person support, which can be helpful for international students. However, online banks (Boursorama, Hello Bank, N26) often offer faster account opening and no maintenance fees. As an international student, you have the legal right to open a basic bank account in France, even if banks sometimes seem reluctant.",
-      "steps": [
+  "icon": "piggy-bank",
+  "label": {
+    "en": "Financial",
+    "fr": "Finances"
+  },
+  "description": {
+    "en": "Essential for daily finances, paying bills, and receiving aid.",
+    "fr": "Indispensable pour gérer ses finances quotidiennes, payer les factures et recevoir des aides."
+  },
+  "shortSummary": {
+    "en": "Required for CAF, rent, and local transactions",
+    "fr": "Nécessaire pour la CAF, le loyer et les transactions locales"
+  },
+  "required": {
+    "en": "Passport/visa, proof of address, student certificate",
+    "fr": "Passeport/visa, justificatif de domicile, certificat étudiant"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": ["2"],
+  "detailedInfo": {
+    "overview": {
+      "en": "Opening a French bank account is essential for managing your finances in France. It is required for receiving housing aid (CAF), paying rent, and many other services. French banks offer special student packages that are often free or low-cost.",
+      "fr": "Ouvrir un compte bancaire en France est essentiel pour gérer vos finances. Il est nécessaire pour percevoir les aides au logement (CAF), payer le loyer et utiliser de nombreux autres services. Les banques françaises proposent des offres spéciales pour étudiants, souvent gratuites ou à faible coût."
+    },
+    "discussion": {
+      "en": "A French bank account provides you with a RIB (Relevé d\"Identité Bancaire), which is your bank account identifier needed for virtually all financial transactions in France. Unlike in some countries, cash and foreign cards are not widely accepted for recurring payments like rent, subscriptions, or receiving aid. The RIB contains your IBAN and is required for setting up direct debits, receiving salary or aid payments, and proving your financial situation. Traditional banks (BNP Paribas, Société Générale, LCL, Crédit Agricole) have physical branches where you can get in-person support, which can be helpful for international students. However, online banks (Boursorama, Hello Bank, N26) often offer faster account opening and no maintenance fees. As an international student, you have the legal right to open a basic bank account in France, even if banks sometimes seem reluctant.",
+      "fr": "Un compte bancaire français vous fournit un RIB (Relevé d’Identité Bancaire), qui est l’identifiant de votre compte nécessaire pour presque toutes les transactions financières en France. Contrairement à certains pays, l’argent liquide et les cartes étrangères ne sont pas toujours acceptés pour les paiements récurrents tels que le loyer, les abonnements ou la réception d’aides. Le RIB contient votre IBAN et est nécessaire pour mettre en place des prélèvements automatiques, recevoir un salaire ou des aides, et justifier votre situation financière. Les banques traditionnelles (BNP Paribas, Société Générale, LCL, Crédit Agricole) possèdent des agences physiques offrant un support en personne, utile pour les étudiants internationaux. Les banques en ligne (Boursorama, Hello Bank, N26) permettent généralement une ouverture de compte plus rapide et sans frais de tenue de compte. En tant qu’étudiant international, vous avez le droit légal d’ouvrir un compte bancaire de base en France, même si certaines banques peuvent sembler réticentes."
+    },
+    "steps": {
+      "en": [
         "Research banks and compare student offers (many offer free accounts for students)",
         "Choose between traditional banks (with branches) or online banks (faster, digital)",
         "For traditional banks: Book an appointment online or by phone",
@@ -188,18 +400,56 @@
         "Activate your card at an ATM or online",
         "Set up online banking and download mobile app"
       ],
-      "requiredDocuments": [
+      "fr": [
+        "Recherchez les banques et comparez les offres étudiantes (beaucoup proposent des comptes gratuits)",
+        "Choisissez entre banques traditionnelles (avec agences) ou banques en ligne (plus rapides, numériques)",
+        "Pour les banques traditionnelles : prenez rendez-vous en ligne ou par téléphone",
+        "Pour les banques en ligne : complétez la demande en ligne avec le téléchargement des documents",
+        "Rassemblez tous les documents requis",
+        "Présentez-vous à votre rendez-vous (si applicable) ou complétez la vérification en ligne",
+        "Apportez les documents originaux et leurs copies",
+        "Signez le contrat d’ouverture de compte et les conditions",
+        "Effectuez le dépôt initial si nécessaire (généralement 10–50 € pour les banques traditionnelles, souvent 0 € pour les banques en ligne)",
+        "Recevez votre RIB immédiatement (souvent par e-mail)",
+        "Attendez la réception de votre carte bancaire par courrier (5–10 jours ouvrés)",
+        "Activez votre carte au distributeur ou en ligne",
+        "Configurez la banque en ligne et téléchargez l’application mobile"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
         "Valid passport",
         "VLS-TS student visa or residence permit",
         "Proof of address in France (rental agreement, accommodation certificate, or utility bill)",
         "Student certificate from EPITA",
         "Sometimes: proof of enrollment or acceptance letter"
       ],
-      "officialLinks": [
-        {"title": "Service-Public - Opening a Bank Account", "url": "https://www.service-public.fr/particuliers/vosdroits/F2417"},
-        {"title": "BNP Paribas Student Offers", "url": "https://www.bnpparibas.fr"}
-      ],
-      "tips": [
+      "fr": [
+        "Passeport valide",
+        "Visa étudiant VLS-TS ou titre de séjour",
+        "Justificatif de domicile en France (bail, attestation de logement ou facture)",
+        "Certificat étudiant de l’EPITA",
+        "Parfois : preuve d’inscription ou lettre d’admission"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Service-Public - Opening a Bank Account",
+          "fr": "Service-Public - Ouvrir un compte bancaire"
+        },
+        "url": "https://www.service-public.fr/particuliers/vosdroits/F2417"
+      },
+      {
+        "title": {
+          "en": "BNP Paribas Student Offers",
+          "fr": "BNP Paribas - Offres étudiantes"
+        },
+        "url": "https://www.bnpparibas.fr"
+      }
+    ],
+    "tips": {
+      "en": [
         "Many banks offer free accounts for students under 25-28 years old",
         "Online banks like Boursorama or Hello Bank can open accounts in 5-10 days",
         "N26 is popular among international students but may not be accepted for CAF",
@@ -208,444 +458,992 @@
         "If a bank refuses your application, you can invoke your \"droit au compte\" (right to an account)",
         "Your bank card may have daily withdrawal and payment limits - check and adjust if needed",
         "Consider keeping a card from your home country for the first month as backup"
+      ],
+      "fr": [
+        "De nombreuses banques proposent des comptes gratuits pour les étudiants de moins de 25–28 ans",
+        "Les banques en ligne comme Boursorama ou Hello Bank peuvent ouvrir des comptes en 5–10 jours",
+        "N26 est populaire auprès des étudiants internationaux mais peut ne pas être accepté pour la CAF",
+        "Conservez toujours plusieurs copies de votre RIB – vous en aurez fréquemment besoin",
+        "Certaines banques exigent un justificatif de domicile, ce qui peut être un cercle vicieux – une attestation de logement temporaire fonctionne",
+        "Si une banque refuse votre demande, vous pouvez invoquer votre « droit au compte »",
+        "Votre carte bancaire peut avoir des limites de retrait et de paiement journalières – vérifiez et ajustez si nécessaire",
+        "Envisagez de conserver une carte de votre pays d’origine pour le premier mois en secours"
       ]
     }
+  }
+},
+{
+  "id": "5",
+  "title": {
+    "en": "Secure Accommodation & Home Insurance",
+    "fr": "Sécuriser le logement et l’assurance habitation"
   },
+  "icon": "home",
+  "label": {
+    "en": "Housing",
+    "fr": "Logement"
+  },
+  "description": {
+    "en": "Finalize your rental agreement and obtain mandatory home insurance.",
+    "fr": "Finaliser votre bail et obtenir l’assurance habitation obligatoire."
+  },
+  "shortSummary": {
+    "en": "Rental agreement and insurance required by law",
+    "fr": "Bail et assurance exigés par la loi"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": [],
+  "detailedInfo": {
+    "overview": {
+      "en": "Finding accommodation is one of the first priorities for international students. Once you have secured housing, obtaining home insurance (assurance habitation) is mandatory by French law. You must provide proof of insurance to your landlord before moving in and annually thereafter.",
+      "fr": "Trouver un logement est l’une des premières priorités pour les étudiants internationaux. Une fois le logement sécurisé, l’obtention d’une assurance habitation est obligatoire selon la loi française. Vous devez fournir la preuve de votre assurance à votre propriétaire avant d’emménager et chaque année par la suite."
+    },
+    "discussion": {
+      "en": "The French rental market can be challenging, especially in Paris and major cities. Student accommodation options include CROUS residences (subsidized student housing), private student residences, private rentals, and shared apartments. CROUS housing is the most affordable but has limited availability and long waiting lists. Private student residences are more expensive but often include utilities and internet. Home insurance is mandatory for all tenants in France, and landlords will require proof before handing over keys and annually thereafter. Student home insurance is relatively inexpensive (€30-80/year) and covers damages to the property and your belongings. The move-in inventory (état des lieux) is a crucial document that records the condition of the apartment - take your time and photographs to protect yourself when moving out.",
+      "fr": "Le marché locatif français peut être difficile, surtout à Paris et dans les grandes villes. Les options de logement pour étudiants incluent les résidences CROUS (logements subventionnés), les résidences étudiantes privées, les locations privées et les colocations. Le logement CROUS est le plus abordable mais avec des places limitées et de longues listes d’attente. Les résidences privées sont plus chères mais incluent souvent les charges et internet. L’assurance habitation est obligatoire pour tous les locataires en France et les propriétaires en exigent la preuve avant de remettre les clés et chaque année par la suite. L’assurance habitation étudiante est relativement peu coûteuse (30–80 €/an) et couvre les dommages au logement et à vos biens. L’état des lieux est un document essentiel qui enregistre l’état de l’appartement – prenez votre temps et faites des photos pour vous protéger lors du départ."
+    },
+    "steps": {
+      "en": [
+        "Start searching for accommodation as early as possible (2-3 months before arrival)",
+        "Explore options: CROUS (apply via messervices.etudiant.gouv.fr), private student residences, or private rentals",
+        "Prepare required documents (student certificate, guarantor, passport)",
+        "Visit accommodations if possible, or request virtual tours",
+        "Sign your rental agreement (bail) - read it carefully",
+        "Obtain home insurance BEFORE move-in date",
+        "Compare insurance offers: SMENO, LMDE, MAE, or traditional insurers",
+        "Subscribe to insurance online or at an agency",
+        "Receive your insurance attestation (attestation d\"assurance habitation)",
+        "Provide insurance proof to your landlord",
+        "Complete move-in inventory (état des lieux d\"entrée) with landlord or agent",
+        "Take photos of every room and any existing damage",
+        "Keep all documentation: lease, insurance, inventory, and correspondence"
+      ],
+      "fr": [
+        "Commencez vos recherches de logement le plus tôt possible (2-3 mois avant l’arrivée)",
+        "Explorez les options : CROUS (postuler via messervices.etudiant.gouv.fr), résidences étudiantes privées ou locations privées",
+        "Préparez les documents requis (certificat étudiant, garant, passeport)",
+        "Visitez les logements si possible, ou demandez des visites virtuelles",
+        "Signez votre bail – lisez-le attentivement",
+        "Obtenez l’assurance habitation AVANT la date d’emménagement",
+        "Comparez les offres d’assurance : SMENO, LMDE, MAE ou assureurs traditionnels",
+        "Souscrivez l’assurance en ligne ou en agence",
+        "Recevez votre attestation d’assurance habitation",
+        "Fournissez la preuve d’assurance à votre propriétaire",
+        "Réalisez l’état des lieux d’entrée avec le propriétaire ou l’agent",
+        "Prenez des photos de chaque pièce et des éventuels dommages existants",
+        "Conservez tous les documents : bail, assurance, état des lieux et correspondances"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Student certificate from EPITA",
+        "Valid passport and visa",
+        "Guarantor documents (if required): French guarantor or Visale guarantee",
+        "Proof of income or financial resources",
+        "Bank account details (RIB)",
+        "Previous rental references (if available)"
+      ],
+      "fr": [
+        "Certificat étudiant de l’EPITA",
+        "Passeport et visa valides",
+        "Documents du garant (si requis) : garant français ou garantie Visale",
+        "Justificatif de revenus ou ressources financières",
+        "Coordonnées bancaires (RIB)",
+        "Références locatives précédentes (si disponibles)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "CROUS Housing",
+          "fr": "Logements CROUS"
+        },
+        "url": "https://www.messervices.etudiant.gouv.fr"
+      },
+      {
+        "title": {
+          "en": "Visale Guarantor Service",
+          "fr": "Service de garantie Visale"
+        },
+        "url": "https://www.visale.fr"
+      },
+      {
+        "title": {
+          "en": "Student Housing Portal",
+          "fr": "Portail logement étudiant"
+        },
+        "url": "https://www.lokaviz.fr"
+      }
+    ],
+    "tips": {
+      "en": [
+        "CROUS housing is cheapest (€200-400/month) but apply early - waiting lists are long",
+        "Visale is a free government guarantor service for students under 30",
+        "Home insurance for students costs around €30-60/year",
+        "Always attend the move-in inventory and document everything with photos",
+        "Keep your insurance certificate accessible - landlords check it annually",
+        "Utilities may or may not be included in rent - clarify this before signing",
+        "The notice period is usually 1-3 months - check your lease",
+        "Shared apartments (colocation) can be more affordable and social"
+      ],
+      "fr": [
+        "Le logement CROUS est le moins cher (200–400 €/mois) mais postulez tôt – les listes d’attente sont longues",
+        "Visale est un service de garantie gratuit pour les étudiants de moins de 30 ans",
+        "L’assurance habitation étudiante coûte environ 30–60 €/an",
+        "Assistez toujours à l’état des lieux d’entrée et documentez tout avec des photos",
+        "Gardez votre attestation d’assurance accessible – les propriétaires la vérifient chaque année",
+        "Les charges peuvent être incluses ou non dans le loyer – clarifiez avant de signer",
+        "Le préavis est généralement de 1 à 3 mois – vérifiez votre bail",
+        "La colocation peut être plus abordable et sociale"
+      ]
+    }
+  }
+},
+{
+  "id": "6",
+  "title": {
+    "en": "Apply for CAF Housing Aid (APL)",
+    "fr": "Faire une demande d’aide au logement CAF (APL)"
+  },
+  "icon": "hand-coins",
+  "label": {
+    "en": "Financial Aid",
+    "fr": "Aide financière"
+  },
+  "description": {
+    "en": "Government financial assistance to help reduce rent costs.",
+    "fr": "Aide financière de l’État pour réduire le coût du loyer."
+  },
+  "shortSummary": {
+    "en": "Can reduce rent by €50-200+/month",
+    "fr": "Peut réduire le loyer de 50 à 200 € ou plus par mois"
+  },
+  "timeConstraint": {
+    "en": "Apply as soon as you have housing and bank account",
+    "fr": "Faire la demande dès que vous avez un logement et un compte bancaire"
+  },
+  "status": "todo",
+  "category": "highly-recommended",
+  "prerequisites": ["4", "5"],
+  "detailedInfo": {
+    "overview": {
+      "en": "CAF (Caisse d\"Allocations Familiales) provides housing assistance (APL or ALS) to students and low-income individuals. This can significantly reduce your monthly rent by €50-200 or more, depending on your situation, rent amount, and location.",
+      "fr": "La CAF (Caisse d’Allocations Familiales) offre une aide au logement (APL ou ALS) aux étudiants et aux personnes à faibles revenus. Cela peut réduire significativement votre loyer mensuel de 50 à 200 € ou plus, selon votre situation, le montant du loyer et la localisation."
+    },
+    "discussion": {
+      "en": "CAF is a government organization that provides various social benefits, including housing assistance. The APL (Aide Personnalisée au Logement) is calculated based on your rent, location, income, and living situation. Most international students qualify for assistance, even if they receive financial support from parents or scholarships abroad. The application process can be lengthy (2-3 months for first payment), but payments are backdated to your application date, so apply as soon as possible. You will need to provide annual updates with new student certificates and proof of enrollment. The aid is paid directly to you (not the landlord) and you must still pay full rent to your landlord. CAF requires specific documentation and has strict requirements - incomplete applications cause delays.",
+      "fr": "La CAF est un organisme gouvernemental qui fournit diverses prestations sociales, y compris l’aide au logement. L’APL (Aide Personnalisée au Logement) est calculée en fonction de votre loyer, de votre localisation, de vos revenus et de votre situation de logement. La plupart des étudiants internationaux peuvent bénéficier de cette aide, même s’ils reçoivent un soutien financier de leurs parents ou des bourses à l’étranger. Le processus de demande peut être long (2-3 mois pour le premier paiement), mais les paiements sont rétroactifs à la date de la demande, donc faites votre demande dès que possible. Vous devrez fournir chaque année des mises à jour avec un nouveau certificat étudiant et une preuve d’inscription. L’aide est versée directement à vous (pas au propriétaire) et vous devez continuer à payer le loyer complet à votre propriétaire. La CAF exige des documents précis et des conditions strictes – les demandes incomplètes entraînent des retards."
+    },
+    "steps": {
+      "en": [
+        "Ensure you have a French bank account and signed rental agreement",
+        "Visit www.caf.fr",
+        "Click 'Faire une demande de prestation' (Apply for benefits)",
+        "Create an account with your personal details",
+        "Fill out the housing assistance application (APL or ALS)",
+        "Provide detailed information about your accommodation",
+        "Upload all required documents",
+        "Submit your landlord\"s information (name, address, RIB)",
+        "Submit the application",
+        "Wait for CAF to review (can take 2-3 months)",
+        "Respond promptly to any requests for additional information",
+        "Receive notification of decision",
+        "Set up direct deposit to your French bank account",
+        "Receive first payment (backdated to application date)",
+        "Remember to update CAF every year with new student certificate"
+      ],
+      "fr": [
+        "Assurez-vous d’avoir un compte bancaire français et un bail signé",
+        "Visitez www.caf.fr",
+        "Cliquez sur 'Faire une demande de prestation'",
+        "Créez un compte avec vos informations personnelles",
+        "Remplissez la demande d’aide au logement (APL ou ALS)",
+        "Fournissez des informations détaillées sur votre logement",
+        "Téléversez tous les documents requis",
+        "Soumettez les informations de votre propriétaire (nom, adresse, RIB)",
+        "Soumettez la demande",
+        "Attendez que la CAF examine votre dossier (peut prendre 2-3 mois)",
+        "Répondez rapidement à toute demande d’informations supplémentaires",
+        "Recevez la notification de décision",
+        "Configurez le virement sur votre compte bancaire français",
+        "Recevez le premier paiement (rétroactif à la date de la demande)",
+        "N’oubliez pas de mettre à jour la CAF chaque année avec un nouveau certificat étudiant"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "French bank account details (RIB)",
+        "Rental agreement (bail) or accommodation attestation",
+        "Student certificate from EPITA",
+        "Copy of passport or national ID",
+        "Proof of resources (or declaration of zero income if parents support you)",
+        "Landlord\"s information and RIB",
+        "Proof of rent payment (rent receipt)"
+      ],
+      "fr": [
+        "Coordonnées bancaires françaises (RIB)",
+        "Bail ou attestation de logement",
+        "Certificat étudiant de l’EPITA",
+        "Copie du passeport ou carte d’identité nationale",
+        "Justificatif de ressources (ou déclaration de revenus nuls si vos parents vous soutiennent)",
+        "Informations du propriétaire et RIB",
+        "Justificatif de paiement du loyer (quittance)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "CAF Official Website",
+          "fr": "Site officiel de la CAF"
+        },
+        "url": "https://www.caf.fr"
+      },
+      {
+        "title": {
+          "en": "CAF Housing Aid Simulator",
+          "fr": "Simulateur d’aide au logement CAF"
+        },
+        "url": "https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/estimervosdroits"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Apply immediately after moving in - aid is paid from application date, not approval date",
+        "Even if your parents support you financially, you can still qualify",
+        "Use the CAF simulator on their website to estimate your aid amount",
+        "Payments go to you, not your landlord - budget accordingly",
+        "You must update CAF every year with a new student certificate",
+        "CROUS housing and some private residences are automatically reported to CAF",
+        "Keep copies of all correspondence and documents sent to CAF",
+        "If sharing an apartment, each person can apply for their share",
+        "Processing time is long - don\"t expect money in the first 2-3 months"
+      ],
+      "fr": [
+        "Faites votre demande immédiatement après l’emménagement – l’aide est versée à partir de la date de la demande, pas de l’approbation",
+        "Même si vos parents vous soutiennent financièrement, vous pouvez bénéficier de l’aide",
+        "Utilisez le simulateur CAF sur leur site pour estimer le montant de votre aide",
+        "Les paiements vous sont versés directement, pas au propriétaire – budgétisez en conséquence",
+        "Vous devez mettre à jour la CAF chaque année avec un nouveau certificat étudiant",
+        "Les logements CROUS et certaines résidences privées sont automatiquement déclarés à la CAF",
+        "Conservez des copies de toute correspondance et des documents envoyés à la CAF",
+        "En colocation, chaque personne peut faire sa demande pour sa part",
+        "Le délai de traitement est long – ne vous attendez pas à recevoir l’argent dans les 2-3 premiers mois"
+      ]
+    }
+  }
+},
             {
-                "id": "5",
-                "title": "Secure Accommodation & Home Insurance",
-                "icon": "home",
-                "label": "Housing",
-                "description": "Finalize your rental agreement and obtain mandatory home insurance.",
-                "shortSummary": "Rental agreement and insurance required by law",
-                "status": "todo",
-                "category": "obligatory",
-                "prerequisites": [],
-                "detailedInfo": {
-                    "overview": "Finding accommodation is one of the first priorities for international students. Once you have secured housing, obtaining home insurance (assurance habitation) is mandatory by French law. You must provide proof of insurance to your landlord before moving in and annually thereafter.",
-                    "discussion": "The French rental market can be challenging, especially in Paris and major cities. Student accommodation options include CROUS residences (subsidized student housing), private student residences, private rentals, and shared apartments. CROUS housing is the most affordable but has limited availability and long waiting lists. Private student residences are more expensive but often include utilities and internet. Home insurance is mandatory for all tenants in France, and landlords will require proof before handing over keys and annually thereafter. Student home insurance is relatively inexpensive (€30-80/year) and covers damages to the property and your belongings. The move-in inventory (état des lieux) is a crucial document that records the condition of the apartment - take your time and photographs to protect yourself when moving out.",
-                    "steps": [
-                        "Start searching for accommodation as early as possible (2-3 months before arrival)",
-                        "Explore options: CROUS (apply via messervices.etudiant.gouv.fr), private student residences, or private rentals",
-                        "Prepare required documents (student certificate, guarantor, passport)",
-                        "Visit accommodations if possible, or request virtual tours",
-                        "Sign your rental agreement (bail) - read it carefully",
-                        "Obtain home insurance BEFORE move-in date",
-                        "Compare insurance offers: SMENO, LMDE, MAE, or traditional insurers",
-                        "Subscribe to insurance online or at an agency",
-                        "Receive your insurance attestation (attestation d\"assurance habitation)",
-                        "Provide insurance proof to your landlord",
-                        "Complete move-in inventory (état des lieux d\"entrée) with landlord or agent",
-                        "Take photos of every room and any existing damage",
-                        "Keep all documentation: lease, insurance, inventory, and correspondence"
-                    ],
-                    "requiredDocuments": [
-                        "Student certificate from EPITA",
-                        "Valid passport and visa",
-                        "Guarantor documents (if required): French guarantor or Visale guarantee",
-                        "Proof of income or financial resources",
-                        "Bank account details (RIB)",
-                        "Previous rental references (if available)"
-                    ],
-                    "officialLinks": [
-                        {"title": "CROUS Housing", "url": "https://www.messervices.etudiant.gouv.fr"},
-                        {"title": "Visale Guarantor Service", "url": "https://www.visale.fr"},
-                        {"title": "Student Housing Portal", "url": "https://www.lokaviz.fr"}
-                    ],
-                    "tips": [
-                        "CROUS housing is cheapest (€200-400/month) but apply early - waiting lists are long",
-                        "Visale is a free government guarantor service for students under 30",
-                        "Home insurance for students costs around €30-60/year",
-                        "Always attend the move-in inventory and document everything with photos",
-                        "Keep your insurance certificate accessible - landlords check it annually",
-                        "Utilities may or may not be included in rent - clarify this before signing",
-                        "The notice period is usually 1-3 months - check your lease",
-                        "Shared apartments (colocation) can be more affordable and social"
-                    ]
-                }
-            },
-            {
-                "id": "6",
-                "title": "Apply for CAF Housing Aid (APL)",
-                "icon": "hand-coins",
-                "label": "Financial Aid",
-                "description": "Government financial assistance to help reduce rent costs.",
-                "shortSummary": "Can reduce rent by €50-200+/month",
-                "timeConstraint": "Apply as soon as you have housing and bank account",
-                "status": "todo",
-                "category": "highly-recommended",
-                "prerequisites": ["4", "5"],
-                "detailedInfo": {
-                    "overview": "CAF (Caisse d\"Allocations Familiales) provides housing assistance (APL or ALS) to students and low-income individuals. This can significantly reduce your monthly rent by €50-200 or more, depending on your situation, rent amount, and location.",
-                    "discussion": "CAF is a government organization that provides various social benefits, including housing assistance. The APL (Aide Personnalisée au Logement) is calculated based on your rent, location, income, and living situation. Most international students qualify for assistance, even if they receive financial support from parents or scholarships abroad. The application process can be lengthy (2-3 months for first payment), but payments are backdated to your application date, so apply as soon as possible. You will need to provide annual updates with new student certificates and proof of enrollment. The aid is paid directly to you (not the landlord) and you must still pay full rent to your landlord. CAF requires specific documentation and has strict requirements - incomplete applications cause delays.",
-                    "steps": [
-                        "Ensure you have a French bank account and signed rental agreement",
-                        "Visit www.caf.fr",
-                        "Click 'Faire une demande de prestation' (Apply for benefits)",
-                        "Create an account with your personal details",
-                        "Fill out the housing assistance application (APL or ALS)",
-                        "Provide detailed information about your accommodation",
-                        "Upload all required documents",
-                        "Submit your landlord\"s information (name, address, RIB)",
-                        "Submit the application",
-                        "Wait for CAF to review (can take 2-3 months)",
-                        "Respond promptly to any requests for additional information",
-                        "Receive notification of decision",
-                        "Set up direct deposit to your French bank account",
-                        "Receive first payment (backdated to application date)",
-                        "Remember to update CAF every year with new student certificate"
-                    ],
-                    "requiredDocuments": [
-                        "French bank account details (RIB)",
-                        "Rental agreement (bail) or accommodation attestation",
-                        "Student certificate from EPITA",
-                        "Copy of passport or national ID",
-                        "Proof of resources (or declaration of zero income if parents support you)",
-                        "Landlord\"s information and RIB",
-                        "Proof of rent payment (rent receipt)"
-                    ],
-                    "officialLinks": [
-                        {"title": "CAF Official Website", "url": "https://www.caf.fr"},
-                        {
-                            "title": "CAF Housing Aid Simulator",
-                            "url": "https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/estimervosdroits"
-                        }
-                    ],
-                    "tips": [
-                        "Apply immediately after moving in - aid is paid from application date, not approval date",
-                        "Even if your parents support you financially, you can still qualify",
-                        "Use the CAF simulator on their website to estimate your aid amount",
-                        "Payments go to you, not your landlord - budget accordingly",
-                        "You must update CAF every year with a new student certificate",
-                        "CROUS housing and some private residences are automatically reported to CAF",
-                        "Keep copies of all correspondence and documents sent to CAF",
-                        "If sharing an apartment, each person can apply for their share",
-                        "Processing time is long - don\"t expect money in the first 2-3 months"
-                    ]
-                }
-            },
-            {
-                "id": "7",
-                "title": "Get a Navigo Pass",
-                "icon": "train",
-                "label": "Transportation",
-                "description": "Monthly/weekly pass for unlimited travel on Paris public transport.",
-                "shortSummary": "Unlimited metro, bus, RER travel for ~€40/month (under 26)",
-                "status": "todo",
-                "category": "highly-recommended",
-                "prerequisites": [],
-                "detailedInfo": {
-                    "overview": "The Navigo pass is a rechargeable smart card that provides unlimited travel on all public transportation in Paris and Île-de-France, including metro, bus, RER, tram, and Transilien trains. Students under 26 benefit from significant discounts.",
-                    "discussion": "The Navigo system is the primary transportation card for Paris residents. For students under 26, the Imagine R subscription offers unlimited travel across all zones for approximately €40/month (pricing varies by zones and your age). This is significantly cheaper than buying individual tickets (€2.10 per ticket). The card requires a one-time purchase fee (€5) and can be recharged monthly or annually. If you\"re over 26, you can still get a regular Navigo pass with monthly or weekly subscriptions. The zones system determines pricing: Paris is in zones 1-2, and most suburbs extend to zones 3-5. EPITA\"s main campus in Le Kremlin-Bicêtre is accessible via metro line 7, so zones 1-2 or 1-3 usually suffice. You can reload your pass at ticket machines in metro stations, online via the Île-de-France Mobilités website, or through the mobile app.",
-                    "steps": [
-                        "Prepare a recent passport-style photo (digital or printed)",
-                        "Go to any major metro or RER station ticket counter (guichet)",
-                        "Fill out the application form with your name and photo",
-                        "Choose your subscription type: Imagine R (under 26), weekly, monthly, or annual, always check for any discounts, and how to fulfill them.",
-                        "If choosing Imagine R, provide student certificate",
-                        "Pay for your first subscription period",
-                        "Receive your card immediately",
-                        "Download the Île-de-France Mobilités app for easy recharging",
-                        "Reload your pass before it expires (monthly passes must be recharged between the 20th of previous month and 19th of current month)"
-                    ],
-                    "requiredDocuments": [
-                        "Passport-style photo (recent, color, neutral background)",
-                        "Identity document (passport or student card)",
-                        "For Imagine R: student certificate from EPITA",
-                        "Payment method (cash or card accepted)"
-                    ],
-                    "officialLinks": [
-                        {"title": "Île-de-France Mobilités", "url": "https://www.iledefrance-mobilites.fr"},
-                        {"title": "Imagine R Information", "url": "https://www.imagine-r.com"}
-                    ],
-                    "tips": [
-                        "If you\"re under 26, Imagine R is the best deal at ~€40/month for all zones",
-                        "Annual Imagine R subscription offers 2 months free",
-                        "If over 26, consider the weekly Navigo if you won\"t use it daily",
-                        "You can reload online or at stations - set up automatic recharge to avoid forgetting",
-                        "Always carry your Navigo - inspectors fine heavily for fare dodging (€50+)",
-                        "The card is transferable between types of subscriptions",
-                        "Monthly Navigo can only be loaded from the 20th of the previous month",
-                        "Night buses (Noctilien) are included in your Navigo subscription"
-                    ]
-                }
-            },
-            {
-                "id": "8",
-                "title": "Join Student Associations",
-                "icon": "users",
-                "label": "Social",
-                "description": "Connect with other students, discover activities, and make friends.",
-                "shortSummary": "Great for networking, making friends, and cultural integration",
-                "status": "todo",
-                "category": "optional",
-                "prerequisites": ["2"],
-                "detailedInfo": {
-                    "overview": "French universities and grandes écoles have a rich tradition of student associations (associations étudiantes) covering sports, culture, technology, international students, and specific interests. These are excellent opportunities for socializing, networking, and cultural integration.",
-                    "discussion": "Student associations are an integral part of French higher education culture. At EPITA, there are numerous associations focusing on computer science, robotics, gaming, sports, music, and international students. Joining associations helps you meet both French and international students, practice French, develop skills outside academics, and build your professional network. Many associations organize events, competitions, trips, and workshops. Some are purely social, while others are professional and can help with internships and job opportunities. Association membership fees are typically affordable (€5-30/year), and participating is one of the best ways to make your student experience memorable.",
-                    "steps": [
-                        "Check EPITA\"s official list of student associations on their website or BDE (student office)",
-                        "Attend the associations fair (Forum des Associations) at the start of the academic year",
-                        "Browse association stands and talk to current members",
-                        "Identify associations that match your interests (tech clubs, sports, culture, international)",
-                        "Join association group chats or social media pages",
-                        "Pay membership fee (usually €5-30)",
-                        "Attend initial meetings and events",
-                        "Participate actively and contribute to association activities",
-                        "Consider taking on responsibilities or leadership roles"
-                    ],
-                    "requiredDocuments": [
-                        "Student card from EPITA",
-                        "Sometimes: payment for membership fee",
-                        "Sometimes: photo for membership card"
-                    ],
-                    "officialLinks": [
-                        {"title": "EPITA Student Life", "url": "https://www.epita.fr/vie-etudiante/"}
-                    ],
-                    "tips": [
-                        "The BDE (Bureau des Élèves) is the main student organization - they coordinate events and activities",
-                        "ESN (Erasmus Student Network) helps international students integrate",
-                        "Tech-focused associations at EPITA often work on real projects - great for your resume",
-                        "Sports associations (AS) offer activities at reduced student rates",
-                        "Cultural associations organize trips to museums, concerts, and events around France",
-                        "Don\"t be shy - associations are very welcoming to international students",
-                        "Language exchange programs help you practice French with native speakers",
-                        "Participating in associations is a great way to practice French in informal settings"
-                    ]
-                }
-            },
-            {
-                "id": "9",
-                "title": "Learn French consistently",
-                "icon": "book-open",
-                "label": "Language",
-                "description": "Essential language skills for daily life and administrative tasks. You will need it for mastering the Final French Exam before graduating.",
-                "shortSummary": "Improves daily life, required for many administrative tasks",
-                "status": "todo",
-                "category": "optional",
-                "prerequisites": [],
-                "detailedInfo": {
-                    "overview": "While many people in Paris speak English, learning basic French significantly improves your daily life, helps with administrative procedures, and is essential for cultural integration. Many offices, shops, and services prefer or require French communication.",
-                    "discussion": "French language skills are valuable not just for academic success but for navigating daily life in France. While Paris is international and many people speak English, administrative offices, banks, housing agencies, and healthcare providers often operate primarily in French. Even basic French skills like greetings, numbers, and common phrases will make your life much easier. Starting interactions with 'Bonjour' and attempting French shows respect and often makes people more willing to help. Many French people appreciate the effort even if you make mistakes. Beyond practicality, learning French opens doors to French culture, literature, cinema, and deeper connections with local friends.",
-                    "steps": [
-                        "Start with basics: greetings (Bonjour, Merci, S\"il vous plaît, Au revoir)",
-                        "Learn numbers, days of the week, and common questions",
-                        "Use language learning apps: Duolingo, Babbel, or Rosetta Stone",
-                        "Enroll in EPITA or university French courses (often free for international students)",
-                        "Check if your university offers FLE (Français Langue Étrangère) classes",
-                        "Join language exchange programs or conversation groups",
-                        "Find a language tandem partner (you teach your language, they teach French)",
-                        "Watch French TV shows and movies with subtitles (Netflix has good French content)",
-                        "Listen to French podcasts or radio (RFI, France Inter)",
-                        "Practice daily: order in French at cafés, ask questions in shops",
-                        "Use language apps like HelloTalk or Tandem to chat with French speakers",
-                        "Read French news websites with a dictionary handy"
-                    ],
-                    "requiredDocuments": [
-                        "For university courses: student certificate",
-                        "For some language schools: identity document"
-                    ],
-                    "officialLinks": [
-                        {"title": "TV5Monde - Learn French", "url": "https://apprendre.tv5monde.com"},
-                        {
-                            "title": "Campus France - French Language",
-                            "url": "https://www.campusfrance.org/en/french-language-courses"
-                        }
-                    ],
-                    "tips": [
-                        "Always start conversations with 'Bonjour' - it\"s considered rude not to greet",
-                        "Many universities offer free French courses (FLE) for international students",
-                        "Language tandems are free and effective - exchange 30 min your language, 30 min French",
-                        "Don\"t be embarrassed to make mistakes - French people appreciate the effort",
-                        "Basic administrative vocabulary is crucial: loyer (rent), assurance (insurance), rendez-vous (appointment)",
-                        "The Meetup app has many French-English language exchange groups in Paris",
-                        "Children\"s books and comics (BD) are great for learning - try Tintin or Astérix",
-                        "French pronunciation is challenging - apps like Forvo help you hear correct pronunciation",
-                        "Even B1 level French makes life significantly easier"
-                    ]
-                }
-            },
-            {
-                "id": "10",
-                "title": "Get a French Mobile Plan",
-                "icon": "smartphone",
-                "label": "Communication",
-                "description": "Obtain a French phone number (+33) for administrative 2FA and daily contact.",
-                "shortSummary": "Essential for bank 2FA and receiving deliveries",
-                "required": "Passport, IBAN (RIB), Address",
-                "status": "todo",
-                "category": "obligatory",
-                "prerequisites": ["4", "5"],
-                "detailedInfo": {
-                    "overview": "Having a French mobile number is virtually mandatory. Most French banks, the CAF, and online delivery services require a French number (+33) to send Two-Factor Authentication (2FA) codes. Using a foreign number often results in not receiving these critical SMS.",
-                    "discussion": "France has one of the most competitive mobile markets in the world. Plans are typically 'sans engagement' (no contract commitment), meaning you can cancel at any time. Major operators include Orange, SFR, Bouygues Telecom, and Free Mobile. 'Free Mobile' is particularly popular among students for its low-cost plans with high data caps (often €10-20 for 100GB+). You can sign up online or at kiosks (bornes) in tobacco shops or dedicated stores. You will need a French bank account (RIB) because monthly bills are paid via automatic direct debit (prélèvement).",
-                    "steps": [
-                        "Compare offers (Free, RED by SFR, Sosh, Bouygues)",
-                        "Decide if you need a new phone or just a SIM card",
-                        "Visit a store, a 'Free Center', or the operator's website",
-                        "Provide your French address and email",
-                        "Provide your French bank details (RIB) for monthly payment",
-                        "Pay for the SIM card (usually €10 one-time fee)",
-                        "Insert SIM and activate (PIN is usually 1234 or 0000 initially)",
-                        "Update your phone number on your Bank, ANEF, and CAF accounts immediately"
-                    ],
-                    "requiredDocuments": [
-                        "Valid passport or ID",
-                        "French Bank RIB (IBAN)",
-                        "Valid French address",
-                        "Debit card for the initial SIM card payment"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "ARCEP (Telecom Regulator) - Help",
-                            "url": "https://www.arcep.fr"
-                        },
-                        {
-                            "title": "Free Mobile (Student Popular Choice)",
-                            "url": "https://mobile.free.fr"
-                        }
-                    ],
-                    "tips": [
-                        "Look for 'Forfait sans engagement' (no-contract plan)",
-                        "Free Mobile has automated kiosks (Bornes) where you can get a SIM in 5 minutes",
-                        "WhatsApp works with your old number, but standard SMS needs the new one",
-                        "If you want to keep your French number when switching carriers later, you need your RIO code (call 3179)",
-                        "Check network coverage if you live in a rural area (Orange has best coverage generally)"
-                    ]
-                }
-            },
-            {
-                "id": "11",
-                "title": "Declare 'Médecin Traitant'",
-                "icon": "stethoscope",
-                "label": "Healthcare",
-                "description": "Designate a primary care physician to ensure maximum reimbursement rates.",
-                "shortSummary": "Avoids 40% penalty on health reimbursements",
-                "status": "todo",
-                "category": "highly-recommended",
-                "prerequisites": ["3"],
-                "detailedInfo": {
-                    "overview": "In the French healthcare system, you must declare a 'Médecin Traitant' (referring doctor/GP). If you do not declare one, your reimbursement rate from Social Security drops from 70% to 30% for consultations, known as the 'parcours de soins coordonnés'.",
-                    "discussion": "A Médecin Traitant is usually a General Practitioner (Généraliste). You should choose one near your accommodation. You are free to choose any doctor, but they must accept new patients. During your first consultation, you simply ask them to become your Médecin Traitant. They will declare it electronically using your Carte Vitale. This doctor will hold your medical records and refer you to specialists (like dermatologists or cardiologists) if needed. Note that Gynecologists, Ophthalmologists, and Psychiatrists can be seen directly without a referral.",
-                    "steps": [
-                        "Create an account on Doctolib.fr (the standard platform for booking doctors)",
-                        "Search for 'Médecin Généraliste' near your address",
-                        "Filter by 'Accepte les nouveaux patients' (Accepts new patients)",
-                        "Book a consultation (Ex: for a check-up or medical certificate)",
-                        "Bring your Carte Vitale (or certificate of social security rights)",
-                        "During the visit, ask: 'Pouvez-vous être mon médecin traitant ?'",
-                        "The doctor will swipe your card to register the declaration",
-                        "Verify the declaration appears in your Ameli account under 'Mes informations'"
-                    ],
-                    "requiredDocuments": [
-                        "Carte Vitale or Attestation de droits",
-                        "Payment method (Cash or Card - verify beforehand)"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "Doctolib (Book Appointments)",
-                            "url": "https://www.doctolib.fr"
-                        },
-                        {
-                            "title": "Service Public - Médecin Traitant",
-                            "url": "https://www.service-public.fr/particuliers/vosdroits/F163"
-                        }
-                    ],
-                    "tips": [
-                        "Doctors in 'Secteur 1' charge the standard rate (€26.50) fully reimbursable base",
-                        "Doctors in 'Secteur 2' charge extra fees (dépassements d'honoraires) not covered by basic social security",
-                        "Doctolib is the easiest way to find English-speaking doctors (filter by language)",
-                        "If you cannot find a doctor, the 'Médiateur de la CPAM' can help assign one",
-                        "You can change your Médecin Traitant at any time without justification"
-                    ]
-                }
-            },
-            {
-                "id": "12",
-                "title": "Subscribe to 'Mutuelle'",
-                "icon": "shield-plus",
-                "label": "Insurance",
-                "description": "Get complementary health insurance to cover the remaining 30% of medical costs.",
-                "shortSummary": "Covers remaining costs and hospitalization",
-                "status": "todo",
-                "category": "highly-recommended",
-                "prerequisites": ["3", "4"],
-                "detailedInfo": {
-                    "overview": "Social Security covers about 70% of standard medical costs. A 'Mutuelle' (Complementary Health Insurance) covers the remaining 30% (ticket modérateur) and can cover expensive items like dental, optical, and hospitalization which are poorly reimbursed by the state.",
-                    "discussion": "While not legally mandatory like Home Insurance, a Mutuelle is financially vital. A single day in a hospital can cost hundreds of euros without one. For students, specific mutuals (LMDE, HEYME) offer low-cost packages starting at €10-15/month. If you have very low income, you might be eligible for the 'Complémentaire Santé Solidaire' (CSS), which is free or costs less than €1/day. Most student mutuelles also include Civil Liability insurance (Responsabilité Civile), which is often required for internships.",
-                    "steps": [
-                        "Assess your medical needs (Do you wear glasses? Need dental work?)",
-                        "Compare student mutuals: HEYME, LMDE, SMENO, or bank insurances",
-                        "Check if you qualify for CSS (Complémentaire Santé Solidaire) on Ameli",
-                        "Choose a package (Hospitalization only, Basic, or Comprehensive)",
-                        "Subscribe online by providing your Social Security Number and RIB",
-                        "Link your Mutuelle to your Ameli account (Noémie system) for automatic refunds",
-                        "Download your 'Carte de Tiers Payant' (allows you to not pay upfront in pharmacies)"
-                    ],
-                    "requiredDocuments": [
-                        "French Bank RIB",
-                        "Social Security Number (or temporary number)",
-                        "Certificate of school enrollment"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "Complémentaire Santé Solidaire (CSS)",
-                            "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire"
-                        },
-                        {
-                            "title": "HEYME (Student Mutuelle)",
-                            "url": "https://heyme.care"
-                        }
-                    ],
-                    "tips": [
-                        "Ensure 'Télétransmission' (Noémie) is active so you don't have to mail paper sheets",
-                        "Check if your parents' insurance covers you abroad before buying new one",
-                        "Hospitalization costs are the biggest risk—ensure your plan covers 'Forfait journalier hospitalier'",
-                        "The 'Responsabilité Civile' included in mutuelles is required for internships"
-                    ]
-                }
-            },
-            {
-                "id": "13",
-                "title": "Electricity Contract (EDF)",
-                "icon": "zap",
-                "label": "Utilities",
-                "description": "Open an electricity meter account if you are renting a private apartment.",
-                "shortSummary": "Required for lights, heat, and proof of address",
-                "status": "todo",
-                "category": "obligatory",
-                "required": "Apartment address, PDL number",
-                "prerequisites": ["4", "5"],
-                "detailedInfo": {
-                    "overview": "If you rent a private apartment (not a CROUS room or shared facility where bills are included), you must open an electricity contract in your name. This bill is the 'Gold Standard' for Proof of Address in France.",
-                    "discussion": "EDF (Électricité de France) is the historic provider, but you can choose competitors (Engie, TotalEnergies). However, EDF is the most recognized for administrative proofs. Most apartments now have 'Linky' smart meters, which means activation is remote and instant (no technician visit needed). You will need the PDL (Point de Livraison) number found on the meter or previous tenant's bill. Bills are usually estimated monthly and adjusted annually, or you can pay actual usage via the Linky data.",
-                    "steps": [
-                        "Ask landlord for the PDL number (14 digits) or the name of the previous tenant",
-                        "Take a photo of the meter reading (indexes) on move-in day",
-                        "Go to EDF.fr or call their English-speaking line",
-                        "Subscribe to a 'Tarif Bleu' (Regulated Tariff) contract",
-                        "Provide RIB for monthly direct debit",
-                        "Download the EDF app to track consumption",
-                        "Download your 'Attestation de Contrat' immediately—this is your proof of address"
-                    ],
-                    "requiredDocuments": [
-                        "Full address with apartment number/floor",
-                        "PDL Number (Point de Livraison) or PRM",
-                        "Meter reading",
-                        "IBAN (RIB)"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "EDF English Speaking",
-                            "url": "https://www.edf.fr/en/individual-clients"
-                        }
-                    ],
-                    "tips": [
-                        "Do this within 48 hours of moving in to avoid power cuts",
-                        "The 'Justificatif de Domicile' (Proof of Address) from EDF is valid for 3 months and needed for Bank, Visa, and Prefecture",
-                        "Linky meters allow you to see daily consumption—monitor it to avoid shock bills",
-                        "When moving out, you MUST cancel the contract to stop paying"
-                    ]
-                }
-            }
+  "id": "7",
+  "title": {
+    "en": "Get a Navigo Pass",
+    "fr": "Obtenir un pass Navigo"
+  },
+  "icon": "train",
+  "label": {
+    "en": "Transportation",
+    "fr": "Transports"
+  },
+  "description": {
+    "en": "Monthly/weekly pass for unlimited travel on Paris public transport.",
+    "fr": "Pass mensuel/hebdomadaire pour des déplacements illimités sur les transports publics parisiens."
+  },
+  "shortSummary": {
+    "en": "Unlimited metro, bus, RER travel for ~€40/month (under 26)",
+    "fr": "Voyages illimités en métro, bus et RER pour ~40 €/mois (moins de 26 ans)"
+  },
+  "status": "todo",
+  "category": "highly-recommended",
+  "prerequisites": [],
+  "detailedInfo": {
+    "overview": {
+      "en": "The Navigo pass is a rechargeable smart card that provides unlimited travel on all public transportation in Paris and Île-de-France, including metro, bus, RER, tram, and Transilien trains. Students under 26 benefit from significant discounts.",
+      "fr": "Le pass Navigo est une carte à puce rechargeable offrant des trajets illimités sur tous les transports publics à Paris et en Île-de-France, y compris métro, bus, RER, tramway et trains Transilien. Les étudiants de moins de 26 ans bénéficient de réductions importantes."
+    },
+    "discussion": {
+      "en": "The Navigo system is the primary transportation card for Paris residents. For students under 26, the Imagine R subscription offers unlimited travel across all zones for approximately €40/month (pricing varies by zones and your age). This is significantly cheaper than buying individual tickets (€2.10 per ticket). The card requires a one-time purchase fee (€5) and can be recharged monthly or annually. If you\"re over 26, you can still get a regular Navigo pass with monthly or weekly subscriptions. The zones system determines pricing: Paris is in zones 1-2, and most suburbs extend to zones 3-5. EPITA\"s main campus in Le Kremlin-Bicêtre is accessible via metro line 7, so zones 1-2 or 1-3 usually suffice. You can reload your pass at ticket machines in metro stations, online via the Île-de-France Mobilités website, or through the mobile app.",
+      "fr": "Le système Navigo est la carte de transport principale pour les habitants de Paris. Pour les étudiants de moins de 26 ans, l’abonnement Imagine R offre des trajets illimités dans toutes les zones pour environ 40 €/mois (le prix varie selon les zones et l’âge). C’est beaucoup moins cher que l’achat de tickets à l’unité (2,10 € par ticket). La carte nécessite un achat unique (5 €) et peut être rechargée mensuellement ou annuellement. Si vous avez plus de 26 ans, vous pouvez toujours obtenir un pass Navigo classique avec abonnements mensuels ou hebdomadaires. Le système de zones détermine les tarifs : Paris est en zones 1-2, et la plupart des banlieues s’étendent jusqu’aux zones 3-5. Le campus principal d’EPITA au Kremlin-Bicêtre est accessible via la ligne 7 du métro, donc les zones 1-2 ou 1-3 suffisent généralement. Vous pouvez recharger votre pass aux distributeurs des stations de métro, en ligne via le site Île-de-France Mobilités, ou via l’application mobile."
+    },
+    "steps": {
+      "en": [
+        "Prepare a recent passport-style photo (digital or printed)",
+        "Go to any major metro or RER station ticket counter (guichet)",
+        "Fill out the application form with your name and photo",
+        "Choose your subscription type: Imagine R (under 26), weekly, monthly, or annual, always check for any discounts, and how to fulfill them.",
+        "If choosing Imagine R, provide student certificate",
+        "Pay for your first subscription period",
+        "Receive your card immediately",
+        "Download the Île-de-France Mobilités app for easy recharging",
+        "Reload your pass before it expires (monthly passes must be recharged between the 20th of previous month and 19th of current month)"
+      ],
+      "fr": [
+        "Préparez une photo d’identité récente (numérique ou imprimée)",
+        "Rendez-vous au guichet de n’importe quelle grande station de métro ou RER",
+        "Remplissez le formulaire avec votre nom et votre photo",
+        "Choisissez votre type d’abonnement : Imagine R (moins de 26 ans), hebdomadaire, mensuel ou annuel, vérifiez toujours les réductions disponibles et comment en bénéficier",
+        "Si vous choisissez Imagine R, fournissez le certificat étudiant",
+        "Payez votre première période d’abonnement",
+        "Recevez votre carte immédiatement",
+        "Téléchargez l’application Île-de-France Mobilités pour recharger facilement",
+        "Rechargez votre pass avant son expiration (les passes mensuels doivent être rechargés entre le 20 du mois précédent et le 19 du mois en cours)"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Passport-style photo (recent, color, neutral background)",
+        "Identity document (passport or student card)",
+        "For Imagine R: student certificate from EPITA",
+        "Payment method (cash or card accepted)"
+      ],
+      "fr": [
+        "Photo d’identité récente (couleur, fond neutre)",
+        "Document d’identité (passeport ou carte étudiante)",
+        "Pour Imagine R : certificat étudiant de l’EPITA",
+        "Moyen de paiement (espèces ou carte acceptée)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Île-de-France Mobilités",
+          "fr": "Île-de-France Mobilités"
+        },
+        "url": "https://www.iledefrance-mobilites.fr"
+      },
+      {
+        "title": {
+          "en": "Imagine R Information",
+          "fr": "Informations Imagine R"
+        },
+        "url": "https://www.imagine-r.com"
+      }
+    ],
+    "tips": {
+      "en": [
+        "If you\"re under 26, Imagine R is the best deal at ~€40/month for all zones",
+        "Annual Imagine R subscription offers 2 months free",
+        "If over 26, consider the weekly Navigo if you won\"t use it daily",
+        "You can reload online or at stations - set up automatic recharge to avoid forgetting",
+        "Always carry your Navigo - inspectors fine heavily for fare dodging (€50+)",
+        "The card is transferable between types of subscriptions",
+        "Monthly Navigo can only be loaded from the 20th of the previous month",
+        "Night buses (Noctilien) are included in your Navigo subscription"
+      ],
+      "fr": [
+        "Si vous avez moins de 26 ans, Imagine R est le meilleur choix (~40 €/mois pour toutes les zones)",
+        "L’abonnement annuel Imagine R offre 2 mois gratuits",
+        "Si vous avez plus de 26 ans, envisagez le Navigo hebdomadaire si vous ne l’utilisez pas quotidiennement",
+        "Vous pouvez recharger en ligne ou en station – configurez le rechargement automatique pour ne pas oublier",
+        "Portez toujours votre Navigo – les contrôleurs infligent de lourdes amendes en cas de fraude (50 €+)",
+        "La carte est transférable entre types d’abonnement",
+        "Le Navigo mensuel ne peut être chargé qu’à partir du 20 du mois précédent",
+        "Les bus de nuit (Noctilien) sont inclus dans votre abonnement Navigo"
+      ]
+    }
+  }
+},
+{
+  "id": "8",
+  "title": {
+    "en": "Join Student Associations",
+    "fr": "Rejoindre les associations étudiantes"
+  },
+  "icon": "users",
+  "label": {
+    "en": "Social",
+    "fr": "Social"
+  },
+  "description": {
+    "en": "Connect with other students, discover activities, and make friends.",
+    "fr": "Rencontrez d’autres étudiants, découvrez des activités et faites-vous des amis."
+  },
+  "shortSummary": {
+    "en": "Great for networking, making friends, and cultural integration",
+    "fr": "Idéal pour réseauter, se faire des amis et s’intégrer culturellement"
+  },
+  "status": "todo",
+  "category": "optional",
+  "prerequisites": ["2"],
+  "detailedInfo": {
+    "overview": {
+      "en": "French universities and grandes écoles have a rich tradition of student associations (associations étudiantes) covering sports, culture, technology, international students, and specific interests. These are excellent opportunities for socializing, networking, and cultural integration.",
+      "fr": "Les universités et grandes écoles françaises ont une riche tradition d’associations étudiantes couvrant le sport, la culture, la technologie, les étudiants internationaux et des centres d’intérêt spécifiques. C’est une excellente opportunité pour socialiser, réseauter et s’intégrer culturellement."
+    },
+    "discussion": {
+      "en": "Student associations are an integral part of French higher education culture. At EPITA, there are numerous associations focusing on computer science, robotics, gaming, sports, music, and international students. Joining associations helps you meet both French and international students, practice French, develop skills outside academics, and build your professional network. Many associations organize events, competitions, trips, and workshops. Some are purely social, while others are professional and can help with internships and job opportunities. Association membership fees are typically affordable (€5-30/year), and participating is one of the best ways to make your student experience memorable.",
+      "fr": "Les associations étudiantes font partie intégrante de la culture de l’enseignement supérieur en France. À EPITA, il existe de nombreuses associations axées sur l’informatique, la robotique, le gaming, le sport, la musique et les étudiants internationaux. Rejoindre une association vous permet de rencontrer des étudiants français et internationaux, de pratiquer le français, de développer des compétences hors du cadre académique et de construire votre réseau professionnel. De nombreuses associations organisent des événements, concours, voyages et ateliers. Certaines sont purement sociales, tandis que d’autres sont professionnelles et peuvent aider pour les stages et opportunités d’emploi. Les cotisations sont généralement abordables (5–30 €/an) et participer est l’une des meilleures façons de rendre votre expérience étudiante mémorable."
+    },
+    "steps": {
+      "en": [
+        "Check EPITA\"s official list of student associations on their website or BDE (student office)",
+        "Attend the associations fair (Forum des Associations) at the start of the academic year",
+        "Browse association stands and talk to current members",
+        "Identify associations that match your interests (tech clubs, sports, culture, international)",
+        "Join association group chats or social media pages",
+        "Pay membership fee (usually €5-30)",
+        "Attend initial meetings and events",
+        "Participate actively and contribute to association activities",
+        "Consider taking on responsibilities or leadership roles"
+      ],
+      "fr": [
+        "Consultez la liste officielle des associations étudiantes d’EPITA sur leur site web ou auprès du BDE",
+        "Assistez au forum des associations au début de l’année universitaire",
+        "Visitez les stands des associations et parlez aux membres actuels",
+        "Identifiez les associations correspondant à vos centres d’intérêt (clubs tech, sport, culture, international)",
+        "Rejoignez les groupes de discussion ou pages sociales des associations",
+        "Payez la cotisation (généralement 5–30 €)",
+        "Assistez aux premières réunions et événements",
+        "Participez activement et contribuez aux activités de l’association",
+        "Envisagez de prendre des responsabilités ou des rôles de leadership"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Student card from EPITA",
+        "Sometimes: payment for membership fee",
+        "Sometimes: photo for membership card"
+      ],
+      "fr": [
+        "Carte étudiante d’EPITA",
+        "Parfois : paiement de la cotisation",
+        "Parfois : photo pour la carte de membre"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "EPITA Student Life",
+          "fr": "Vie étudiante EPITA"
+        },
+        "url": "https://www.epita.fr/vie-etudiante/"
+      }
+    ],
+    "tips": {
+      "en": [
+        "The BDE (Bureau des Élèves) is the main student organization - they coordinate events and activities",
+        "ESN (Erasmus Student Network) helps international students integrate",
+        "Tech-focused associations at EPITA often work on real projects - great for your resume",
+        "Sports associations (AS) offer activities at reduced student rates",
+        "Cultural associations organize trips to museums, concerts, and events around France",
+        "Don\"t be shy - associations are very welcoming to international students",
+        "Language exchange programs help you practice French with native speakers",
+        "Participating in associations is a great way to practice French in informal settings"
+      ],
+      "fr": [
+        "Le BDE (Bureau des Élèves) est l’organisation étudiante principale – ils coordonnent les événements et activités",
+        "ESN (Erasmus Student Network) aide les étudiants internationaux à s’intégrer",
+        "Les associations tech d’EPITA travaillent souvent sur de vrais projets – excellent pour votre CV",
+        "Les associations sportives (AS) proposent des activités à tarifs étudiants réduits",
+        "Les associations culturelles organisent des sorties dans les musées, concerts et événements en France",
+        "Ne soyez pas timide – les associations accueillent très bien les étudiants internationaux",
+        "Les programmes d’échange linguistique aident à pratiquer le français avec des locuteurs natifs",
+        "Participer aux associations est un excellent moyen de pratiquer le français dans un cadre informel"
+      ]
+    }
+  }
+},
+{
+  "id": "9",
+  "title": {
+    "en": "Learn French consistently",
+    "fr": "Apprendre le français régulièrement"
+  },
+  "icon": "book-open",
+  "label": {
+    "en": "Language",
+    "fr": "Langue"
+  },
+  "description": {
+    "en": "Essential language skills for daily life and administrative tasks. You will need it for mastering the Final French Exam before graduating.",
+    "fr": "Compétences linguistiques essentielles pour la vie quotidienne et les démarches administratives. Vous en aurez besoin pour réussir l’examen final de français avant l’obtention du diplôme."
+  },
+  "shortSummary": {
+    "en": "Improves daily life, required for many administrative tasks",
+    "fr": "Améliore la vie quotidienne, nécessaire pour de nombreuses démarches administratives"
+  },
+  "status": "todo",
+  "category": "optional",
+  "prerequisites": [],
+  "detailedInfo": {
+    "overview": {
+      "en": "While many people in Paris speak English, learning basic French significantly improves your daily life, helps with administrative procedures, and is essential for cultural integration. Many offices, shops, and services prefer or require French communication.",
+      "fr": "Bien que de nombreuses personnes à Paris parlent anglais, apprendre le français de base améliore considérablement votre vie quotidienne, facilite les démarches administratives et est essentiel pour l’intégration culturelle. De nombreux bureaux, magasins et services préfèrent ou exigent la communication en français."
+    },
+    "discussion": {
+      "en": "French language skills are valuable not just for academic success but for navigating daily life in France. While Paris is international and many people speak English, administrative offices, banks, housing agencies, and healthcare providers often operate primarily in French. Even basic French skills like greetings, numbers, and common phrases will make your life much easier. Starting interactions with 'Bonjour' and attempting French shows respect and often makes people more willing to help. Many French people appreciate the effort even if you make mistakes. Beyond practicality, learning French opens doors to French culture, literature, cinema, and deeper connections with local friends.",
+      "fr": "Les compétences en français sont précieuses non seulement pour la réussite académique, mais aussi pour naviguer dans la vie quotidienne en France. Bien que Paris soit international et que beaucoup parlent anglais, les administrations, banques, agences de logement et prestataires de santé fonctionnent souvent principalement en français. Même des notions de base comme les salutations, les chiffres et les phrases courantes facilitent grandement la vie. Commencer les interactions par 'Bonjour' et essayer de parler français montre du respect et incite souvent les gens à aider. Beaucoup de Français apprécient l’effort même si vous faites des erreurs. Au-delà de la praticité, apprendre le français ouvre les portes à la culture française, à la littérature, au cinéma et à des liens plus profonds avec des amis locaux."
+    },
+    "steps": {
+      "en": [
+        "Start with basics: greetings (Bonjour, Merci, S\"il vous plaît, Au revoir)",
+        "Learn numbers, days of the week, and common questions",
+        "Use language learning apps: Duolingo, Babbel, or Rosetta Stone",
+        "Enroll in EPITA or university French courses (often free for international students)",
+        "Check if your university offers FLE (Français Langue Étrangère) classes",
+        "Join language exchange programs or conversation groups",
+        "Find a language tandem partner (you teach your language, they teach French)",
+        "Watch French TV shows and movies with subtitles (Netflix has good French content)",
+        "Listen to French podcasts or radio (RFI, France Inter)",
+        "Practice daily: order in French at cafés, ask questions in shops",
+        "Use language apps like HelloTalk or Tandem to chat with French speakers",
+        "Read French news websites with a dictionary handy"
+      ],
+      "fr": [
+        "Commencez par les bases : salutations (Bonjour, Merci, S’il vous plaît, Au revoir)",
+        "Apprenez les chiffres, les jours de la semaine et les questions courantes",
+        "Utilisez des applications d’apprentissage des langues : Duolingo, Babbel ou Rosetta Stone",
+        "Inscrivez-vous aux cours de français d’EPITA ou de l’université (souvent gratuits pour les étudiants internationaux)",
+        "Vérifiez si votre université propose des cours de FLE (Français Langue Étrangère)",
+        "Rejoignez des programmes d’échange linguistique ou des groupes de conversation",
+        "Trouvez un partenaire tandem (vous enseignez votre langue, il vous enseigne le français)",
+        "Regardez des séries et films français avec sous-titres (Netflix propose du contenu français de qualité)",
+        "Écoutez des podcasts ou radios françaises (RFI, France Inter)",
+        "Pratiquez quotidiennement : commandez en français dans les cafés, posez des questions dans les magasins",
+        "Utilisez des applications comme HelloTalk ou Tandem pour discuter avec des francophones",
+        "Lisez des sites d’actualité en français avec un dictionnaire à portée de main"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "For university courses: student certificate",
+        "For some language schools: identity document"
+      ],
+      "fr": [
+        "Pour les cours universitaires : certificat étudiant",
+        "Pour certaines écoles de langues : pièce d’identité"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "TV5Monde - Learn French",
+          "fr": "TV5Monde - Apprendre le français"
+        },
+        "url": "https://apprendre.tv5monde.com"
+      },
+      {
+        "title": {
+          "en": "Campus France - French Language",
+          "fr": "Campus France - Langue française"
+        },
+        "url": "https://www.campusfrance.org/en/french-language-courses"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Always start conversations with 'Bonjour' - it\"s considered rude not to greet",
+        "Many universities offer free French courses (FLE) for international students",
+        "Language tandems are free and effective - exchange 30 min your language, 30 min French",
+        "Don\"t be embarrassed to make mistakes - French people appreciate the effort",
+        "Basic administrative vocabulary is crucial: loyer (rent), assurance (insurance), rendez-vous (appointment)",
+        "The Meetup app has many French-English language exchange groups in Paris",
+        "Children\"s books and comics (BD) are great for learning - try Tintin or Astérix",
+        "French pronunciation is challenging - apps like Forvo help you hear correct pronunciation",
+        "Even B1 level French makes life significantly easier"
+      ],
+      "fr": [
+        "Commencez toujours les conversations par 'Bonjour' – il est considéré comme impoli de ne pas saluer",
+        "De nombreuses universités proposent des cours de français gratuits (FLE) pour les étudiants internationaux",
+        "Les tandems linguistiques sont gratuits et efficaces – échangez 30 min dans votre langue, 30 min en français",
+        "Ne soyez pas gêné de faire des erreurs – les Français apprécient l’effort",
+        "Le vocabulaire administratif de base est crucial : loyer, assurance, rendez-vous",
+        "L’application Meetup propose de nombreux groupes d’échange français-anglais à Paris",
+        "Les livres et bandes dessinées pour enfants sont excellents pour apprendre – essayez Tintin ou Astérix",
+        "La prononciation française est difficile – des applications comme Forvo permettent d’écouter la prononciation correcte",
+        "Même un niveau B1 en français facilite grandement la vie"
+      ]
+    }
+  }
+},
+{
+  "id": "10",
+  "title": {
+    "en": "Get a French Mobile Plan",
+    "fr": "Obtenir un forfait mobile français"
+  },
+  "icon": "smartphone",
+  "label": {
+    "en": "Communication",
+    "fr": "Communication"
+  },
+  "description": {
+    "en": "Obtain a French phone number (+33) for administrative 2FA and daily contact.",
+    "fr": "Obtenez un numéro français (+33) pour l’authentification à deux facteurs (2FA) et les contacts quotidiens."
+  },
+  "shortSummary": {
+    "en": "Essential for bank 2FA and receiving deliveries",
+    "fr": "Indispensable pour la 2FA bancaire et la réception de colis"
+  },
+  "required": {
+    "en": "Passport, IBAN (RIB), Address",
+    "fr": "Passeport, IBAN (RIB), Adresse"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": ["4", "5"],
+  "detailedInfo": {
+    "overview": {
+      "en": "Having a French mobile number is virtually mandatory. Most French banks, the CAF, and online delivery services require a French number (+33) to send Two-Factor Authentication (2FA) codes. Using a foreign number often results in not receiving these critical SMS.",
+      "fr": "Avoir un numéro de téléphone français est pratiquement obligatoire. La plupart des banques françaises, la CAF et les services de livraison en ligne exigent un numéro français (+33) pour envoyer les codes d’authentification à deux facteurs (2FA). Utiliser un numéro étranger empêche souvent de recevoir ces SMS essentiels."
+    },
+    "discussion": {
+      "en": "France has one of the most competitive mobile markets in the world. Plans are typically 'sans engagement' (no contract commitment), meaning you can cancel at any time. Major operators include Orange, SFR, Bouygues Telecom, and Free Mobile. 'Free Mobile' is particularly popular among students for its low-cost plans with high data caps (often €10-20 for 100GB+). You can sign up online or at kiosks (bornes) in tobacco shops or dedicated stores. You will need a French bank account (RIB) because monthly bills are paid via automatic direct debit (prélèvement).",
+      "fr": "La France possède l’un des marchés mobiles les plus compétitifs au monde. Les forfaits sont généralement 'sans engagement', ce qui signifie que vous pouvez résilier à tout moment. Les principaux opérateurs sont Orange, SFR, Bouygues Telecom et Free Mobile. 'Free Mobile' est particulièrement populaire auprès des étudiants pour ses forfaits économiques avec de gros volumes de données (souvent 10–20 € pour 100 Go+). Vous pouvez vous inscrire en ligne ou aux bornes dans les bureaux de tabac ou magasins spécialisés. Vous aurez besoin d’un compte bancaire français (RIB) car les factures mensuelles sont payées par prélèvement automatique."
+    },
+    "steps": {
+      "en": [
+        "Compare offers (Free, RED by SFR, Sosh, Bouygues)",
+        "Decide if you need a new phone or just a SIM card",
+        "Visit a store, a 'Free Center', or the operator's website",
+        "Provide your French address and email",
+        "Provide your French bank details (RIB) for monthly payment",
+        "Pay for the SIM card (usually €10 one-time fee)",
+        "Insert SIM and activate (PIN is usually 1234 or 0000 initially)",
+        "Update your phone number on your Bank, ANEF, and CAF accounts immediately"
+      ],
+      "fr": [
+        "Comparez les offres (Free, RED by SFR, Sosh, Bouygues)",
+        "Décidez si vous avez besoin d’un nouveau téléphone ou seulement d’une carte SIM",
+        "Rendez-vous en magasin, dans un 'Free Center' ou sur le site de l’opérateur",
+        "Fournissez votre adresse et email français",
+        "Fournissez vos coordonnées bancaires françaises (RIB) pour le paiement mensuel",
+        "Payez la carte SIM (souvent 10 € une seule fois)",
+        "Insérez la SIM et activez-la (le code PIN est généralement 1234 ou 0000 au départ)",
+        "Mettez à jour votre numéro de téléphone sur vos comptes Banque, ANEF et CAF immédiatement"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Valid passport or ID",
+        "French Bank RIB (IBAN)",
+        "Valid French address",
+        "Debit card for the initial SIM card payment"
+      ],
+      "fr": [
+        "Passeport ou pièce d’identité valide",
+        "RIB français (IBAN)",
+        "Adresse française valide",
+        "Carte bancaire pour le paiement initial de la SIM"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "ARCEP (Telecom Regulator) - Help",
+          "fr": "ARCEP (Régulateur Télécom) - Aide"
+        },
+        "url": "https://www.arcep.fr"
+      },
+      {
+        "title": {
+          "en": "Free Mobile (Student Popular Choice)",
+          "fr": "Free Mobile (Choix populaire chez les étudiants)"
+        },
+        "url": "https://mobile.free.fr"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Look for 'Forfait sans engagement' (no-contract plan)",
+        "Free Mobile has automated kiosks (Bornes) where you can get a SIM in 5 minutes",
+        "WhatsApp works with your old number, but standard SMS needs the new one",
+        "If you want to keep your French number when switching carriers later, you need your RIO code (call 3179)",
+        "Check network coverage if you live in a rural area (Orange has best coverage generally)"
+      ],
+      "fr": [
+        "Cherchez un 'Forfait sans engagement'",
+        "Free Mobile dispose de bornes automatiques où vous pouvez obtenir une SIM en 5 minutes",
+        "WhatsApp fonctionne avec votre ancien numéro, mais les SMS standard nécessitent le nouveau",
+        "Si vous voulez conserver votre numéro français en changeant d’opérateur plus tard, vous aurez besoin de votre code RIO (appelez le 3179)",
+        "Vérifiez la couverture réseau si vous habitez en zone rurale (Orange offre généralement la meilleure couverture)"
+      ]
+    }
+  }
+},
+{
+  "id": "11",
+  "title": {
+    "en": "Declare 'Médecin Traitant'",
+    "fr": "Déclarer son Médecin Traitant"
+  },
+  "icon": "stethoscope",
+  "label": {
+    "en": "Healthcare",
+    "fr": "Santé"
+  },
+  "description": {
+    "en": "Designate a primary care physician to ensure maximum reimbursement rates.",
+    "fr": "Désignez un médecin traitant pour bénéficier du taux de remboursement maximal."
+  },
+  "shortSummary": {
+    "en": "Avoids 40% penalty on health reimbursements",
+    "fr": "Évite une pénalité de 40 % sur les remboursements de santé"
+  },
+  "status": "todo",
+  "category": "highly-recommended",
+  "prerequisites": ["3"],
+  "detailedInfo": {
+    "overview": {
+      "en": "In the French healthcare system, you must declare a 'Médecin Traitant' (referring doctor/GP). If you do not declare one, your reimbursement rate from Social Security drops from 70% to 30% for consultations, known as the 'parcours de soins coordonnés'.",
+      "fr": "Dans le système de santé français, vous devez déclarer un 'Médecin Traitant'. Si vous n’en déclarez pas, votre taux de remboursement par la Sécurité Sociale passe de 70 % à 30 % pour les consultations, conformément au 'parcours de soins coordonnés'."
+    },
+    "discussion": {
+      "en": "A Médecin Traitant is usually a General Practitioner (Généraliste). You should choose one near your accommodation. You are free to choose any doctor, but they must accept new patients. During your first consultation, you simply ask them to become your Médecin Traitant. They will declare it electronically using your Carte Vitale. This doctor will hold your medical records and refer you to specialists (like dermatologists or cardiologists) if needed. Note that Gynecologists, Ophthalmologists, and Psychiatrists can be seen directly without a referral.",
+      "fr": "Le Médecin Traitant est généralement un médecin généraliste. Vous devriez en choisir un près de votre logement. Vous êtes libre de choisir n’importe quel médecin, mais il doit accepter de nouveaux patients. Lors de votre première consultation, demandez simplement s’il peut devenir votre Médecin Traitant. Il le déclarera électroniquement via votre Carte Vitale. Ce médecin conservera vos dossiers médicaux et vous orientera vers des spécialistes (dermatologues, cardiologues, etc.) si nécessaire. Notez que les gynécologues, ophtalmologues et psychiatres peuvent être consultés directement sans prescription."
+    },
+    "steps": {
+      "en": [
+        "Create an account on Doctolib.fr (the standard platform for booking doctors)",
+        "Search for 'Médecin Généraliste' near your address",
+        "Filter by 'Accepte les nouveaux patients' (Accepts new patients)",
+        "Book a consultation (Ex: for a check-up or medical certificate)",
+        "Bring your Carte Vitale (or certificate of social security rights)",
+        "During the visit, ask: 'Pouvez-vous être mon médecin traitant ?'",
+        "The doctor will swipe your card to register the declaration",
+        "Verify the declaration appears in your Ameli account under 'Mes informations'"
+      ],
+      "fr": [
+        "Créez un compte sur Doctolib.fr (plateforme standard pour prendre rendez-vous)",
+        "Recherchez un 'Médecin Généraliste' près de votre adresse",
+        "Filtrez par 'Accepte les nouveaux patients'",
+        "Prenez un rendez-vous (ex : pour un bilan ou un certificat médical)",
+        "Apportez votre Carte Vitale (ou attestation de droits à la sécurité sociale)",
+        "Lors de la consultation, demandez : 'Pouvez-vous être mon médecin traitant ?'",
+        "Le médecin passera votre carte pour enregistrer la déclaration",
+        "Vérifiez que la déclaration apparaît dans votre compte Ameli sous 'Mes informations'"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Carte Vitale or Attestation de droits",
+        "Payment method (Cash or Card - verify beforehand)"
+      ],
+      "fr": [
+        "Carte Vitale ou attestation de droits",
+        "Moyen de paiement (Espèces ou carte - vérifier avant)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Doctolib (Book Appointments)",
+          "fr": "Doctolib (Prendre rendez-vous)"
+        },
+        "url": "https://www.doctolib.fr"
+      },
+      {
+        "title": {
+          "en": "Service Public - Médecin Traitant",
+          "fr": "Service Public - Médecin Traitant"
+        },
+        "url": "https://www.service-public.fr/particuliers/vosdroits/F163"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Doctors in 'Secteur 1' charge the standard rate (€26.50) fully reimbursable base",
+        "Doctors in 'Secteur 2' charge extra fees (dépassements d'honoraires) not covered by basic social security",
+        "Doctolib is the easiest way to find English-speaking doctors (filter by language)",
+        "If you cannot find a doctor, the 'Médiateur de la CPAM' can help assign one",
+        "You can change your Médecin Traitant at any time without justification"
+      ],
+      "fr": [
+        "Les médecins en 'Secteur 1' facturent le tarif standard (26,50 €) entièrement remboursable",
+        "Les médecins en 'Secteur 2' facturent des dépassements d’honoraires non couverts par la Sécurité Sociale de base",
+        "Doctolib est le moyen le plus simple de trouver des médecins parlant anglais (filtrer par langue)",
+        "Si vous ne trouvez pas de médecin, le 'Médiateur de la CPAM' peut vous en assigner un",
+        "Vous pouvez changer de Médecin Traitant à tout moment sans justification"
+      ]
+    }
+  }
+},
+{
+  "id": "12",
+  "title": {
+    "en": "Subscribe to 'Mutuelle'",
+    "fr": "Souscrire à une Mutuelle"
+  },
+  "icon": "shield-plus",
+  "label": {
+    "en": "Insurance",
+    "fr": "Assurance"
+  },
+  "description": {
+    "en": "Get complementary health insurance to cover the remaining 30% of medical costs.",
+    "fr": "Obtenez une assurance santé complémentaire pour couvrir les 30 % restants des frais médicaux."
+  },
+  "shortSummary": {
+    "en": "Covers remaining costs and hospitalization",
+    "fr": "Couvre les coûts restants et l'hospitalisation"
+  },
+  "status": "todo",
+  "category": "highly-recommended",
+  "prerequisites": ["3", "4"],
+  "detailedInfo": {
+    "overview": {
+      "en": "Social Security covers about 70% of standard medical costs. A 'Mutuelle' (Complementary Health Insurance) covers the remaining 30% (ticket modérateur) and can cover expensive items like dental, optical, and hospitalization which are poorly reimbursed by the state.",
+      "fr": "La Sécurité Sociale couvre environ 70 % des frais médicaux standards. Une 'Mutuelle' (Assurance Santé Complémentaire) couvre les 30 % restants (ticket modérateur) et peut prendre en charge des dépenses coûteuses comme les soins dentaires, optiques et l'hospitalisation, peu remboursés par l'État."
+    },
+    "discussion": {
+      "en": "While not legally mandatory like Home Insurance, a Mutuelle is financially vital. A single day in a hospital can cost hundreds of euros without one. For students, specific mutuals (LMDE, HEYME) offer low-cost packages starting at €10-15/month. If you have very low income, you might be eligible for the 'Complémentaire Santé Solidaire' (CSS), which is free or costs less than €1/day. Most student mutuelles also include Civil Liability insurance (Responsabilité Civile), which is often required for internships.",
+      "fr": "Bien qu’elle ne soit pas légalement obligatoire comme l’assurance habitation, la Mutuelle est financièrement essentielle. Une seule journée à l’hôpital peut coûter plusieurs centaines d’euros sans mutuelle. Pour les étudiants, certaines mutuelles (LMDE, HEYME) proposent des forfaits abordables à partir de 10-15 €/mois. Si vos revenus sont très faibles, vous pouvez être éligible à la 'Complémentaire Santé Solidaire' (CSS), gratuite ou à moins de 1 €/jour. La plupart des mutuelles étudiantes incluent également la Responsabilité Civile, souvent exigée pour les stages."
+    },
+    "steps": {
+      "en": [
+        "Assess your medical needs (Do you wear glasses? Need dental work?)",
+        "Compare student mutuals: HEYME, LMDE, SMENO, or bank insurances",
+        "Check if you qualify for CSS (Complémentaire Santé Solidaire) on Ameli",
+        "Choose a package (Hospitalization only, Basic, or Comprehensive)",
+        "Subscribe online by providing your Social Security Number and RIB",
+        "Link your Mutuelle to your Ameli account (Noémie system) for automatic refunds",
+        "Download your 'Carte de Tiers Payant' (allows you to not pay upfront in pharmacies)"
+      ],
+      "fr": [
+        "Évaluez vos besoins médicaux (Portez-vous des lunettes ? Avez-vous besoin de soins dentaires ?)",
+        "Comparez les mutuelles étudiantes : HEYME, LMDE, SMENO ou assurances bancaires",
+        "Vérifiez si vous êtes éligible à la CSS (Complémentaire Santé Solidaire) sur Ameli",
+        "Choisissez un forfait (Hospitalisation seulement, Basique ou Complet)",
+        "Souscrivez en ligne en fournissant votre numéro de Sécurité Sociale et RIB",
+        "Reliez votre Mutuelle à votre compte Ameli (système Noémie) pour les remboursements automatiques",
+        "Téléchargez votre 'Carte de Tiers Payant' (vous permet de ne pas avancer les frais en pharmacie)"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "French Bank RIB",
+        "Social Security Number (or temporary number)",
+        "Certificate of school enrollment"
+      ],
+      "fr": [
+        "RIB français",
+        "Numéro de Sécurité Sociale (ou numéro provisoire)",
+        "Attestation de scolarité"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Complémentaire Santé Solidaire (CSS)",
+          "fr": "Complémentaire Santé Solidaire (CSS)"
+        },
+        "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire"
+      },
+      {
+        "title": {
+          "en": "HEYME (Student Mutuelle)",
+          "fr": "HEYME (Mutuelle Étudiante)"
+        },
+        "url": "https://heyme.care"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Ensure 'Télétransmission' (Noémie) is active so you don't have to mail paper sheets",
+        "Check if your parents' insurance covers you abroad before buying new one",
+        "Hospitalization costs are the biggest risk—ensure your plan covers 'Forfait journalier hospitalier'",
+        "The 'Responsabilité Civile' included in mutuelles is required for internships"
+      ],
+      "fr": [
+        "Assurez-vous que la 'Télétransmission' (Noémie) est activée pour ne pas envoyer de feuilles papier",
+        "Vérifiez si l’assurance de vos parents vous couvre à l’étranger avant d’en souscrire une nouvelle",
+        "Les frais d’hospitalisation représentent le plus grand risque — assurez-vous que votre mutuelle couvre le 'Forfait journalier hospitalier'",
+        "La 'Responsabilité Civile' incluse dans les mutuelles est obligatoire pour les stages"
+      ]
+    }
+  }
+},
+{
+  "id": "13",
+  "title": {
+    "en": "Electricity Contract (EDF)",
+    "fr": "Contrat Électricité (EDF)"
+  },
+  "icon": "zap",
+  "label": {
+    "en": "Utilities",
+    "fr": "Services Publics"
+  },
+  "description": {
+    "en": "Open an electricity meter account if you are renting a private apartment.",
+    "fr": "Ouvrez un contrat d'électricité si vous louez un appartement privé."
+  },
+  "shortSummary": {
+    "en": "Required for lights, heat, and proof of address",
+    "fr": "Nécessaire pour l'électricité, le chauffage et comme justificatif de domicile"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "required": {
+    "en": "Apartment address, PDL number",
+    "fr": "Adresse de l'appartement, numéro PDL"
+  },
+  "prerequisites": ["4", "5"],
+  "detailedInfo": {
+    "overview": {
+      "en": "If you rent a private apartment (not a CROUS room or shared facility where bills are included), you must open an electricity contract in your name. This bill is the 'Gold Standard' for Proof of Address in France.",
+      "fr": "Si vous louez un appartement privé (pas une chambre CROUS ou un logement avec charges incluses), vous devez ouvrir un contrat d'électricité à votre nom. Cette facture est la référence principale pour le justificatif de domicile en France."
+    },
+    "discussion": {
+      "en": "EDF (Électricité de France) is the historic provider, but you can choose competitors (Engie, TotalEnergies). However, EDF is the most recognized for administrative proofs. Most apartments now have 'Linky' smart meters, which means activation is remote and instant (no technician visit needed). You will need the PDL (Point de Livraison) number found on the meter or previous tenant's bill. Bills are usually estimated monthly and adjusted annually, or you can pay actual usage via the Linky data.",
+      "fr": "EDF (Électricité de France) est le fournisseur historique, mais vous pouvez choisir des concurrents (Engie, TotalEnergies). Cependant, EDF est le plus reconnu pour les justificatifs administratifs. La plupart des appartements sont maintenant équipés de compteurs intelligents 'Linky', ce qui permet une activation à distance et instantanée (pas de visite technique nécessaire). Vous aurez besoin du numéro PDL (Point de Livraison) figurant sur le compteur ou la facture de l'ancien locataire. Les factures sont généralement estimées mensuellement et régularisées annuellement, ou vous pouvez payer selon votre consommation réelle grâce aux données Linky."
+    },
+    "steps": {
+      "en": [
+        "Ask landlord for the PDL number (14 digits) or the name of the previous tenant",
+        "Take a photo of the meter reading (indexes) on move-in day",
+        "Go to EDF.fr or call their English-speaking line",
+        "Subscribe to a 'Tarif Bleu' (Regulated Tariff) contract",
+        "Provide RIB for monthly direct debit",
+        "Download the EDF app to track consumption",
+        "Download your 'Attestation de Contrat' immediately—this is your proof of address"
+      ],
+      "fr": [
+        "Demandez au propriétaire le numéro PDL (14 chiffres) ou le nom de l'ancien locataire",
+        "Prenez une photo du relevé du compteur le jour de l'emménagement",
+        "Allez sur EDF.fr ou appelez la ligne anglophone",
+        "Souscrivez à un contrat 'Tarif Bleu' (Tarif Réglementé)",
+        "Fournissez votre RIB pour le prélèvement mensuel",
+        "Téléchargez l'application EDF pour suivre votre consommation",
+        "Téléchargez immédiatement votre 'Attestation de Contrat' — c'est votre justificatif de domicile"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Full address with apartment number/floor",
+        "PDL Number (Point de Livraison) or PRM",
+        "Meter reading",
+        "IBAN (RIB)"
+      ],
+      "fr": [
+        "Adresse complète avec numéro d'appartement/étage",
+        "Numéro PDL (Point de Livraison) ou PRM",
+        "Relevé du compteur",
+        "IBAN (RIB)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "EDF English Speaking",
+          "fr": "EDF Anglais"
+        },
+        "url": "https://www.edf.fr/en/individual-clients"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Do this within 48 hours of moving in to avoid power cuts",
+        "The 'Justificatif de Domicile' (Proof of Address) from EDF is valid for 3 months and needed for Bank, Visa, and Prefecture",
+        "Linky meters allow you to see daily consumption—monitor it to avoid shock bills",
+        "When moving out, you MUST cancel the contract to stop paying"
+      ],
+      "fr": [
+        "Faites-le dans les 48 heures suivant votre emménagement pour éviter les coupures d'électricité",
+        "Le 'Justificatif de Domicile' d'EDF est valable 3 mois et nécessaire pour la banque, le visa et la préfecture",
+        "Les compteurs Linky permettent de suivre la consommation quotidienne — surveillez-la pour éviter les factures surprises",
+        "Lors du départ, vous DEVEZ résilier le contrat pour arrêter les prélèvements"
+      ]
+    }
+  }
+}
   ]
