@@ -20,7 +20,7 @@
   },
   "timeConstraint": {
     "en": "Within 3 months of arrival",
-    "fr": "Dans les 3 mois suivant l’arrivée"
+    "fr": "Dans les 3 mois suivant votre arrivée"
   },
   "status": "todo",
   "category": "obligatory",
@@ -942,238 +942,508 @@
     }
   }
 },
-            {
-                "id": "9",
-                "title": "Learn French consistently",
-                "icon": "book-open",
-                "label": "Language",
-                "description": "Essential language skills for daily life and administrative tasks. You will need it for mastering the Final French Exam before graduating.",
-                "shortSummary": "Improves daily life, required for many administrative tasks",
-                "status": "todo",
-                "category": "optional",
-                "prerequisites": [],
-                "detailedInfo": {
-                    "overview": "While many people in Paris speak English, learning basic French significantly improves your daily life, helps with administrative procedures, and is essential for cultural integration. Many offices, shops, and services prefer or require French communication.",
-                    "discussion": "French language skills are valuable not just for academic success but for navigating daily life in France. While Paris is international and many people speak English, administrative offices, banks, housing agencies, and healthcare providers often operate primarily in French. Even basic French skills like greetings, numbers, and common phrases will make your life much easier. Starting interactions with 'Bonjour' and attempting French shows respect and often makes people more willing to help. Many French people appreciate the effort even if you make mistakes. Beyond practicality, learning French opens doors to French culture, literature, cinema, and deeper connections with local friends.",
-                    "steps": [
-                        "Start with basics: greetings (Bonjour, Merci, S\"il vous plaît, Au revoir)",
-                        "Learn numbers, days of the week, and common questions",
-                        "Use language learning apps: Duolingo, Babbel, or Rosetta Stone",
-                        "Enroll in EPITA or university French courses (often free for international students)",
-                        "Check if your university offers FLE (Français Langue Étrangère) classes",
-                        "Join language exchange programs or conversation groups",
-                        "Find a language tandem partner (you teach your language, they teach French)",
-                        "Watch French TV shows and movies with subtitles (Netflix has good French content)",
-                        "Listen to French podcasts or radio (RFI, France Inter)",
-                        "Practice daily: order in French at cafés, ask questions in shops",
-                        "Use language apps like HelloTalk or Tandem to chat with French speakers",
-                        "Read French news websites with a dictionary handy"
-                    ],
-                    "requiredDocuments": [
-                        "For university courses: student certificate",
-                        "For some language schools: identity document"
-                    ],
-                    "officialLinks": [
-                        {"title": "TV5Monde - Learn French", "url": "https://apprendre.tv5monde.com"},
-                        {
-                            "title": "Campus France - French Language",
-                            "url": "https://www.campusfrance.org/en/french-language-courses"
-                        }
-                    ],
-                    "tips": [
-                        "Always start conversations with 'Bonjour' - it\"s considered rude not to greet",
-                        "Many universities offer free French courses (FLE) for international students",
-                        "Language tandems are free and effective - exchange 30 min your language, 30 min French",
-                        "Don\"t be embarrassed to make mistakes - French people appreciate the effort",
-                        "Basic administrative vocabulary is crucial: loyer (rent), assurance (insurance), rendez-vous (appointment)",
-                        "The Meetup app has many French-English language exchange groups in Paris",
-                        "Children\"s books and comics (BD) are great for learning - try Tintin or Astérix",
-                        "French pronunciation is challenging - apps like Forvo help you hear correct pronunciation",
-                        "Even B1 level French makes life significantly easier"
-                    ]
-                }
-            },
-            {
-                "id": "10",
-                "title": "Get a French Mobile Plan",
-                "icon": "smartphone",
-                "label": "Communication",
-                "description": "Obtain a French phone number (+33) for administrative 2FA and daily contact.",
-                "shortSummary": "Essential for bank 2FA and receiving deliveries",
-                "required": "Passport, IBAN (RIB), Address",
-                "status": "todo",
-                "category": "obligatory",
-                "prerequisites": ["4", "5"],
-                "detailedInfo": {
-                    "overview": "Having a French mobile number is virtually mandatory. Most French banks, the CAF, and online delivery services require a French number (+33) to send Two-Factor Authentication (2FA) codes. Using a foreign number often results in not receiving these critical SMS.",
-                    "discussion": "France has one of the most competitive mobile markets in the world. Plans are typically 'sans engagement' (no contract commitment), meaning you can cancel at any time. Major operators include Orange, SFR, Bouygues Telecom, and Free Mobile. 'Free Mobile' is particularly popular among students for its low-cost plans with high data caps (often €10-20 for 100GB+). You can sign up online or at kiosks (bornes) in tobacco shops or dedicated stores. You will need a French bank account (RIB) because monthly bills are paid via automatic direct debit (prélèvement).",
-                    "steps": [
-                        "Compare offers (Free, RED by SFR, Sosh, Bouygues)",
-                        "Decide if you need a new phone or just a SIM card",
-                        "Visit a store, a 'Free Center', or the operator's website",
-                        "Provide your French address and email",
-                        "Provide your French bank details (RIB) for monthly payment",
-                        "Pay for the SIM card (usually €10 one-time fee)",
-                        "Insert SIM and activate (PIN is usually 1234 or 0000 initially)",
-                        "Update your phone number on your Bank, ANEF, and CAF accounts immediately"
-                    ],
-                    "requiredDocuments": [
-                        "Valid passport or ID",
-                        "French Bank RIB (IBAN)",
-                        "Valid French address",
-                        "Debit card for the initial SIM card payment"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "ARCEP (Telecom Regulator) - Help",
-                            "url": "https://www.arcep.fr"
-                        },
-                        {
-                            "title": "Free Mobile (Student Popular Choice)",
-                            "url": "https://mobile.free.fr"
-                        }
-                    ],
-                    "tips": [
-                        "Look for 'Forfait sans engagement' (no-contract plan)",
-                        "Free Mobile has automated kiosks (Bornes) where you can get a SIM in 5 minutes",
-                        "WhatsApp works with your old number, but standard SMS needs the new one",
-                        "If you want to keep your French number when switching carriers later, you need your RIO code (call 3179)",
-                        "Check network coverage if you live in a rural area (Orange has best coverage generally)"
-                    ]
-                }
-            },
-            {
-                "id": "11",
-                "title": "Declare 'Médecin Traitant'",
-                "icon": "stethoscope",
-                "label": "Healthcare",
-                "description": "Designate a primary care physician to ensure maximum reimbursement rates.",
-                "shortSummary": "Avoids 40% penalty on health reimbursements",
-                "status": "todo",
-                "category": "highly-recommended",
-                "prerequisites": ["3"],
-                "detailedInfo": {
-                    "overview": "In the French healthcare system, you must declare a 'Médecin Traitant' (referring doctor/GP). If you do not declare one, your reimbursement rate from Social Security drops from 70% to 30% for consultations, known as the 'parcours de soins coordonnés'.",
-                    "discussion": "A Médecin Traitant is usually a General Practitioner (Généraliste). You should choose one near your accommodation. You are free to choose any doctor, but they must accept new patients. During your first consultation, you simply ask them to become your Médecin Traitant. They will declare it electronically using your Carte Vitale. This doctor will hold your medical records and refer you to specialists (like dermatologists or cardiologists) if needed. Note that Gynecologists, Ophthalmologists, and Psychiatrists can be seen directly without a referral.",
-                    "steps": [
-                        "Create an account on Doctolib.fr (the standard platform for booking doctors)",
-                        "Search for 'Médecin Généraliste' near your address",
-                        "Filter by 'Accepte les nouveaux patients' (Accepts new patients)",
-                        "Book a consultation (Ex: for a check-up or medical certificate)",
-                        "Bring your Carte Vitale (or certificate of social security rights)",
-                        "During the visit, ask: 'Pouvez-vous être mon médecin traitant ?'",
-                        "The doctor will swipe your card to register the declaration",
-                        "Verify the declaration appears in your Ameli account under 'Mes informations'"
-                    ],
-                    "requiredDocuments": [
-                        "Carte Vitale or Attestation de droits",
-                        "Payment method (Cash or Card - verify beforehand)"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "Doctolib (Book Appointments)",
-                            "url": "https://www.doctolib.fr"
-                        },
-                        {
-                            "title": "Service Public - Médecin Traitant",
-                            "url": "https://www.service-public.fr/particuliers/vosdroits/F163"
-                        }
-                    ],
-                    "tips": [
-                        "Doctors in 'Secteur 1' charge the standard rate (€26.50) fully reimbursable base",
-                        "Doctors in 'Secteur 2' charge extra fees (dépassements d'honoraires) not covered by basic social security",
-                        "Doctolib is the easiest way to find English-speaking doctors (filter by language)",
-                        "If you cannot find a doctor, the 'Médiateur de la CPAM' can help assign one",
-                        "You can change your Médecin Traitant at any time without justification"
-                    ]
-                }
-            },
-            {
-                "id": "12",
-                "title": "Subscribe to 'Mutuelle'",
-                "icon": "shield-plus",
-                "label": "Insurance",
-                "description": "Get complementary health insurance to cover the remaining 30% of medical costs.",
-                "shortSummary": "Covers remaining costs and hospitalization",
-                "status": "todo",
-                "category": "highly-recommended",
-                "prerequisites": ["3", "4"],
-                "detailedInfo": {
-                    "overview": "Social Security covers about 70% of standard medical costs. A 'Mutuelle' (Complementary Health Insurance) covers the remaining 30% (ticket modérateur) and can cover expensive items like dental, optical, and hospitalization which are poorly reimbursed by the state.",
-                    "discussion": "While not legally mandatory like Home Insurance, a Mutuelle is financially vital. A single day in a hospital can cost hundreds of euros without one. For students, specific mutuals (LMDE, HEYME) offer low-cost packages starting at €10-15/month. If you have very low income, you might be eligible for the 'Complémentaire Santé Solidaire' (CSS), which is free or costs less than €1/day. Most student mutuelles also include Civil Liability insurance (Responsabilité Civile), which is often required for internships.",
-                    "steps": [
-                        "Assess your medical needs (Do you wear glasses? Need dental work?)",
-                        "Compare student mutuals: HEYME, LMDE, SMENO, or bank insurances",
-                        "Check if you qualify for CSS (Complémentaire Santé Solidaire) on Ameli",
-                        "Choose a package (Hospitalization only, Basic, or Comprehensive)",
-                        "Subscribe online by providing your Social Security Number and RIB",
-                        "Link your Mutuelle to your Ameli account (Noémie system) for automatic refunds",
-                        "Download your 'Carte de Tiers Payant' (allows you to not pay upfront in pharmacies)"
-                    ],
-                    "requiredDocuments": [
-                        "French Bank RIB",
-                        "Social Security Number (or temporary number)",
-                        "Certificate of school enrollment"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "Complémentaire Santé Solidaire (CSS)",
-                            "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire"
-                        },
-                        {
-                            "title": "HEYME (Student Mutuelle)",
-                            "url": "https://heyme.care"
-                        }
-                    ],
-                    "tips": [
-                        "Ensure 'Télétransmission' (Noémie) is active so you don't have to mail paper sheets",
-                        "Check if your parents' insurance covers you abroad before buying new one",
-                        "Hospitalization costs are the biggest risk—ensure your plan covers 'Forfait journalier hospitalier'",
-                        "The 'Responsabilité Civile' included in mutuelles is required for internships"
-                    ]
-                }
-            },
-            {
-                "id": "13",
-                "title": "Electricity Contract (EDF)",
-                "icon": "zap",
-                "label": "Utilities",
-                "description": "Open an electricity meter account if you are renting a private apartment.",
-                "shortSummary": "Required for lights, heat, and proof of address",
-                "status": "todo",
-                "category": "obligatory",
-                "required": "Apartment address, PDL number",
-                "prerequisites": ["4", "5"],
-                "detailedInfo": {
-                    "overview": "If you rent a private apartment (not a CROUS room or shared facility where bills are included), you must open an electricity contract in your name. This bill is the 'Gold Standard' for Proof of Address in France.",
-                    "discussion": "EDF (Électricité de France) is the historic provider, but you can choose competitors (Engie, TotalEnergies). However, EDF is the most recognized for administrative proofs. Most apartments now have 'Linky' smart meters, which means activation is remote and instant (no technician visit needed). You will need the PDL (Point de Livraison) number found on the meter or previous tenant's bill. Bills are usually estimated monthly and adjusted annually, or you can pay actual usage via the Linky data.",
-                    "steps": [
-                        "Ask landlord for the PDL number (14 digits) or the name of the previous tenant",
-                        "Take a photo of the meter reading (indexes) on move-in day",
-                        "Go to EDF.fr or call their English-speaking line",
-                        "Subscribe to a 'Tarif Bleu' (Regulated Tariff) contract",
-                        "Provide RIB for monthly direct debit",
-                        "Download the EDF app to track consumption",
-                        "Download your 'Attestation de Contrat' immediately—this is your proof of address"
-                    ],
-                    "requiredDocuments": [
-                        "Full address with apartment number/floor",
-                        "PDL Number (Point de Livraison) or PRM",
-                        "Meter reading",
-                        "IBAN (RIB)"
-                    ],
-                    "officialLinks": [
-                        {
-                            "title": "EDF English Speaking",
-                            "url": "https://www.edf.fr/en/individual-clients"
-                        }
-                    ],
-                    "tips": [
-                        "Do this within 48 hours of moving in to avoid power cuts",
-                        "The 'Justificatif de Domicile' (Proof of Address) from EDF is valid for 3 months and needed for Bank, Visa, and Prefecture",
-                        "Linky meters allow you to see daily consumption—monitor it to avoid shock bills",
-                        "When moving out, you MUST cancel the contract to stop paying"
-                    ]
-                }
-            }
+{
+  "id": "9",
+  "title": {
+    "en": "Learn French consistently",
+    "fr": "Apprendre le français régulièrement"
+  },
+  "icon": "book-open",
+  "label": {
+    "en": "Language",
+    "fr": "Langue"
+  },
+  "description": {
+    "en": "Essential language skills for daily life and administrative tasks. You will need it for mastering the Final French Exam before graduating.",
+    "fr": "Compétences linguistiques essentielles pour la vie quotidienne et les démarches administratives. Vous en aurez besoin pour réussir l’examen final de français avant l’obtention du diplôme."
+  },
+  "shortSummary": {
+    "en": "Improves daily life, required for many administrative tasks",
+    "fr": "Améliore la vie quotidienne, nécessaire pour de nombreuses démarches administratives"
+  },
+  "status": "todo",
+  "category": "optional",
+  "prerequisites": [],
+  "detailedInfo": {
+    "overview": {
+      "en": "While many people in Paris speak English, learning basic French significantly improves your daily life, helps with administrative procedures, and is essential for cultural integration. Many offices, shops, and services prefer or require French communication.",
+      "fr": "Bien que de nombreuses personnes à Paris parlent anglais, apprendre le français de base améliore considérablement votre vie quotidienne, facilite les démarches administratives et est essentiel pour l’intégration culturelle. De nombreux bureaux, magasins et services préfèrent ou exigent la communication en français."
+    },
+    "discussion": {
+      "en": "French language skills are valuable not just for academic success but for navigating daily life in France. While Paris is international and many people speak English, administrative offices, banks, housing agencies, and healthcare providers often operate primarily in French. Even basic French skills like greetings, numbers, and common phrases will make your life much easier. Starting interactions with 'Bonjour' and attempting French shows respect and often makes people more willing to help. Many French people appreciate the effort even if you make mistakes. Beyond practicality, learning French opens doors to French culture, literature, cinema, and deeper connections with local friends.",
+      "fr": "Les compétences en français sont précieuses non seulement pour la réussite académique, mais aussi pour naviguer dans la vie quotidienne en France. Bien que Paris soit international et que beaucoup parlent anglais, les administrations, banques, agences de logement et prestataires de santé fonctionnent souvent principalement en français. Même des notions de base comme les salutations, les chiffres et les phrases courantes facilitent grandement la vie. Commencer les interactions par 'Bonjour' et essayer de parler français montre du respect et incite souvent les gens à aider. Beaucoup de Français apprécient l’effort même si vous faites des erreurs. Au-delà de la praticité, apprendre le français ouvre les portes à la culture française, à la littérature, au cinéma et à des liens plus profonds avec des amis locaux."
+    },
+    "steps": {
+      "en": [
+        "Start with basics: greetings (Bonjour, Merci, S\"il vous plaît, Au revoir)",
+        "Learn numbers, days of the week, and common questions",
+        "Use language learning apps: Duolingo, Babbel, or Rosetta Stone",
+        "Enroll in EPITA or university French courses (often free for international students)",
+        "Check if your university offers FLE (Français Langue Étrangère) classes",
+        "Join language exchange programs or conversation groups",
+        "Find a language tandem partner (you teach your language, they teach French)",
+        "Watch French TV shows and movies with subtitles (Netflix has good French content)",
+        "Listen to French podcasts or radio (RFI, France Inter)",
+        "Practice daily: order in French at cafés, ask questions in shops",
+        "Use language apps like HelloTalk or Tandem to chat with French speakers",
+        "Read French news websites with a dictionary handy"
+      ],
+      "fr": [
+        "Commencez par les bases : salutations (Bonjour, Merci, S’il vous plaît, Au revoir)",
+        "Apprenez les chiffres, les jours de la semaine et les questions courantes",
+        "Utilisez des applications d’apprentissage des langues : Duolingo, Babbel ou Rosetta Stone",
+        "Inscrivez-vous aux cours de français d’EPITA ou de l’université (souvent gratuits pour les étudiants internationaux)",
+        "Vérifiez si votre université propose des cours de FLE (Français Langue Étrangère)",
+        "Rejoignez des programmes d’échange linguistique ou des groupes de conversation",
+        "Trouvez un partenaire tandem (vous enseignez votre langue, il vous enseigne le français)",
+        "Regardez des séries et films français avec sous-titres (Netflix propose du contenu français de qualité)",
+        "Écoutez des podcasts ou radios françaises (RFI, France Inter)",
+        "Pratiquez quotidiennement : commandez en français dans les cafés, posez des questions dans les magasins",
+        "Utilisez des applications comme HelloTalk ou Tandem pour discuter avec des francophones",
+        "Lisez des sites d’actualité en français avec un dictionnaire à portée de main"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "For university courses: student certificate",
+        "For some language schools: identity document"
+      ],
+      "fr": [
+        "Pour les cours universitaires : certificat étudiant",
+        "Pour certaines écoles de langues : pièce d’identité"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "TV5Monde - Learn French",
+          "fr": "TV5Monde - Apprendre le français"
+        },
+        "url": "https://apprendre.tv5monde.com"
+      },
+      {
+        "title": {
+          "en": "Campus France - French Language",
+          "fr": "Campus France - Langue française"
+        },
+        "url": "https://www.campusfrance.org/en/french-language-courses"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Always start conversations with 'Bonjour' - it\"s considered rude not to greet",
+        "Many universities offer free French courses (FLE) for international students",
+        "Language tandems are free and effective - exchange 30 min your language, 30 min French",
+        "Don\"t be embarrassed to make mistakes - French people appreciate the effort",
+        "Basic administrative vocabulary is crucial: loyer (rent), assurance (insurance), rendez-vous (appointment)",
+        "The Meetup app has many French-English language exchange groups in Paris",
+        "Children\"s books and comics (BD) are great for learning - try Tintin or Astérix",
+        "French pronunciation is challenging - apps like Forvo help you hear correct pronunciation",
+        "Even B1 level French makes life significantly easier"
+      ],
+      "fr": [
+        "Commencez toujours les conversations par 'Bonjour' – il est considéré comme impoli de ne pas saluer",
+        "De nombreuses universités proposent des cours de français gratuits (FLE) pour les étudiants internationaux",
+        "Les tandems linguistiques sont gratuits et efficaces – échangez 30 min dans votre langue, 30 min en français",
+        "Ne soyez pas gêné de faire des erreurs – les Français apprécient l’effort",
+        "Le vocabulaire administratif de base est crucial : loyer, assurance, rendez-vous",
+        "L’application Meetup propose de nombreux groupes d’échange français-anglais à Paris",
+        "Les livres et bandes dessinées pour enfants sont excellents pour apprendre – essayez Tintin ou Astérix",
+        "La prononciation française est difficile – des applications comme Forvo permettent d’écouter la prononciation correcte",
+        "Même un niveau B1 en français facilite grandement la vie"
+      ]
+    }
+  }
+},
+{
+  "id": "10",
+  "title": {
+    "en": "Get a French Mobile Plan",
+    "fr": "Obtenir un forfait mobile français"
+  },
+  "icon": "smartphone",
+  "label": {
+    "en": "Communication",
+    "fr": "Communication"
+  },
+  "description": {
+    "en": "Obtain a French phone number (+33) for administrative 2FA and daily contact.",
+    "fr": "Obtenez un numéro français (+33) pour l’authentification à deux facteurs (2FA) et les contacts quotidiens."
+  },
+  "shortSummary": {
+    "en": "Essential for bank 2FA and receiving deliveries",
+    "fr": "Indispensable pour la 2FA bancaire et la réception de colis"
+  },
+  "required": {
+    "en": "Passport, IBAN (RIB), Address",
+    "fr": "Passeport, IBAN (RIB), Adresse"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "prerequisites": ["4", "5"],
+  "detailedInfo": {
+    "overview": {
+      "en": "Having a French mobile number is virtually mandatory. Most French banks, the CAF, and online delivery services require a French number (+33) to send Two-Factor Authentication (2FA) codes. Using a foreign number often results in not receiving these critical SMS.",
+      "fr": "Avoir un numéro de téléphone français est pratiquement obligatoire. La plupart des banques françaises, la CAF et les services de livraison en ligne exigent un numéro français (+33) pour envoyer les codes d’authentification à deux facteurs (2FA). Utiliser un numéro étranger empêche souvent de recevoir ces SMS essentiels."
+    },
+    "discussion": {
+      "en": "France has one of the most competitive mobile markets in the world. Plans are typically 'sans engagement' (no contract commitment), meaning you can cancel at any time. Major operators include Orange, SFR, Bouygues Telecom, and Free Mobile. 'Free Mobile' is particularly popular among students for its low-cost plans with high data caps (often €10-20 for 100GB+). You can sign up online or at kiosks (bornes) in tobacco shops or dedicated stores. You will need a French bank account (RIB) because monthly bills are paid via automatic direct debit (prélèvement).",
+      "fr": "La France possède l’un des marchés mobiles les plus compétitifs au monde. Les forfaits sont généralement 'sans engagement', ce qui signifie que vous pouvez résilier à tout moment. Les principaux opérateurs sont Orange, SFR, Bouygues Telecom et Free Mobile. 'Free Mobile' est particulièrement populaire auprès des étudiants pour ses forfaits économiques avec de gros volumes de données (souvent 10–20 € pour 100 Go+). Vous pouvez vous inscrire en ligne ou aux bornes dans les bureaux de tabac ou magasins spécialisés. Vous aurez besoin d’un compte bancaire français (RIB) car les factures mensuelles sont payées par prélèvement automatique."
+    },
+    "steps": {
+      "en": [
+        "Compare offers (Free, RED by SFR, Sosh, Bouygues)",
+        "Decide if you need a new phone or just a SIM card",
+        "Visit a store, a 'Free Center', or the operator's website",
+        "Provide your French address and email",
+        "Provide your French bank details (RIB) for monthly payment",
+        "Pay for the SIM card (usually €10 one-time fee)",
+        "Insert SIM and activate (PIN is usually 1234 or 0000 initially)",
+        "Update your phone number on your Bank, ANEF, and CAF accounts immediately"
+      ],
+      "fr": [
+        "Comparez les offres (Free, RED by SFR, Sosh, Bouygues)",
+        "Décidez si vous avez besoin d’un nouveau téléphone ou seulement d’une carte SIM",
+        "Rendez-vous en magasin, dans un 'Free Center' ou sur le site de l’opérateur",
+        "Fournissez votre adresse et email français",
+        "Fournissez vos coordonnées bancaires françaises (RIB) pour le paiement mensuel",
+        "Payez la carte SIM (souvent 10 € une seule fois)",
+        "Insérez la SIM et activez-la (le code PIN est généralement 1234 ou 0000 au départ)",
+        "Mettez à jour votre numéro de téléphone sur vos comptes Banque, ANEF et CAF immédiatement"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Valid passport or ID",
+        "French Bank RIB (IBAN)",
+        "Valid French address",
+        "Debit card for the initial SIM card payment"
+      ],
+      "fr": [
+        "Passeport ou pièce d’identité valide",
+        "RIB français (IBAN)",
+        "Adresse française valide",
+        "Carte bancaire pour le paiement initial de la SIM"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "ARCEP (Telecom Regulator) - Help",
+          "fr": "ARCEP (Régulateur Télécom) - Aide"
+        },
+        "url": "https://www.arcep.fr"
+      },
+      {
+        "title": {
+          "en": "Free Mobile (Student Popular Choice)",
+          "fr": "Free Mobile (Choix populaire chez les étudiants)"
+        },
+        "url": "https://mobile.free.fr"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Look for 'Forfait sans engagement' (no-contract plan)",
+        "Free Mobile has automated kiosks (Bornes) where you can get a SIM in 5 minutes",
+        "WhatsApp works with your old number, but standard SMS needs the new one",
+        "If you want to keep your French number when switching carriers later, you need your RIO code (call 3179)",
+        "Check network coverage if you live in a rural area (Orange has best coverage generally)"
+      ],
+      "fr": [
+        "Cherchez un 'Forfait sans engagement'",
+        "Free Mobile dispose de bornes automatiques où vous pouvez obtenir une SIM en 5 minutes",
+        "WhatsApp fonctionne avec votre ancien numéro, mais les SMS standard nécessitent le nouveau",
+        "Si vous voulez conserver votre numéro français en changeant d’opérateur plus tard, vous aurez besoin de votre code RIO (appelez le 3179)",
+        "Vérifiez la couverture réseau si vous habitez en zone rurale (Orange offre généralement la meilleure couverture)"
+      ]
+    }
+  }
+},
+{
+  "id": "11",
+  "title": {
+    "en": "Declare 'Médecin Traitant'",
+    "fr": "Déclarer son Médecin Traitant"
+  },
+  "icon": "stethoscope",
+  "label": {
+    "en": "Healthcare",
+    "fr": "Santé"
+  },
+  "description": {
+    "en": "Designate a primary care physician to ensure maximum reimbursement rates.",
+    "fr": "Désignez un médecin traitant pour bénéficier du taux de remboursement maximal."
+  },
+  "shortSummary": {
+    "en": "Avoids 40% penalty on health reimbursements",
+    "fr": "Évite une pénalité de 40 % sur les remboursements de santé"
+  },
+  "status": "todo",
+  "category": "highly-recommended",
+  "prerequisites": ["3"],
+  "detailedInfo": {
+    "overview": {
+      "en": "In the French healthcare system, you must declare a 'Médecin Traitant' (referring doctor/GP). If you do not declare one, your reimbursement rate from Social Security drops from 70% to 30% for consultations, known as the 'parcours de soins coordonnés'.",
+      "fr": "Dans le système de santé français, vous devez déclarer un 'Médecin Traitant'. Si vous n’en déclarez pas, votre taux de remboursement par la Sécurité Sociale passe de 70 % à 30 % pour les consultations, conformément au 'parcours de soins coordonnés'."
+    },
+    "discussion": {
+      "en": "A Médecin Traitant is usually a General Practitioner (Généraliste). You should choose one near your accommodation. You are free to choose any doctor, but they must accept new patients. During your first consultation, you simply ask them to become your Médecin Traitant. They will declare it electronically using your Carte Vitale. This doctor will hold your medical records and refer you to specialists (like dermatologists or cardiologists) if needed. Note that Gynecologists, Ophthalmologists, and Psychiatrists can be seen directly without a referral.",
+      "fr": "Le Médecin Traitant est généralement un médecin généraliste. Vous devriez en choisir un près de votre logement. Vous êtes libre de choisir n’importe quel médecin, mais il doit accepter de nouveaux patients. Lors de votre première consultation, demandez simplement s’il peut devenir votre Médecin Traitant. Il le déclarera électroniquement via votre Carte Vitale. Ce médecin conservera vos dossiers médicaux et vous orientera vers des spécialistes (dermatologues, cardiologues, etc.) si nécessaire. Notez que les gynécologues, ophtalmologues et psychiatres peuvent être consultés directement sans prescription."
+    },
+    "steps": {
+      "en": [
+        "Create an account on Doctolib.fr (the standard platform for booking doctors)",
+        "Search for 'Médecin Généraliste' near your address",
+        "Filter by 'Accepte les nouveaux patients' (Accepts new patients)",
+        "Book a consultation (Ex: for a check-up or medical certificate)",
+        "Bring your Carte Vitale (or certificate of social security rights)",
+        "During the visit, ask: 'Pouvez-vous être mon médecin traitant ?'",
+        "The doctor will swipe your card to register the declaration",
+        "Verify the declaration appears in your Ameli account under 'Mes informations'"
+      ],
+      "fr": [
+        "Créez un compte sur Doctolib.fr (plateforme standard pour prendre rendez-vous)",
+        "Recherchez un 'Médecin Généraliste' près de votre adresse",
+        "Filtrez par 'Accepte les nouveaux patients'",
+        "Prenez un rendez-vous (ex : pour un bilan ou un certificat médical)",
+        "Apportez votre Carte Vitale (ou attestation de droits à la sécurité sociale)",
+        "Lors de la consultation, demandez : 'Pouvez-vous être mon médecin traitant ?'",
+        "Le médecin passera votre carte pour enregistrer la déclaration",
+        "Vérifiez que la déclaration apparaît dans votre compte Ameli sous 'Mes informations'"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Carte Vitale or Attestation de droits",
+        "Payment method (Cash or Card - verify beforehand)"
+      ],
+      "fr": [
+        "Carte Vitale ou attestation de droits",
+        "Moyen de paiement (Espèces ou carte - vérifier avant)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Doctolib (Book Appointments)",
+          "fr": "Doctolib (Prendre rendez-vous)"
+        },
+        "url": "https://www.doctolib.fr"
+      },
+      {
+        "title": {
+          "en": "Service Public - Médecin Traitant",
+          "fr": "Service Public - Médecin Traitant"
+        },
+        "url": "https://www.service-public.fr/particuliers/vosdroits/F163"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Doctors in 'Secteur 1' charge the standard rate (€26.50) fully reimbursable base",
+        "Doctors in 'Secteur 2' charge extra fees (dépassements d'honoraires) not covered by basic social security",
+        "Doctolib is the easiest way to find English-speaking doctors (filter by language)",
+        "If you cannot find a doctor, the 'Médiateur de la CPAM' can help assign one",
+        "You can change your Médecin Traitant at any time without justification"
+      ],
+      "fr": [
+        "Les médecins en 'Secteur 1' facturent le tarif standard (26,50 €) entièrement remboursable",
+        "Les médecins en 'Secteur 2' facturent des dépassements d’honoraires non couverts par la Sécurité Sociale de base",
+        "Doctolib est le moyen le plus simple de trouver des médecins parlant anglais (filtrer par langue)",
+        "Si vous ne trouvez pas de médecin, le 'Médiateur de la CPAM' peut vous en assigner un",
+        "Vous pouvez changer de Médecin Traitant à tout moment sans justification"
+      ]
+    }
+  }
+},
+{
+  "id": "12",
+  "title": {
+    "en": "Subscribe to 'Mutuelle'",
+    "fr": "Souscrire à une Mutuelle"
+  },
+  "icon": "shield-plus",
+  "label": {
+    "en": "Insurance",
+    "fr": "Assurance"
+  },
+  "description": {
+    "en": "Get complementary health insurance to cover the remaining 30% of medical costs.",
+    "fr": "Obtenez une assurance santé complémentaire pour couvrir les 30 % restants des frais médicaux."
+  },
+  "shortSummary": {
+    "en": "Covers remaining costs and hospitalization",
+    "fr": "Couvre les coûts restants et l'hospitalisation"
+  },
+  "status": "todo",
+  "category": "highly-recommended",
+  "prerequisites": ["3", "4"],
+  "detailedInfo": {
+    "overview": {
+      "en": "Social Security covers about 70% of standard medical costs. A 'Mutuelle' (Complementary Health Insurance) covers the remaining 30% (ticket modérateur) and can cover expensive items like dental, optical, and hospitalization which are poorly reimbursed by the state.",
+      "fr": "La Sécurité Sociale couvre environ 70 % des frais médicaux standards. Une 'Mutuelle' (Assurance Santé Complémentaire) couvre les 30 % restants (ticket modérateur) et peut prendre en charge des dépenses coûteuses comme les soins dentaires, optiques et l'hospitalisation, peu remboursés par l'État."
+    },
+    "discussion": {
+      "en": "While not legally mandatory like Home Insurance, a Mutuelle is financially vital. A single day in a hospital can cost hundreds of euros without one. For students, specific mutuals (LMDE, HEYME) offer low-cost packages starting at €10-15/month. If you have very low income, you might be eligible for the 'Complémentaire Santé Solidaire' (CSS), which is free or costs less than €1/day. Most student mutuelles also include Civil Liability insurance (Responsabilité Civile), which is often required for internships.",
+      "fr": "Bien qu’elle ne soit pas légalement obligatoire comme l’assurance habitation, la Mutuelle est financièrement essentielle. Une seule journée à l’hôpital peut coûter plusieurs centaines d’euros sans mutuelle. Pour les étudiants, certaines mutuelles (LMDE, HEYME) proposent des forfaits abordables à partir de 10-15 €/mois. Si vos revenus sont très faibles, vous pouvez être éligible à la 'Complémentaire Santé Solidaire' (CSS), gratuite ou à moins de 1 €/jour. La plupart des mutuelles étudiantes incluent également la Responsabilité Civile, souvent exigée pour les stages."
+    },
+    "steps": {
+      "en": [
+        "Assess your medical needs (Do you wear glasses? Need dental work?)",
+        "Compare student mutuals: HEYME, LMDE, SMENO, or bank insurances",
+        "Check if you qualify for CSS (Complémentaire Santé Solidaire) on Ameli",
+        "Choose a package (Hospitalization only, Basic, or Comprehensive)",
+        "Subscribe online by providing your Social Security Number and RIB",
+        "Link your Mutuelle to your Ameli account (Noémie system) for automatic refunds",
+        "Download your 'Carte de Tiers Payant' (allows you to not pay upfront in pharmacies)"
+      ],
+      "fr": [
+        "Évaluez vos besoins médicaux (Portez-vous des lunettes ? Avez-vous besoin de soins dentaires ?)",
+        "Comparez les mutuelles étudiantes : HEYME, LMDE, SMENO ou assurances bancaires",
+        "Vérifiez si vous êtes éligible à la CSS (Complémentaire Santé Solidaire) sur Ameli",
+        "Choisissez un forfait (Hospitalisation seulement, Basique ou Complet)",
+        "Souscrivez en ligne en fournissant votre numéro de Sécurité Sociale et RIB",
+        "Reliez votre Mutuelle à votre compte Ameli (système Noémie) pour les remboursements automatiques",
+        "Téléchargez votre 'Carte de Tiers Payant' (vous permet de ne pas avancer les frais en pharmacie)"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "French Bank RIB",
+        "Social Security Number (or temporary number)",
+        "Certificate of school enrollment"
+      ],
+      "fr": [
+        "RIB français",
+        "Numéro de Sécurité Sociale (ou numéro provisoire)",
+        "Attestation de scolarité"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "Complémentaire Santé Solidaire (CSS)",
+          "fr": "Complémentaire Santé Solidaire (CSS)"
+        },
+        "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire"
+      },
+      {
+        "title": {
+          "en": "HEYME (Student Mutuelle)",
+          "fr": "HEYME (Mutuelle Étudiante)"
+        },
+        "url": "https://heyme.care"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Ensure 'Télétransmission' (Noémie) is active so you don't have to mail paper sheets",
+        "Check if your parents' insurance covers you abroad before buying new one",
+        "Hospitalization costs are the biggest risk—ensure your plan covers 'Forfait journalier hospitalier'",
+        "The 'Responsabilité Civile' included in mutuelles is required for internships"
+      ],
+      "fr": [
+        "Assurez-vous que la 'Télétransmission' (Noémie) est activée pour ne pas envoyer de feuilles papier",
+        "Vérifiez si l’assurance de vos parents vous couvre à l’étranger avant d’en souscrire une nouvelle",
+        "Les frais d’hospitalisation représentent le plus grand risque — assurez-vous que votre mutuelle couvre le 'Forfait journalier hospitalier'",
+        "La 'Responsabilité Civile' incluse dans les mutuelles est obligatoire pour les stages"
+      ]
+    }
+  }
+},
+{
+  "id": "13",
+  "title": {
+    "en": "Electricity Contract (EDF)",
+    "fr": "Contrat Électricité (EDF)"
+  },
+  "icon": "zap",
+  "label": {
+    "en": "Utilities",
+    "fr": "Services Publics"
+  },
+  "description": {
+    "en": "Open an electricity meter account if you are renting a private apartment.",
+    "fr": "Ouvrez un contrat d'électricité si vous louez un appartement privé."
+  },
+  "shortSummary": {
+    "en": "Required for lights, heat, and proof of address",
+    "fr": "Nécessaire pour l'électricité, le chauffage et comme justificatif de domicile"
+  },
+  "status": "todo",
+  "category": "obligatory",
+  "required": {
+    "en": "Apartment address, PDL number",
+    "fr": "Adresse de l'appartement, numéro PDL"
+  },
+  "prerequisites": ["4", "5"],
+  "detailedInfo": {
+    "overview": {
+      "en": "If you rent a private apartment (not a CROUS room or shared facility where bills are included), you must open an electricity contract in your name. This bill is the 'Gold Standard' for Proof of Address in France.",
+      "fr": "Si vous louez un appartement privé (pas une chambre CROUS ou un logement avec charges incluses), vous devez ouvrir un contrat d'électricité à votre nom. Cette facture est la référence principale pour le justificatif de domicile en France."
+    },
+    "discussion": {
+      "en": "EDF (Électricité de France) is the historic provider, but you can choose competitors (Engie, TotalEnergies). However, EDF is the most recognized for administrative proofs. Most apartments now have 'Linky' smart meters, which means activation is remote and instant (no technician visit needed). You will need the PDL (Point de Livraison) number found on the meter or previous tenant's bill. Bills are usually estimated monthly and adjusted annually, or you can pay actual usage via the Linky data.",
+      "fr": "EDF (Électricité de France) est le fournisseur historique, mais vous pouvez choisir des concurrents (Engie, TotalEnergies). Cependant, EDF est le plus reconnu pour les justificatifs administratifs. La plupart des appartements sont maintenant équipés de compteurs intelligents 'Linky', ce qui permet une activation à distance et instantanée (pas de visite technique nécessaire). Vous aurez besoin du numéro PDL (Point de Livraison) figurant sur le compteur ou la facture de l'ancien locataire. Les factures sont généralement estimées mensuellement et régularisées annuellement, ou vous pouvez payer selon votre consommation réelle grâce aux données Linky."
+    },
+    "steps": {
+      "en": [
+        "Ask landlord for the PDL number (14 digits) or the name of the previous tenant",
+        "Take a photo of the meter reading (indexes) on move-in day",
+        "Go to EDF.fr or call their English-speaking line",
+        "Subscribe to a 'Tarif Bleu' (Regulated Tariff) contract",
+        "Provide RIB for monthly direct debit",
+        "Download the EDF app to track consumption",
+        "Download your 'Attestation de Contrat' immediately—this is your proof of address"
+      ],
+      "fr": [
+        "Demandez au propriétaire le numéro PDL (14 chiffres) ou le nom de l'ancien locataire",
+        "Prenez une photo du relevé du compteur le jour de l'emménagement",
+        "Allez sur EDF.fr ou appelez la ligne anglophone",
+        "Souscrivez à un contrat 'Tarif Bleu' (Tarif Réglementé)",
+        "Fournissez votre RIB pour le prélèvement mensuel",
+        "Téléchargez l'application EDF pour suivre votre consommation",
+        "Téléchargez immédiatement votre 'Attestation de Contrat' — c'est votre justificatif de domicile"
+      ]
+    },
+    "requiredDocuments": {
+      "en": [
+        "Full address with apartment number/floor",
+        "PDL Number (Point de Livraison) or PRM",
+        "Meter reading",
+        "IBAN (RIB)"
+      ],
+      "fr": [
+        "Adresse complète avec numéro d'appartement/étage",
+        "Numéro PDL (Point de Livraison) ou PRM",
+        "Relevé du compteur",
+        "IBAN (RIB)"
+      ]
+    },
+    "officialLinks": [
+      {
+        "title": {
+          "en": "EDF English Speaking",
+          "fr": "EDF Anglais"
+        },
+        "url": "https://www.edf.fr/en/individual-clients"
+      }
+    ],
+    "tips": {
+      "en": [
+        "Do this within 48 hours of moving in to avoid power cuts",
+        "The 'Justificatif de Domicile' (Proof of Address) from EDF is valid for 3 months and needed for Bank, Visa, and Prefecture",
+        "Linky meters allow you to see daily consumption—monitor it to avoid shock bills",
+        "When moving out, you MUST cancel the contract to stop paying"
+      ],
+      "fr": [
+        "Faites-le dans les 48 heures suivant votre emménagement pour éviter les coupures d'électricité",
+        "Le 'Justificatif de Domicile' d'EDF est valable 3 mois et nécessaire pour la banque, le visa et la préfecture",
+        "Les compteurs Linky permettent de suivre la consommation quotidienne — surveillez-la pour éviter les factures surprises",
+        "Lors du départ, vous DEVEZ résilier le contrat pour arrêter les prélèvements"
+      ]
+    }
+  }
+}
   ]
