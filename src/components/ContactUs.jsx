@@ -1,47 +1,52 @@
 import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import {useEffect} from "react";
-const ContactUs = () => {
+import { useEffect } from "react";
+import uitext from "./utils/uitext";
+import { translate } from "./utils/translate";
+
+const ContactUs = ({ lang = 'en' }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }, []);
 
     const goBack = () => {
         if (window.history.length > 1) {
             navigate(-1);
         } else {
-            navigate('/'); // fallback to Dashboard
+            navigate(`/${lang}`); // fallback to Dashboard in current language
         }
     };
-    return (
-        <div className="bg-gradient-to-r from-indigo-50 to-indigo-100">
-            {/* Header */}
-            <div className="bg-white border-b border-gray-200 shadow-sm">
-              <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 py-6">
-                {/* Back button flush left */}
-                <div>
-                  <button
-                    onClick={goBack}
-                    className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors cursor-pointer"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                    Back
-                  </button>
-                </div>
 
-                {/* Centered header */}
-                <div className="text-center mt-6">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-700 mb-4">
-                    Contact Us
-                  </h1>
-                  <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-                    We're here to help students like you settle in Paris. Notify us immediately if you find any outdated information.
-                  </p>
-                </div>
-              </div>
-            </div>
+    return (
+        <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+            {/* Header */}
+            <div className="bg-white border-b border-gray-200 shadow-sm sticky top-5 z-10">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 mt-16">
+    {/* Back button flush left */}
+    <div className="self-start mb-4">
+      <button
+        onClick={goBack}
+        className="inline-flex items-center gap-2 text-base text-gray-600 hover:text-indigo-600 transition-colors cursor-pointer"
+      >
+        <ArrowLeft className="w-5 h-5" />
+        {translate(uitext.back, lang)}
+      </button>
+    </div>
+
+    {/* Centered header */}
+    <div className="text-center">
+      <h1 className="text-xl sm:text-xl lg:text-6xl font-extrabold text-indigo-700 mb-4">
+        {translate(uitext.contactUs, lang)}
+      </h1>
+      <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        {translate(uitext.contactUsDescription, lang)}
+      </p>
+    </div>
+
+  </div>
+</div>
 
 
             {/* Content */}
@@ -54,11 +59,9 @@ const ContactUs = () => {
                             <div className="p-3 bg-red-100 rounded-lg">
                                 <Mail className="w-6 h-6 text-red-900" />
                             </div>
-                            <h2 className="text-gray-900">Email Us</h2>
+                            <h2 className="text-gray-900">{translate(uitext.emailUs, lang)}</h2>
                         </div>
-                        <p className="text-gray-600 mb-4">
-                            For general inquiries, bugs, and detailed update requests. We typically respond within 24-48 hours.
-                        </p>
+                        <p className="text-gray-600 mb-4">{translate(uitext.emailDescription, lang)}</p>
                         <a
                             href="mailto:joseph.ayoub@epita.fr"
                             className="text-indigo-600 hover:underline inline-flex items-center gap-2"
@@ -74,33 +77,17 @@ const ContactUs = () => {
                             <div className="p-3 bg-green-100 rounded-lg">
                                 <Phone className="w-6 h-6 text-green-600" />
                             </div>
-                            <h2 className="text-gray-900">Call Us</h2>
+                            <h2 className="text-gray-900">{translate(uitext.callUs, lang)}</h2>
                         </div>
-                        <p className="text-gray-600 mb-4">
-                            For urgent matters and assistance, please call the EPITA International Office during office hours.
-                        </p>
-                        <a
-                            href="tel:+33184071690"
-                            className="text-indigo-600 hover:underline inline-flex items-center gap-2"
-                        >
-                            <Phone className="w-4 h-4" />
-                            +33 1 84 07 16 90
+                        <p className="text-gray-600 mb-4">{translate(uitext.callUsDescription, lang)}</p>
+                        <a href="tel:+33184071690" className="text-indigo-600 hover:underline inline-flex items-center gap-2">
+                            <Phone className="w-4 h-4" /> +33 1 84 07 16 90
                         </a><br />
-
-                        <a
-                            href="tel:+33184071606"
-                            className="text-indigo-600 hover:underline inline-flex items-center gap-2"
-                        >
-                            <Phone className="w-4 h-4" />
-                            +33 1 84 07 16 06
+                        <a href="tel:+33184071606" className="text-indigo-600 hover:underline inline-flex items-center gap-2">
+                            <Phone className="w-4 h-4" /> +33 1 84 07 16 06
                         </a><br />
-
-                        <a
-                            href="tel:+33184071618"
-                            className="text-indigo-600 hover:underline inline-flex items-center gap-2"
-                        >
-                            <Phone className="w-4 h-4" />
-                            +33 1 84 07 16 18
+                        <a href="tel:+33184071618" className="text-indigo-600 hover:underline inline-flex items-center gap-2">
+                            <Phone className="w-4 h-4" /> +33 1 84 07 16 18
                         </a>
                     </div>
                 </div>
@@ -112,15 +99,14 @@ const ContactUs = () => {
                             <MapPin className="w-6 h-6 text-purple-600" />
                         </div>
                         <div className="text-sm">
-                            <h2 className="text-gray-900">Visit EPITA International Office</h2>
-                            <div className="text-red-800 space-y-1">Note that this office does not pertain to us</div>
+                            <h2 className="text-gray-900">{translate(uitext.visitOffice, lang)}</h2>
+                            <div className="text-red-800 space-y-1">{translate(uitext.visitNote, lang)}</div>
                         </div>
                     </div>
-                    <p className="text-gray-700 mb-3">To email the EPITA Intl. Office or to book an appointment during office hours, use one of two emails:</p>
+                    <p className="text-gray-700 mb-3">{translate(uitext.officeEmailIntro, lang)}</p>
                     <div className="text-red-800 space-y-1">
-                        <p>For academic and internship inquiries: international-scolarite@epita.fr</p>
-                        <p>For administrative and housing related inquiries: welcome-services@epita.fr</p>
-                        <p></p>
+                        <p>{translate(uitext.academicEmail, lang)}</p>
+                        <p>{translate(uitext.adminEmail, lang)}</p>
                     </div>
 
                     <div className="text-gray-600 space-y-1">
@@ -139,24 +125,24 @@ const ContactUs = () => {
                         <div className="p-3 bg-orange-100 rounded-lg">
                             <Clock className="w-6 h-6 text-orange-600" />
                         </div>
-                        <h2 className="text-gray-900">EPITA Intl. Office Hours</h2>
+                        <h2 className="text-gray-900">{translate(uitext.officeHours, lang)}</h2>
                     </div>
                     <div className="space-y-2 text-gray-700">
                         <div className="flex justify-between py-2 border-b border-gray-100">
-                            <span>Monday, Wednesday, Friday:</span>
+                            <span>{translate(uitext.mondayWedFri, lang)}</span>
                             <span>10:00 AM - 12:00 PM</span>
                         </div>
                         <div className="flex justify-between py-2 border-b border-gray-100">
-                            <span>Tuesday, Thursday:</span>
+                            <span>{translate(uitext.tueThu, lang)}</span>
                             <span>15:00 PM - 17:00 PM</span>
                         </div>
                         <div className="flex justify-between py-2">
-                            <span>Saturday - Sunday:</span>
-                            <span className="text-gray-500">Closed</span>
+                            <span>{translate(uitext.weekend, lang)}</span>
+                            <span className="text-gray-500">{translate(uitext.closed, lang)}</span>
                         </div>
                     </div>
                     <p className="text-sm text-gray-500 mt-4">
-                        During French school holidays, office hours may be reduced. Please check the website or call ahead.
+                        {translate(uitext.holidayHours, lang)}
                     </p>
                 </div>
 
@@ -164,22 +150,21 @@ const ContactUs = () => {
                 <div className="bg-gradient-to-br from-indigo-600 to-indigo-600 rounded-lg p-6 text-white">
                     <div className="flex items-center gap-3 mb-4">
                         <MessageCircle className="w-6 h-6" />
-                        <h2 className="text-white">Additional Suggestions</h2>
+                        <h2 className="text-white">{translate(uitext.additionalSuggestions, lang)}</h2>
                     </div>
                     <div className="space-y-3">
-                        <p className="text-indigo-100">
-                            For quick questions, you can also reach out through:
-                        </p>
+                        <p className="text-indigo-100">{translate(uitext.quickQuestions, lang)}</p>
                         <ul className="space-y-2 text-indigo-50">
-                            <li>• Your batch's student Whatsapp / Discord group (if any)</li>
-                            <li>• Student buddy program (assigned upon arrival)</li>
-                            <li>• Campus France office (for visa-related questions)</li>
+                            <li>{translate(uitext.suggestion1, lang)}</li>
+                            <li>{translate(uitext.suggestion2, lang)}</li>
+                            <li>{translate(uitext.suggestion3, lang)}</li>
                         </ul>
                     </div>
                 </div>
 
             </div>
         </div>
-    )
-}
-export default ContactUs
+    );
+};
+
+export default ContactUs;
