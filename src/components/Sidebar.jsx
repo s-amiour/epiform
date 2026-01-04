@@ -1,5 +1,5 @@
 // Sidebar.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, OctagonAlert, Sparkle, ClipboardList } from 'lucide-react';
 import { useLanguage } from "./context/Languagecontext";
 import { translate } from "./utils/translate";
@@ -8,7 +8,26 @@ import uitext from "./utils/uitext";
 const Sidebar = ({ procedures = [], selectedCategory, onCategoryChange, isOpen, onClose, lang }) => {
   const { lang: contextLang } = useLanguage();
   const currentLang = lang || contextLang;
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(() => {
+    const saved = localStorage.getItem('sidebar-minimized');
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  // Persist minimize state to localStorage
+  useEffect(() => {
+    localStorage.setItem('sidebar-minimized', JSON.stringify(isMinimized));
+  }, [isMinimized]);
+
+  // Handle ESC key to close mobile sidebar
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
 
   // Calculate category counts
   const obligatoryProcedures = procedures.filter(p => p.category === 'obligatory');
@@ -46,6 +65,10 @@ const Sidebar = ({ procedures = [], selectedCategory, onCategoryChange, isOpen, 
 
   const handleCategoryClick = (categoryId) => {
     onCategoryChange(categoryId);
+    // Close mobile sidebar after selection
+    if (window.innerWidth < 1024) {
+      onClose();
+    }
   };
 
   const toggleMinimize = () => {
@@ -54,27 +77,32 @@ const Sidebar = ({ procedures = [], selectedCategory, onCategoryChange, isOpen, 
 
   return (
     <>
-      {/* Mobile backdrop overlay */}
+      {/* Mobile backdrop overlay - covers full screen, click-outside-to-close */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 lg:hidden dark:bg-black/70"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 lg:hidden dark:bg-black/70 transition-opacity duration-300"
           onClick={onClose}
+          onTouchStart={onClose}
           aria-hidden="true"
+          role="button"
+          tabIndex={-1}
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar - Mobile drawer (70-80% width) and Desktop fixed sidebar */}
       <aside
         className={`
           fixed inset-y-0 left-0 z-50
           w-[75%] max-w-sm
-          lg:fixed lg:left-0 lg:top-16 lg:h-[calc(100vh-4rem)]
-          ${isMinimized ? 'lg:w-16' : 'lg:w-64'}
           bg-white dark:bg-gray-800
           border-r border-gray-200 dark:border-gray-700
-          transition-all duration-300 ease-in-out
+          shadow-xl lg:shadow-none
+          transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
           lg:translate-x-0
+          lg:fixed lg:left-0 lg:top-16 lg:h-[calc(100vh-4rem)]
+          ${isMinimized ? 'lg:w-16' : 'lg:w-64'}
+          lg:transition-all lg:duration-300 lg:ease-in-out
         `}
       >
         {/* Minimize toggle button (desktop only) */}
