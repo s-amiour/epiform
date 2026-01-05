@@ -70,16 +70,17 @@ useEffect(() => {
 
 
   return (
-    <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 pb-16 pt-20">
+    <div className="bg-gradient-to-r from-indigo-50 to-indigo-100
+                dark:from-gray-900 dark:to-gray-800
+                pb-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back button */}
-        <div className="mb-6">
+        <div className="mb-6 pt-4">
           <button
-            onClick={goBack}
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors cursor-pointer"
-          >
-            <ArrowLeft className="w-4 h-4" />
+             onClick={goBack}
+             className="inline-flex items-center gap-2 text-base text-gray-700 dark:text-gray-300 hover:text-indigo-600 transition-colors cursor-pointer" >
+            <ArrowLeft className="w-5 h-10" />
             {translate(uitext.back, lang)}
           </button>
         </div>
@@ -89,7 +90,7 @@ useEffect(() => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0033CC] dark:text-[#4F95FF] mb-4">
             {translate(uitext.dashboardTitle, lang)}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-white max-w-3xl mx-auto">
             {translate(uitext.dashboardSubtitle, lang)}
           </p>
         </div>
@@ -176,14 +177,18 @@ useEffect(() => {
           <div className="mb-6" key={section.key} ref={section.ref}>
             <button
               onClick={() => toggleCategory(section.key)}
-              className="w-full bg-white rounded-lg shadow-sm border-2 border-gray-200 p-4 hover:border-gray-300 transition-colors cursor-pointer"
-            >
+               className="w-full 
+                        bg-white dark:bg-gray-800 
+                         rounded-lg shadow-sm 
+                        border-2 border-gray-200 dark:border-gray-700 
+                        p-4 hover:border-gray-300 dark:hover:border-gray-600 
+                        transition-colors cursor-pointer">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl"><section.icon className="w-5 h-5 text-gray-700"/></span>
                   <div className="text-left">
-                    <h2 className="text-gray-900">{section.title}</h2>
-                    <p className="text-sm text-gray-600">{section.subtitle}</p>
+                    <h2 className="text-gray-900 dark:text-gray-100">{section.title}</h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{section.subtitle}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -215,8 +220,8 @@ useEffect(() => {
         ))}
 
         {/* Emergency Numbers */}
-        <div className="bg-red-50 border border-red-200 rounded-lg p-5 mt-6">
-          <div className="text-red-900">
+        <div className="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-5 mt-6">
+          <div className="text-red-900 dark:text-red-100">
             <p className="font-bold text-lg mb-1">{translate(uitext.emergencyNumbers, lang)}</p>
             <p className="mb-2">{translate(uitext.emergencyIntro, lang)}</p>
             <ul className="list-disc list-inside space-y-1 font-medium">
@@ -226,7 +231,7 @@ useEffect(() => {
               <li><span className="font-bold">18</span>: {translate(uitext.emergencyFire, lang)}</li>
               <li><span className="font-bold">114</span>: {translate(uitext.emergencyDeaf, lang)}</li>
             </ul>
-          </div>
+           </div>
         </div>
 
       </div>

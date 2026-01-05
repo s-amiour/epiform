@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import uitext from "./utils/uitext";
 import { translate } from "./utils/translate";
 
-const Navbar = ({ initialLang = 'en' }) => {
+const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -31,13 +31,18 @@ const Navbar = ({ initialLang = 'en' }) => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-[#0033CC] border-b border-blue-500 shadow-sm z-50 transition-transform duration-300">
+        <nav className="
+  fixed top-0 left-0 right-0
+  bg-blue-700 dark:bg-blue-950
+  border-b border-blue-500 dark:border-blue-900
+  shadow-sm z-50 transition-colors duration-300
+">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center gap-6">
                         <a href={`/${lang}`} className="flex flex-shrink-0 items-center mr-4">
                             <img className="h-10 w-auto" src={logo} alt="/" />
-                            <h2 className="text-gray-100 ml-1 font-mono">epiform</h2>
+                            <h2 className="text-white dark:text-gray-100 ml-1 font-mono">epiform</h2>
                         </a>
                     </div>
 
@@ -66,6 +71,12 @@ const Navbar = ({ initialLang = 'en' }) => {
                             className="ml-4 px-3 py-1 border rounded bg-white text-blue-800 font-mono"
                         >
                             {lang === "en" ? "FR" : "EN"}
+                        </button>
+                        <button
+                            onClick={() => setDarkMode(!darkMode)}
+                            className="px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                        >
+                            {darkMode ? "Light Mode" : "Dark Mode"}
                         </button>
                     </div>
                 </div>
