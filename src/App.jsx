@@ -1,6 +1,6 @@
 // App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import NavBar from "./components/NavBar.jsx";
 import proceduresdata from './proceduresdata.json';
@@ -12,8 +12,6 @@ import Procedures from "./components/Procedures.jsx";
 import NotFound from "./components/NotFound.jsx";
 import { translate } from "./components/utils/translate";
 import { MobileMenuProvider } from "./components/context/MobileMenuContext";
-import Sidebar from "./components/Sidebar.jsx";
-import { useMobileMenu } from "./components/context/MobileMenuContext";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
@@ -75,11 +73,7 @@ function generateSlug(titleObj) {
 // Outlet Context Hook
 // ------------------
 function OutletContext() {
-  try {
-    return useOutletContext() || {};
-  } catch (e) {
-    return {};
-  }
+  return useOutletContext();
 }
 
 // ------------------
@@ -132,7 +126,7 @@ function LangWrapper() {
 // ProcedureDetailRoute
 // ------------------
 function ProcedureDetailRoute() {
-  const { procedures = [], handleStatusChange } = OutletContext();
+  const { procedures, handleStatusChange } = OutletContext();
   const { slug, lang } = useParams();
 
       const procedure = procedures.find(p => p.slugEn === slug);
@@ -154,7 +148,7 @@ function ProcedureDetailRoute() {
 // ProceduresWrapper
 // ------------------
 function ProceduresWrapper() {
-  const { procedures = [], handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
   return (
     <Procedures
       procedures={procedures}
@@ -169,7 +163,7 @@ function ProceduresWrapper() {
 // Home Wrapper
 // ------------------
 function Home() {
-  const { procedures = [], handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
   
   // Frontend Documentation Scrolling Functionality
   const frontEndDocSection = useRef(null);
@@ -199,7 +193,7 @@ function Home() {
 // ------------------
 function ContactWrapper() {
   const { lang } = OutletContext();
-  return <ContactUs lang={lang || 'en'} />;
+  return <ContactUs lang={lang} />;
 }
 
 // ------------------
@@ -208,84 +202,6 @@ function ContactWrapper() {
 function NotFoundWrapper() {
   const { lang } = useParams();
   return <NotFound lang={lang} />;
-}
-
-// ------------------
-// LayoutWithSidebar - Layout that includes Sidebar and has access to OutletContext
-// ------------------
-function LayoutWithSidebar({ darkMode, setDarkMode }) {
-  const { isOpen, closeMenu } = useMobileMenu();
-  const { lang } = useParams();
-  const location = useLocation();
-  
-  // Try to get procedures from OutletContext (available on LangWrapper routes)
-  let procedures = [];
-  let selectedCategory = null;
-  let onCategoryChange = null;
-  
-  try {
-    const context = useOutletContext();
-    if (context && context.procedures) {
-      procedures = context.procedures;
-      // Get selectedCategory from sessionStorage (same as Procedures component)
-      selectedCategory = sessionStorage.getItem('selectedCategory') || 'obligatory';
-      // Create onCategoryChange handler that updates sessionStorage
-      onCategoryChange = (categoryId) => {
-        sessionStorage.setItem('selectedCategory', categoryId);
-        // Dispatch custom event to notify Procedures component
-        window.dispatchEvent(new CustomEvent('categoryChanged', { detail: categoryId }));
-      };
-    }
-  } catch (e) {
-    // OutletContext not available (e.g., on 404 page)
-    // Default values already set above
-  }
-
-  // Get lang from params or extract from path
-  const currentLang = lang || (location.pathname.startsWith('/fr') ? 'fr' : 'en');
-
-  return (
-    <>
-      <Sidebar
-        procedures={procedures}
-        selectedCategory={selectedCategory}
-        onCategoryChange={onCategoryChange}
-        isOpen={isOpen}
-        onClose={closeMenu}
-        lang={currentLang}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
-      <Outlet />
-    </>
-  );
-}
-
-// ------------------
-// RootNotFoundWithSidebar - Wrapper for root 404 with Sidebar
-// ------------------
-function RootNotFoundWithSidebar({ darkMode, setDarkMode }) {
-  const { isOpen, closeMenu } = useMobileMenu();
-  const location = useLocation();
-  
-  // Extract lang from path or default to 'en'
-  const currentLang = location.pathname.startsWith('/fr') ? 'fr' : 'en';
-
-  return (
-    <>
-      <Sidebar
-        procedures={[]}
-        selectedCategory={null}
-        onCategoryChange={null}
-        isOpen={isOpen}
-        onClose={closeMenu}
-        lang={currentLang}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
-      <NotFound lang={currentLang} />
-    </>
-  );
 }
 
 // ------------------
@@ -328,25 +244,24 @@ function App() {
         <Router>
           <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
           <Routes>
-            {/* Root redirect */}
-            <Route path="/" element={<Navigate to="/en" replace />} />
+          {/* Root redirect */}
+          <Route path="/" element={<Navigate to="/en" replace />} />
 
-            {/* Language parent route with Sidebar layout */}
-            <Route path="/:lang" element={<LangWrapper />}>
-              <Route element={<LayoutWithSidebar darkMode={darkMode} setDarkMode={setDarkMode} />}>
-                <Route index element={<Home />} />
-                <Route path="procedures" element={<ProceduresWrapper />} />
-                <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
-                <Route path="contact" element={<ContactWrapper />} />
-                {/* 404 catch-all for invalid paths within language route */}
-                <Route path="*" element={<NotFoundWrapper />} />
-              </Route>
-            </Route>
+          {/* Language parent route */}
+          <Route path="/:lang" element={<LangWrapper />}>
+            <Route index element={<Home />} />
+            <Route path="procedures" element={<ProceduresWrapper />} />
+            <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
+            <Route path="contact" element={<ContactWrapper />} />
 
-            {/* 404 catch-all for invalid paths without language prefix */}
-            <Route path="*" element={<RootNotFoundWithSidebar darkMode={darkMode} setDarkMode={setDarkMode} />} />
-          </Routes>
-        </Router>
+            {/* 404 catch-all for invalid paths within language route */}
+            <Route path="*" element={<NotFoundWrapper />} />
+          </Route>
+
+          {/* 404 catch-all for invalid paths without language prefix */}
+          <Route path="*" element={<NotFound lang="en" />} />
+        </Routes>
+      </Router>
       </MobileMenuProvider>
     </ErrorBoundary>
   );
