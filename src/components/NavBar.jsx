@@ -51,24 +51,26 @@ const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
 ">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center gap-4">
-                        {/* Mobile Menu Button - Only visible on mobile and only on procedures page */}
-                        {location.pathname.includes('/procedures') && (
-                            <button
-                                onClick={openMenu}
-                                className="lg:hidden p-2 rounded-lg text-gray-100 hover:bg-[#002299] transition-colors"
-                                aria-label="Open menu"
-                            >
-                                <Menu className="w-6 h-6" />
-                            </button>
-                        )}
-                        <a href={`/${lang}`} className="flex flex-shrink-0 items-center">
-                            <img className="h-10 w-auto" src={logo} alt="/" />
-                            <h2 className="text-white dark:text-gray-100 ml-1 font-mono">epiform</h2>
-                        </a>
-                    </div>
+                    {/* Mobile Menu Button - Visible on all pages, mobile only */}
+                    <button
+                        onClick={openMenu}
+                        className="lg:hidden p-2 rounded-lg text-gray-100 hover:bg-[#002299] transition-colors"
+                        aria-label="Open menu"
+                    >
+                        <Menu className="w-6 h-6" />
+                    </button>
+                    
+                    {/* Logo - Centered on mobile, left-aligned on desktop */}
+                    <a href={`/${lang}`} className="flex flex-shrink-0 items-center absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-0 lg:transform-none">
+                        <img className="h-10 w-auto" src={logo} alt="/" />
+                        <h2 className="text-white dark:text-gray-100 ml-1 font-mono">epiform</h2>
+                    </a>
+                    
+                    {/* Spacer for mobile to balance the burger menu */}
+                    <div className="lg:hidden w-10"></div>
 
-                    <div className="flex items-center gap-4">
+                    {/* Desktop Navigation - Hidden on mobile */}
+                    <div className="hidden lg:flex items-center gap-4">
                         {/* Home Navigate */}
                         <button
                             onClick={navigateHome}

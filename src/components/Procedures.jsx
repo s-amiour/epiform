@@ -5,16 +5,22 @@ import {
   CheckCircle2, ArrowRight, ArrowLeft, OctagonAlert, Sparkle, ClipboardList
 } from 'lucide-react';
 import ProcedureCard from './ProcedureCard';
-import Sidebar from './Sidebar';
 import uitext from "./utils/uitext";
 import { translate } from "./utils/translate";
-import { useMobileMenu } from "./context/MobileMenuContext";
 
 const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure, lang }) => {
   const [selectedCategory, setSelectedCategory] = useState(() => {
     return sessionStorage.getItem('selectedCategory') || 'obligatory';
   });
-  const { isOpen: sidebarOpen, closeMenu: closeSidebar } = useMobileMenu();
+
+  // Listen for category changes from global Sidebar
+  useEffect(() => {
+    const handleCategoryChange = (event) => {
+      setSelectedCategory(event.detail);
+    };
+    window.addEventListener('categoryChanged', handleCategoryChange);
+    return () => window.removeEventListener('categoryChanged', handleCategoryChange);
+  }, []);
 
   const obligatoryProcedures = procedures.filter(p => p.category === 'obligatory');
   const highlyRecommendedProcedures = procedures.filter(p => p.category === 'highly-recommended');
@@ -98,15 +104,6 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
 
   return (
     <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 pb-16 min-h-screen">
-      {/* Mobile Sidebar Drawer */}
-      <Sidebar
-        procedures={procedures}
-        selectedCategory={selectedCategory}
-        onCategoryChange={handleCategoryChange}
-        isOpen={sidebarOpen}
-        onClose={closeSidebar}
-        lang={lang}
-      />
 
       {/* Sticky Horizontal Category Tabs - Desktop Only */}
       <div className="sticky top-16 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm hidden lg:block">

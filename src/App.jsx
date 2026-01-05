@@ -1,6 +1,6 @@
 // App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import NavBar from "./components/NavBar.jsx";
 import proceduresdata from './proceduresdata.json';
@@ -12,6 +12,8 @@ import Procedures from "./components/Procedures.jsx";
 import NotFound from "./components/NotFound.jsx";
 import { translate } from "./components/utils/translate";
 import { MobileMenuProvider } from "./components/context/MobileMenuContext";
+import Sidebar from "./components/Sidebar.jsx";
+import { useMobileMenu } from "./components/context/MobileMenuContext";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
@@ -205,6 +207,88 @@ function NotFoundWrapper() {
 }
 
 // ------------------
+// AppContent - Wrapper inside Router to access hooks
+// ------------------
+function AppContent({ darkMode, setDarkMode }) {
+  const { isOpen, closeMenu } = useMobileMenu();
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Extract lang from path
+  const currentLang = location.pathname.startsWith('/fr') ? 'fr' : 'en';
+  
+  // Load procedures data globally (same logic as LangWrapper)
+  const [procedures] = useState(() => {
+    const defaultData = proceduresdata.map(proc => ({
+      ...proc,
+      slugEn: generateSlug(proc.title, 'en'),
+    }));
+
+    const savedProgress = localStorage.getItem(STORAGE_KEY);
+    if (savedProgress) {
+      try {
+        const progressData = JSON.parse(savedProgress);
+        return defaultData.map(proc => ({
+          ...proc,
+          status: progressData[proc.id] || proc.status
+        }));
+      } catch {
+        return defaultData;
+      }
+    }
+    return defaultData;
+  });
+
+  // Get selected category from sessionStorage
+  const selectedCategory = sessionStorage.getItem('selectedCategory') || 'obligatory';
+  
+  // Handle category change - navigate to procedures page with selected category
+  const onCategoryChange = (categoryId) => {
+    sessionStorage.setItem('selectedCategory', categoryId);
+    // Navigate to procedures page if not already there
+    if (!location.pathname.includes('/procedures')) {
+      navigate(`/${currentLang}/procedures`);
+    } else {
+      // If already on procedures page, dispatch event to update the page
+      window.dispatchEvent(new CustomEvent('categoryChanged', { detail: categoryId }));
+    }
+  };
+
+  return (
+    <>
+      <Sidebar
+        procedures={procedures}
+        selectedCategory={selectedCategory}
+        onCategoryChange={onCategoryChange}
+        isOpen={isOpen}
+        onClose={closeMenu}
+        lang={currentLang}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
+      <Routes>
+        {/* Root redirect */}
+        <Route path="/" element={<Navigate to="/en" replace />} />
+
+        {/* Language parent route */}
+        <Route path="/:lang" element={<LangWrapper />}>
+          <Route index element={<Home />} />
+          <Route path="procedures" element={<ProceduresWrapper />} />
+          <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
+          <Route path="contact" element={<ContactWrapper />} />
+
+          {/* 404 catch-all for invalid paths within language route */}
+          <Route path="*" element={<NotFoundWrapper />} />
+        </Route>
+
+        {/* 404 catch-all for invalid paths without language prefix */}
+        <Route path="*" element={<NotFound lang="en" />} />
+      </Routes>
+    </>
+  );
+}
+
+// ------------------
 // Main App
 // ------------------
 function App() {
@@ -243,24 +327,7 @@ function App() {
       <MobileMenuProvider>
         <Router>
           <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-          <Routes>
-          {/* Root redirect */}
-          <Route path="/" element={<Navigate to="/en" replace />} />
-
-          {/* Language parent route */}
-          <Route path="/:lang" element={<LangWrapper />}>
-            <Route index element={<Home />} />
-            <Route path="procedures" element={<ProceduresWrapper />} />
-            <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
-            <Route path="contact" element={<ContactWrapper />} />
-
-            {/* 404 catch-all for invalid paths within language route */}
-            <Route path="*" element={<NotFoundWrapper />} />
-          </Route>
-
-          {/* 404 catch-all for invalid paths without language prefix */}
-          <Route path="*" element={<NotFound lang="en" />} />
-        </Routes>
+          <AppContent darkMode={darkMode} setDarkMode={setDarkMode} />
       </Router>
       </MobileMenuProvider>
     </ErrorBoundary>

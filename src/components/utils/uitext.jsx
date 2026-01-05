@@ -340,6 +340,22 @@ contactUsDescription: {
   suggestion3: {
     en: "Campus France office (for visa-related questions)",
     fr: "Bureau Campus France (pour les questions liées au visa)"
+  },
+  darkMode: {
+    en: "Dark Mode",
+    fr: "Mode sombre"
+  },
+  lightMode: {
+    en: "Light Mode",
+    fr: "Mode clair"
+  },
+  language: {
+    en: "Language",
+    fr: "Langue"
+  },
+  menu: {
+    en: "Menu",
+    fr: "Menu"
   }
 };
 
