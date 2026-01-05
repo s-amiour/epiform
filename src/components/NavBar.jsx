@@ -9,6 +9,16 @@ const Navbar = ({ initialLang = 'en' }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Smooth movement to top if at Homepage
+    const navigateHome = () => {
+      let dir = `/${lang}`
+      if (window.location.pathname === dir) {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // scroll to top of page
+      } else {
+        navigate(dir); // navigate to home if not already
+      }
+    }
+
     // Language state derived from props initially
     const [lang, setLang] = useState(initialLang);
 
@@ -44,7 +54,7 @@ const Navbar = ({ initialLang = 'en' }) => {
                     <div className="flex items-center gap-4">
                         {/* Home Navigate */}
                         <button
-                            onClick={() => navigate(`/${lang}`)}
+                            onClick={navigateHome}
                             className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-100 hover:bg-[#002299] transition-colors cursor-pointer"
                         >
                             <Home className="w-5 h-5" />
@@ -63,7 +73,7 @@ const Navbar = ({ initialLang = 'en' }) => {
                         {/* Language Toggle */}
                         <button
                             onClick={toggleLang}
-                            className="ml-4 px-3 py-1 border rounded bg-white text-blue-800 font-mono"
+                            className="ml-4 px-3 py-1 border rounded bg-white text-blue-800 font-mono cursor-pointer transition-colors hover:bg-gray-100 "
                         >
                             {lang === "en" ? "FR" : "EN"}
                         </button>
