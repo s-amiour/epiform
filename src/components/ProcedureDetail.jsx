@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { useLanguage } from "./context/Languagecontext";
 import { translate } from "./utils/translate";
 import uiText from "./utils/uitext";
+import Breadcrumbs from "./Breadcrumbs";
 
 const ProcedureDetail = ({ procedure, allProcedures, onStatusChange,lang }) => {
     const navigate = useNavigate();
@@ -66,6 +67,16 @@ const ProcedureDetail = ({ procedure, allProcedures, onStatusChange,lang }) => {
             {/* Header */}
             <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-16 z-10">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                    {/* Breadcrumbs */}
+                    <Breadcrumbs
+                        items={[
+                            { label: translate(uiText.home, lang), path: `/${lang}` },
+                            { label: translate(uiText.dashboardTitle, lang), path: `/${lang}/procedures` },
+                            { label: translate(procedure.title, lang), path: null }
+                        ]}
+                        lang={lang}
+                    />
+                    
                     <button
                         onClick={goBack}
                         className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 mb-4 transition-colors cursor-pointer"
