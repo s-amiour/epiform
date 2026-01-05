@@ -6,7 +6,7 @@ import uitext from "./utils/uitext";
 import { translate } from "./utils/translate";
 import { useMobileMenu } from "./context/MobileMenuContext";
 
-const Navbar = ({ initialLang = 'en' }) => {
+const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
     const { openMenu } = useMobileMenu();
     const navigate = useNavigate();
     const location = useLocation();

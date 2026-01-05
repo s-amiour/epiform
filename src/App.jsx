@@ -1,6 +1,7 @@
 // App.jsx
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import NavBar from "./components/NavBar.jsx";
 import proceduresdata from './proceduresdata.json';
 import Hero from "./components/Hero.jsx";
@@ -37,7 +38,6 @@ function ErrorBoundary({ children }) {
 }
 
 // Inner wrapper to catch errors using React's componentDidCatch
-import React from "react";
 class ErrorBoundaryWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -164,14 +164,25 @@ function ProceduresWrapper() {
 // ------------------
 function Home() {
   const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  
+  // Frontend Documentation Scrolling Functionality
+  const frontEndDocSection = useRef(null);
+  const handleFrontEndDocScroll = () => {
+    frontEndDocSection?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <Hero lang={lang} />
+      <Hero
+        lang={lang}
+        scrollToDoc={handleFrontEndDocScroll}
+      />
       <Dashboard
         procedures={procedures}
         onStatusChange={handleStatusChange}
         firstObligatoryProcedure={firstObligatoryProcedure}
         lang={lang}
+        frontEndDoc={frontEndDocSection}
       />
     </>
   );
@@ -197,11 +208,22 @@ function NotFoundWrapper() {
 // Main App
 // ------------------
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (darkMode) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   return (
     <ErrorBoundary>
       <MobileMenuProvider>
         <Router>
-          <NavBar />
+          <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
           <Routes>
           {/* Root redirect */}
           <Route path="/" element={<Navigate to="/en" replace />} />
