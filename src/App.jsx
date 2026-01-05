@@ -205,13 +205,36 @@ function ContactWrapper() {
 // Main App
 // ------------------
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+    // const [darkMode, setDarkMode] = useState(false);
+
+    // useEffect(() => {
+    //     const root = window.document.documentElement;
+    //     if (darkMode) root.classList.add("dark");
+    //     else root.classList.remove("dark");
+    // }, [darkMode]);
+
+    //# TO PRESERVE THEME STATE AFTER REFRESH (preserving using localStorage)
+    // Initialize state by checking localStorage first
+    const [darkMode, setDarkMode] = useState(() => {
+      const savedMode = localStorage.getItem("darkMode");
+      return savedMode === "true"; // Converts string "true" to boolean true
+    });
 
     useEffect(() => {
-        const root = window.document.documentElement;
-        if (darkMode) root.classList.add("dark");
-        else root.classList.remove("dark");
-    }, [darkMode]);
+      const root = window.document.documentElement;
+
+      // Update the DOM based on state
+      if (darkMode) {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+
+    // Save the new state to localStorage whenever it changes
+    localStorage.setItem("darkMode", darkMode);
+
+  }, [darkMode]);
+
   return (
     <ErrorBoundary>
       <Router>
