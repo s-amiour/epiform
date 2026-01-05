@@ -155,7 +155,7 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
             className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
-            {translate(uitext.back, lang)}
+            <span>{translate(uitext.back, lang)}</span>
           </button>
         </div>
 
@@ -252,7 +252,7 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
               <li><span className="font-bold">18</span>: {translate(uitext.emergencyFire, lang)}</li>
               <li><span className="font-bold">114</span>: {translate(uitext.emergencyDeaf, lang)}</li>
             </ul>
-          </div>
+           </div>
         </div>
       </div>
     </div>
