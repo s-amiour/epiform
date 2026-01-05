@@ -1,18 +1,20 @@
 // Procedures.jsx
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { 
-  CheckCircle2, ChevronDown, ChevronUp, ArrowRight, OctagonAlert, 
-  Sparkle, ClipboardList, ArrowLeft 
+  CheckCircle2, ArrowRight, ArrowLeft, OctagonAlert, Sparkle, ClipboardList
 } from 'lucide-react';
 import ProcedureCard from './ProcedureCard';
+import Sidebar from './Sidebar';
 import uitext from "./utils/uitext";
-import { translate } from "./utils/translate"; 
+import { translate } from "./utils/translate";
+import { useMobileMenu } from "./context/MobileMenuContext";
 
 const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure, lang }) => {
-  const [expandedCategory, setExpandedCategory] = useState(() => {
-    return sessionStorage.getItem('expandedCategory') || 'obligatory';
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    return sessionStorage.getItem('selectedCategory') || 'obligatory';
   });
+  const { isOpen: sidebarOpen, closeMenu: closeSidebar } = useMobileMenu();
 
   const obligatoryProcedures = procedures.filter(p => p.category === 'obligatory');
   const highlyRecommendedProcedures = procedures.filter(p => p.category === 'highly-recommended');
@@ -25,10 +27,6 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
   const totalProcedures = procedures.length;
   const progressPercentage = totalProcedures > 0 ? (totalCompleted / totalProcedures) * 100 : 0;
 
-  const obligatoryRef = useRef(null);
-  const highlyRecommendedRef = useRef(null);
-  const optionalRef = useRef(null);
-
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -39,45 +37,122 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
     }
   };
 
-  const toggleCategory = (category) => {
-    const newCategory = expandedCategory === category ? null : category;
-    setExpandedCategory(newCategory);
-    sessionStorage.setItem('expandedCategory', newCategory);
+  const handleCategoryChange = (categoryId) => {
+    setSelectedCategory(categoryId);
+    sessionStorage.setItem('selectedCategory', categoryId);
+  };
 
-    if (newCategory) {
-      setTimeout(() => {
-        let ref;
-        if (newCategory === 'obligatory') ref = obligatoryRef;
-        else if (newCategory === 'highly-recommended') ref = highlyRecommendedRef;
-        else if (newCategory === 'optional') ref = optionalRef;
-
-        ref?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+  // Get procedures for selected category
+  const getFilteredProcedures = () => {
+    switch (selectedCategory) {
+      case 'obligatory':
+        return obligatoryProcedures;
+      case 'highly-recommended':
+        return highlyRecommendedProcedures;
+      case 'optional':
+        return optionalProcedures;
+      default:
+        return obligatoryProcedures;
     }
   };
-useEffect(() => {
-  const procedureId = sessionStorage.getItem('scrollToProcedure');
-  if (procedureId) {
-    const element = document.getElementById(`procedure-${procedureId}`);
-    if (element) {
-      const yOffset = -80; // adjust to match your navbar height
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-    sessionStorage.removeItem('scrollToProcedure');
-  }
-}, []);
 
+  const filteredProcedures = getFilteredProcedures();
+
+  // Category data for tabs
+  const categories = [
+    {
+      id: 'obligatory',
+      icon: OctagonAlert,
+      label: translate(uitext.obligatory, lang),
+      count: obligatoryProcedures.length,
+      completed: completedObligatory
+    },
+    {
+      id: 'highly-recommended',
+      icon: Sparkle,
+      label: translate(uitext.highlyRecommended, lang),
+      count: highlyRecommendedProcedures.length,
+      completed: completedHighlyRecommended
+    },
+    {
+      id: 'optional',
+      icon: ClipboardList,
+      label: translate(uitext.optional, lang),
+      count: optionalProcedures.length,
+      completed: completedOptional
+    }
+  ];
+
+  useEffect(() => {
+    const procedureId = sessionStorage.getItem('scrollToProcedure');
+    if (procedureId) {
+      const element = document.getElementById(`procedure-${procedureId}`);
+      if (element) {
+        const yOffset = -80; // adjust to match your navbar height
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      sessionStorage.removeItem('scrollToProcedure');
+    }
+  }, []);
 
   return (
-    <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 pb-16 pt-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 pb-16 min-h-screen">
+      {/* Mobile Sidebar Drawer */}
+      <Sidebar
+        procedures={procedures}
+        selectedCategory={selectedCategory}
+        onCategoryChange={handleCategoryChange}
+        isOpen={sidebarOpen}
+        onClose={closeSidebar}
+        lang={lang}
+      />
+
+      {/* Sticky Horizontal Category Tabs - Desktop Only */}
+      <div className="sticky top-16 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm hidden lg:block">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-2">
+            {categories.map((category) => {
+              const Icon = category.icon;
+              const isActive = selectedCategory === category.id;
+
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => handleCategoryChange(category.id)}
+                  className={`
+                    flex items-center gap-2 px-4 py-3 rounded-none
+                    transition-all duration-200
+                    border-b-2
+                    ${
+                      isActive
+                        ? 'bg-gradient-to-r from-indigo-700 to-indigo-400 text-white border-indigo-500 shadow-md'
+                        : 'bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 border-transparent'
+                    }
+                  `}
+                >
+                  <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-white' : 'text-gray-600 dark:text-gray-300'}`} />
+                  <span className="font-medium">{category.label}</span>
+                  <span className={`px-2 py-0.5 rounded-full text-xs ${
+                    isActive 
+                      ? 'bg-white/20 text-white' 
+                      : 'bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
+                  }`}>
+                    {category.completed}/{category.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         {/* Back button */}
         <div className="mb-6">
           <button
             onClick={goBack}
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             {translate(uitext.back, lang)}
@@ -89,7 +164,7 @@ useEffect(() => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0033CC] dark:text-[#4F95FF] mb-4">
             {translate(uitext.dashboardTitle, lang)}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {translate(uitext.dashboardSubtitle, lang)}
           </p>
         </div>
@@ -114,17 +189,17 @@ useEffect(() => {
         )}
 
         {/* Progress Tracker */}
-        <div className="bg-indigo-950 rounded-lg shadow-sm border border-gray-800 p-6 mb-8">
+        <div className="bg-indigo-950 dark:bg-gray-800 rounded-lg shadow-sm border border-gray-800 dark:border-gray-700 p-6 mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-gray-100">{translate(uitext.yourProgress, lang)}</h2>
+            <h2 className="text-gray-100 dark:text-gray-200">{translate(uitext.yourProgress, lang)}</h2>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-600" />
-              <span className="text-gray-300">
+              <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
+              <span className="text-gray-300 dark:text-gray-300">
                 {totalCompleted} {translate(uitext.of, lang)} {totalProcedures} {translate(uitext.completed, lang)}
               </span>
             </div>
           </div>
-          <div className="w-full h-3 bg-gray-400 rounded-full overflow-hidden">
+          <div className="w-full h-3 bg-gray-400 dark:bg-gray-600 rounded-full overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-green-500 to-emerald-500 transition-all duration-500"
               style={{ width: `${progressPercentage}%` }}
@@ -132,91 +207,42 @@ useEffect(() => {
           </div>
           <div className="grid grid-cols-3 gap-4 mt-4">
             <div className="text-center">
-              <p className="text-sm text-gray-400">{translate(uitext.obligatory, lang)}</p>
-              <p className="text-gray-100">{completedObligatory}/{obligatoryProcedures.length}</p>
+              <p className="text-sm text-gray-400 dark:text-gray-400">{translate(uitext.obligatory, lang)}</p>
+              <p className="text-gray-100 dark:text-gray-200">{completedObligatory}/{obligatoryProcedures.length}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-400">{translate(uitext.highlyRecommended, lang)}</p>
-              <p className="text-gray-100">{completedHighlyRecommended}/{highlyRecommendedProcedures.length}</p>
+              <p className="text-sm text-gray-400 dark:text-gray-400">{translate(uitext.highlyRecommended, lang)}</p>
+              <p className="text-gray-100 dark:text-gray-200">{completedHighlyRecommended}/{highlyRecommendedProcedures.length}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-400">{translate(uitext.optional, lang)}</p>
-              <p className="text-gray-100">{completedOptional}/{optionalProcedures.length}</p>
+              <p className="text-sm text-gray-400 dark:text-gray-400">{translate(uitext.optional, lang)}</p>
+              <p className="text-gray-100 dark:text-gray-200">{completedOptional}/{optionalProcedures.length}</p>
             </div>
           </div>
         </div>
 
-        {/* Procedure Categories */}
-        {[
-          {
-            key: 'obligatory',
-            title: translate(uitext.obligatory, lang),
-            subtitle: translate(uitext.obligatorySubtitle, lang),
-            icon: OctagonAlert,
-            procedures: obligatoryProcedures,
-            ref: obligatoryRef
-          },
-          {
-            key: 'highly-recommended',
-            title: translate(uitext.highlyRecommended, lang),
-            subtitle: translate(uitext.highlyRecommendedSubtitle, lang),
-            icon: Sparkle,
-            procedures: highlyRecommendedProcedures,
-            ref: highlyRecommendedRef
-          },
-          {
-            key: 'optional',
-            title: translate(uitext.optional, lang),
-            subtitle: translate(uitext.optionalSubtitle, lang),
-            icon: ClipboardList,
-            procedures: optionalProcedures,
-            ref: optionalRef
-          }
-        ].map(section => (
-          <div className="mb-6" key={section.key} ref={section.ref}>
-            <button
-              onClick={() => toggleCategory(section.key)}
-              className="w-full bg-white rounded-lg shadow-sm border-2 border-gray-200 p-4 hover:border-gray-300 transition-colors cursor-pointer"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl"><section.icon className="w-5 h-5 text-gray-700"/></span>
-                  <div className="text-left">
-                    <h2 className="text-gray-900">{section.title}</h2>
-                    <p className="text-sm text-gray-600">{section.subtitle}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-sm text-gray-500">
-                    {section.procedures.filter(p => p.status === 'completed').length}/{section.procedures.length} {translate(uitext.completed, lang)}
-                  </span>
-                  {expandedCategory === section.key ? (
-                    <ChevronUp className="w-5 h-5 text-gray-400" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-400" />
-                  )}
-                </div>
-              </div>
-            </button>
-
-            {expandedCategory === section.key && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
-                {section.procedures.map(procedure => (
-                  <ProcedureCard
-                    key={procedure.id}
-                    procedure={procedure}
-                    onStatusChange={(newStatus) => onStatusChange(procedure.id, newStatus)}
-                    lang={lang}
-                  />
-                ))}
-              </div>
-            )}
+        {/* Procedure Cards - Filtered by Selected Category */}
+        <div className="mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {filteredProcedures.map(procedure => (
+              <ProcedureCard
+                key={procedure.id}
+                procedure={procedure}
+                onStatusChange={(newStatus) => onStatusChange(procedure.id, newStatus)}
+                lang={lang}
+              />
+            ))}
           </div>
-        ))}
+          {filteredProcedures.length === 0 && (
+            <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+              <p>{translate(uitext.noProcedures || 'No procedures found', lang)}</p>
+            </div>
+          )}
+        </div>
 
         {/* Emergency Numbers */}
-        <div className="bg-red-50 border border-red-200 rounded-lg p-5 mt-6">
-          <div className="text-red-900">
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-5 mt-6">
+          <div className="text-red-900 dark:text-red-200">
             <p className="font-bold text-lg mb-1">{translate(uitext.emergencyNumbers, lang)}</p>
             <p className="mb-2">{translate(uitext.emergencyIntro, lang)}</p>
             <ul className="list-disc list-inside space-y-1 font-medium">
@@ -228,7 +254,6 @@ useEffect(() => {
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   );

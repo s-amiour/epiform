@@ -9,6 +9,7 @@ import ProcedureDetail from "./components/ProcedureDetail.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Procedures from "./components/Procedures.jsx";
 import { translate } from "./components/utils/translate";
+import { MobileMenuProvider } from "./components/context/MobileMenuContext";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
@@ -189,9 +190,10 @@ function ContactWrapper() {
 function App() {
   return (
     <ErrorBoundary>
-      <Router>
-        <NavBar />
-        <Routes>
+      <MobileMenuProvider>
+        <Router>
+          <NavBar />
+          <Routes>
           {/* Root redirect */}
           <Route path="/" element={<Navigate to="/en" replace />} />
 
@@ -207,6 +209,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      </MobileMenuProvider>
     </ErrorBoundary>
   );
 }

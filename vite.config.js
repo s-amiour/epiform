@@ -9,7 +9,7 @@ export default defineConfig({
       react(),
     ],
     server: {
-        port: 3001,
+        port: 3002,
         // what this does is that whenever the client hits /api/jobs, it's really going to hit
         // localhost:8001/procedures
         // proxy: {
