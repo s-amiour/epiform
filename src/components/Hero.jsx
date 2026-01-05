@@ -107,7 +107,6 @@ const Hero = ({ scrollToDoc, lang = 'en' }) => {
                     </div>
                   </div>
                 </div>
-            </div>
         </>
     )
 }
