@@ -1,6 +1,6 @@
 // App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import NavBar from "./components/NavBar.jsx";
 import proceduresdata from './proceduresdata.json';
@@ -14,8 +14,6 @@ import { translate } from "./components/utils/translate";
 import { MobileMenuProvider } from "./components/context/MobileMenuContext";
 import Sidebar from "./components/Sidebar.jsx";
 import { useMobileMenu } from "./components/context/MobileMenuContext";
-import { useOutletContext } from "react-router-dom";
-import { useParams, useLocation } from "react-router-dom";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
