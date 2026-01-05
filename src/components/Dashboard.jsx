@@ -6,7 +6,9 @@ import { translate } from "./utils/translate";
 
 const Dashboard = ({ frontEndDoc, lang = 'en' }) => {
   return (
-    <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 pb-16">
+    <div className="bg-gradient-to-r from-indigo-50 to-indigo-100
+                dark:from-gray-900 dark:to-gray-800
+                pb-16">
       <GlowOverlay />
 
       <main className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 scroll-pt-16">

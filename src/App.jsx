@@ -1,6 +1,6 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import NavBar from "./components/NavBar.jsx";
 import proceduresdata from './proceduresdata.json';
 import Hero from "./components/Hero.jsx";
@@ -164,14 +164,32 @@ function ProceduresWrapper() {
 // ------------------
 function Home() {
   const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+
+  // ------------------
+  // Frontend Documentation Scrolling Functionality (FDSF)
+  // ------------------
+
+  //   use useRef hook to define target element reference; then use ref attribute on that element to allow it to be recognizable
+  const frontEndDocSection = useRef(null);
+
+  //   Scroll if not null
+  const handleFrontEndDocScroll = () => {
+    frontEndDocSection?.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <>
-      <Hero lang={lang} />
+      {/* FDSF Usage */}
+      <Hero
+        lang={lang}
+        scrollToDoc={handleFrontEndDocScroll}
+      />
       <Dashboard
         procedures={procedures}
         onStatusChange={handleStatusChange}
         firstObligatoryProcedure={firstObligatoryProcedure}
         lang={lang}
+        frontEndDoc={frontEndDocSection}
       />
     </>
   );
@@ -197,12 +215,22 @@ function NotFoundWrapper() {
 // Main App
 // ------------------
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        const root = window.document.documentElement;
+        if (darkMode) root.classList.add("dark");
+        else root.classList.remove("dark");
+    }, [darkMode]);
   return (
     <ErrorBoundary>
       <MobileMenuProvider>
         <Router>
           <NavBar />
           <Routes>
+      <Router>
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Routes>
           {/* Root redirect */}
           <Route path="/" element={<Navigate to="/en" replace />} />
 

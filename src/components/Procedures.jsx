@@ -149,13 +149,14 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         {/* Back button */}
-        <div className="mb-6">
+        <div className="mb-6 pt-4">
           <button
             onClick={goBack}
             className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
-            {translate(uitext.back, lang)}
+             onClick={goBack}
+             <span>{translate(uitext.back, lang)}</span>
           </button>
         </div>
 
@@ -252,7 +253,7 @@ const Procedures = ({ procedures = [], onStatusChange, firstObligatoryProcedure,
               <li><span className="font-bold">18</span>: {translate(uitext.emergencyFire, lang)}</li>
               <li><span className="font-bold">114</span>: {translate(uitext.emergencyDeaf, lang)}</li>
             </ul>
-          </div>
+           </div>
         </div>
       </div>
     </div>
