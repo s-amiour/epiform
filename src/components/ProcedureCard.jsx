@@ -49,6 +49,7 @@ const categoryIconColors = {
   'highly-recommended': 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400',
   optional: 'bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400'
 };
+
 const ProcedureCard = ({ procedure, onStatusChange, lang = 'en' }) => {
     
     const IconComponent = iconMap[procedure.icon] || Circle;

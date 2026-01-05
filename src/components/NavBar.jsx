@@ -9,6 +9,16 @@ const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Smooth movement to top if at Homepage
+    const navigateHome = () => {
+      let dir = `/${lang}`
+      if (window.location.pathname === dir) {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // scroll to top of page
+      } else {
+        navigate(dir); // navigate to home if not already
+      }
+    }
+
     // Language state derived from props initially
     const [lang, setLang] = useState(initialLang);
 
