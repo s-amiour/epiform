@@ -109,4 +109,4 @@ You don't need to be a React expert. Simply edit `src/proceduresdata.json` to ad
 French bureaucracy is notorious for being complex, opaque, and paper-heavy ("La Paperasse"), making it a major pain point for international students. A dedicated tool for EPITA students solves a very specific, high-value problem.
 
 
-<div align="center"> Found a bug? <a href="https://epiform.vercel.app/contact">Contact Us</a> </div>
+<div align="center"> Found a bug? <a href="https://epiform.vercel.app/contact">Signal It</a> </div>
