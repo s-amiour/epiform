@@ -1,13 +1,18 @@
 import logo from '../assets/images/logo.svg';
-import { Home, Phone } from 'lucide-react';
+import { Home, Phone, Menu } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import uitext from "./utils/uitext";
 import { translate } from "./utils/translate";
+import { useMobileMenu } from "./context/MobileMenuContext";
 
 const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
+    const { openMenu } = useMobileMenu();
     const navigate = useNavigate();
     const location = useLocation();
+
+    // Language state derived from props initially
+    const [lang, setLang] = useState(initialLang);
 
     // Smooth movement to top if at Homepage
     const navigateHome = () => {
@@ -18,9 +23,6 @@ const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
         navigate(dir); // navigate to home if not already
       }
     }
-
-    // Language state derived from props initially
-    const [lang, setLang] = useState(initialLang);
 
     // Update lang if URL changes (optional, keeps in sync with path)
     useEffect(() => {
@@ -49,8 +51,18 @@ const Navbar = ({ initialLang = 'en', darkMode, setDarkMode }) => {
 ">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center gap-6">
-                        <a href={`/${lang}`} className="flex flex-shrink-0 items-center mr-4">
+                    <div className="flex items-center gap-4">
+                        {/* Mobile Menu Button - Only visible on mobile and only on procedures page */}
+                        {location.pathname.includes('/procedures') && (
+                            <button
+                                onClick={openMenu}
+                                className="lg:hidden p-2 rounded-lg text-gray-100 hover:bg-[#002299] transition-colors"
+                                aria-label="Open menu"
+                            >
+                                <Menu className="w-6 h-6" />
+                            </button>
+                        )}
+                        <a href={`/${lang}`} className="flex flex-shrink-0 items-center">
                             <img className="h-10 w-auto" src={logo} alt="/" />
                             <h2 className="text-white dark:text-gray-100 ml-1 font-mono">epiform</h2>
                         </a>

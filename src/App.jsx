@@ -1,4 +1,5 @@
 // App.jsx
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, Outlet, useOutletContext } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import NavBar from "./components/NavBar.jsx";
@@ -8,7 +9,9 @@ import Dashboard from "./components/Dashboard.jsx";
 import ProcedureDetail from "./components/ProcedureDetail.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Procedures from "./components/Procedures.jsx";
+import NotFound from "./components/NotFound.jsx";
 import { translate } from "./components/utils/translate";
+import { MobileMenuProvider } from "./components/context/MobileMenuContext";
 
 const STORAGE_KEY = 'paris-student-guide-progress';
 
@@ -35,7 +38,6 @@ function ErrorBoundary({ children }) {
 }
 
 // Inner wrapper to catch errors using React's componentDidCatch
-import React from "react";
 class ErrorBoundaryWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -162,22 +164,15 @@ function ProceduresWrapper() {
 // ------------------
 function Home() {
   const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
-
-  // ------------------
-  // Frontend Documentation Scrolling Functionality (FDSF)
-  // ------------------
-
-  //   use useRef hook to define target element reference; then use ref attribute on that element to allow it to be recognizable
+  
+  // Frontend Documentation Scrolling Functionality
   const frontEndDocSection = useRef(null);
-
-  //   Scroll if not null
   const handleFrontEndDocScroll = () => {
-    frontEndDocSection?.current.scrollIntoView({ behavior: "smooth" });
-  }
+    frontEndDocSection?.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      {/* FDSF Usage */}
       <Hero
         lang={lang}
         scrollToDoc={handleFrontEndDocScroll}
@@ -199,6 +194,14 @@ function Home() {
 function ContactWrapper() {
   const { lang } = OutletContext();
   return <ContactUs lang={lang} />;
+}
+
+// ------------------
+// NotFoundWrapper
+// ------------------
+function NotFoundWrapper() {
+  const { lang } = useParams();
+  return <NotFound lang={lang} />;
 }
 
 // ------------------
@@ -237,9 +240,10 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <Router>
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Routes>
+      <MobileMenuProvider>
+        <Router>
+          <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Routes>
           {/* Root redirect */}
           <Route path="/" element={<Navigate to="/en" replace />} />
 
@@ -250,11 +254,15 @@ function App() {
             <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
             <Route path="contact" element={<ContactWrapper />} />
 
-            {/* Fallback */}
-            <Route path="*" element={<Navigate to="" replace />} />
+            {/* 404 catch-all for invalid paths within language route */}
+            <Route path="*" element={<NotFoundWrapper />} />
           </Route>
+
+          {/* 404 catch-all for invalid paths without language prefix */}
+          <Route path="*" element={<NotFound lang="en" />} />
         </Routes>
       </Router>
+      </MobileMenuProvider>
     </ErrorBoundary>
   );
 }
