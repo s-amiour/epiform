@@ -75,7 +75,11 @@ function generateSlug(titleObj) {
 // Outlet Context Hook
 // ------------------
 function OutletContext() {
-  return useOutletContext();
+  try {
+    return useOutletContext() || {};
+  } catch (e) {
+    return {};
+  }
 }
 
 // ------------------
@@ -128,7 +132,7 @@ function LangWrapper() {
 // ProcedureDetailRoute
 // ------------------
 function ProcedureDetailRoute() {
-  const { procedures, handleStatusChange } = OutletContext();
+  const { procedures = [], handleStatusChange } = OutletContext();
   const { slug, lang } = useParams();
 
       const procedure = procedures.find(p => p.slugEn === slug);
@@ -150,7 +154,7 @@ function ProcedureDetailRoute() {
 // ProceduresWrapper
 // ------------------
 function ProceduresWrapper() {
-  const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  const { procedures = [], handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
   return (
     <Procedures
       procedures={procedures}
@@ -165,7 +169,7 @@ function ProceduresWrapper() {
 // Home Wrapper
 // ------------------
 function Home() {
-  const { procedures, handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
+  const { procedures = [], handleStatusChange, firstObligatoryProcedure, lang } = OutletContext();
   
   // Frontend Documentation Scrolling Functionality
   const frontEndDocSection = useRef(null);
@@ -195,7 +199,7 @@ function Home() {
 // ------------------
 function ContactWrapper() {
   const { lang } = OutletContext();
-  return <ContactUs lang={lang} />;
+  return <ContactUs lang={lang || 'en'} />;
 }
 
 // ------------------
@@ -234,6 +238,7 @@ function LayoutWithSidebar({ darkMode, setDarkMode }) {
     }
   } catch (e) {
     // OutletContext not available (e.g., on 404 page)
+    // Default values already set above
   }
 
   // Get lang from params or extract from path
