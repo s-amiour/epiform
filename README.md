@@ -4,7 +4,7 @@
   <p align="center">A web-based progress tracker for French administrative procedures, designed for international students @ <a href="https://github.com/epita">EPITA</a>.</p>
   
   <div align="center">
-    <a href="https://epiform.vercel.app">
+    <a href="https://epiform.vercel.app" target="_blank">
       <img src="https://img.shields.io/badge/Live_Demo-Visit_Site-success?style=for-the-badge&logo=vercel" alt="Live Demo" />
     </a>
   </div><br />
