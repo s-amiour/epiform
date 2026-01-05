@@ -78,6 +78,12 @@ When committing, use the `-m` flag with a properly formatted message:
 
 ```bash
 git commit -m "feat(auth): implement biometric authentication"
+
+# For using subject + body
+git commit -m "feat(auth): implement biometric authentication" -m "my body"
+
+# For using subject + body + footer
+git commit -m "my subject" -m "my body" -m "my footer"
 ```
 
 ## Enforcing Convention
