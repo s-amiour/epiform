@@ -30,8 +30,8 @@
 - [x] **Browser Persistence**: Uses `localStorage` to save progress automatically without requiring a server account.
 - [x] **Smart Sorting**: Procedures are categorized by priority and urgency.
 - [x] **Responsive Design**: Optimized for both desktop and mobile layouts.
-- [ ] **FR / EN Translation**: Full bilingual support.
-- [ ] **Dark Theme**: Native dark mode support.
+- [x] **FR / EN Translation**: Full bilingual support.
+- [x] **Dark Theme**: Native dark mode support.
 
 <!-- !OPTIONAL: add screenshot of UI, or GIF showing cursor-glow -->
 
