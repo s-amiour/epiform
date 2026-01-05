@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard.jsx";
 import ProcedureDetail from "./components/ProcedureDetail.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Procedures from "./components/Procedures.jsx";
+import NotFound from "./components/NotFound.jsx";
 import { translate } from "./components/utils/translate";
 import { MobileMenuProvider } from "./components/context/MobileMenuContext";
 
@@ -185,6 +186,14 @@ function ContactWrapper() {
 }
 
 // ------------------
+// NotFoundWrapper
+// ------------------
+function NotFoundWrapper() {
+  const { lang } = useParams();
+  return <NotFound lang={lang} />;
+}
+
+// ------------------
 // Main App
 // ------------------
 function App() {
@@ -204,9 +213,12 @@ function App() {
             <Route path="procedures/procedure/:slug" element={<ProcedureDetailRoute />} />
             <Route path="contact" element={<ContactWrapper />} />
 
-            {/* Fallback */}
-            <Route path="*" element={<Navigate to="" replace />} />
+            {/* 404 catch-all for invalid paths within language route */}
+            <Route path="*" element={<NotFoundWrapper />} />
           </Route>
+
+          {/* 404 catch-all for invalid paths without language prefix */}
+          <Route path="*" element={<NotFound lang="en" />} />
         </Routes>
       </Router>
       </MobileMenuProvider>
